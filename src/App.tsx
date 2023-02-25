@@ -1,12 +1,7 @@
-import React from 'react';
-//import {ProductEntity} from 'types';
+import React from 'react'
 
+// import {ProductEntity} from 'types';
 
-export const App = () => {
-
-  return (
-      <div className="App">
-      </div>
-  );
+export function App() {
+  return <div className='App' />
 }
-
