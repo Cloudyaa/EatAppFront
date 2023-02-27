@@ -7,6 +7,7 @@ import { SingleProductView } from './views/products/SingleProductView';
 import { LoginView } from './views/user/LoginView';
 import { SignupView } from './views/user/SignupView';
 import { LoggedUserView } from './views/user/LoggedUserView';
+import { SearchResultsView } from './views/products/SearchResultsView';
 
 // import {ProductEntity} from 'types';
 
@@ -15,12 +16,12 @@ export const App = () => {
     <div className="App">
       <Routes>
         <Route path={'/'} element={<HomeView />} />
-        <Route path={'/products/show'} element={<AllProductsView />} />
+        <Route path={'/products/search'} element={<AllProductsView />} />
+        <Route path={'/products/search/:search_query'} element={<SearchResultsView />} />
         <Route path={'/products/:product_id'} element={<SingleProductView />} />
-        <Route path={'/auth/login'} element={<LoginView />} />
-        <Route path={'/auth/signup'} element={<SignupView />} />
-        {/* prettier-ignore */}
-        <Route path={'/auth/login/user/:user_id'} element={<LoggedUserView />} />
+        <Route path={'/user/signup'} element={<SignupView />} />
+        <Route path={'/user/login'} element={<LoginView />} />
+        <Route path={'/user/login/:user_id'} element={<LoggedUserView />} />
         <Route path={'*'} element={<NotFoundView />} />
       </Routes>
     </div>
