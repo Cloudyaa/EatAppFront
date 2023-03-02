@@ -8,12 +8,13 @@ import { LoginView } from './views/user/LoginView';
 import { SignupView } from './views/user/SignupView';
 import { LoggedUserView } from './views/user/LoggedUserView';
 import { SearchResultsView } from './views/products/SearchResultsView';
+import { Container } from '@mui/material';
 
 // import {ProductEntity} from 'types';
 
 export const App = () => {
   return (
-    <div className="App">
+    <Container fixed>
       <Routes>
         <Route path={'/'} element={<HomeView />} />
         <Route path={'/products/search'} element={<AllProductsView />} />
@@ -24,6 +25,6 @@ export const App = () => {
         <Route path={'/user/login/:user_id'} element={<LoggedUserView />} />
         <Route path={'*'} element={<NotFoundView />} />
       </Routes>
-    </div>
+    </Container>
   );
 };
