@@ -1,0 +1,24 @@
+@use '../utils/colors' as *;
+
+@mixin theme-colors {
+  --color-primary: #{$blue-green};
+  --color-secondary: #{$orange};
+  --color-muted: #{$grey};
+  --main-background: #{$white-grey};
+}
+
+@mixin text-utils {
+  --main-text-font: arboria, 'sans-serif';
+  --main-text-font-weight: 400;
+  --main-text-font-style: normal;
+  --main-text-font-size: 1.25rem;
+  --main-text-font-color: var(--primary);
+}
+
+@mixin section-header-utils {
+  --section-header-font: 'dejanire-headline', serif;
+  --section-header-font-weight: 700;
+  --section-header-font-style: italic;
+  --section-header-font-size: 5rem;
+  --section-header-font-color: var(--primary);
+}

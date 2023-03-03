@@ -1,0 +1,15 @@
+@use '../themes/theme' as *;
+
+:root {
+  // load theme mixins here
+  @include theme-colors;
+  @include text-utils;
+  @include section-header-utils;
+  --container-width: min(100% - 3rem, 80rem);
+}
+
+@media (min-width: 420px) {
+  :root {
+    --container-width: min(100% - 6rem, 80rem);
+  }
+}

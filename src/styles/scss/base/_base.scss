@@ -1,0 +1,34 @@
+@use '../utils/fonts' as *;
+@use '../utils/colors' as *;
+
+* {
+  outline: 3px solid slateblue;
+  margin: 0;
+}
+
+body {
+  @include main-font;
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+section,
+footer {
+  height: 100dvh;
+}
+
+header,
+main {
+  height: calc(100dvh - 4.5rem);
+}
+
+.section-header {
+  @include section-header-font;
+}
+
+.container {
+  width: var(--container-width);
+  min-height: 100%;
+  margin-inline: auto;
+}
