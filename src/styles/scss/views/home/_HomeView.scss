@@ -1,11 +1,6 @@
 @use '../../utils/fonts' as *;
 @use '../../utils/colors' as *;
 
-nav {
-  background: red;
-  height: 3rem;
-}
-
 .home {
   &__hero {
     &-container {
@@ -75,10 +70,6 @@ nav {
       &-btn {
         align-self: center;
         margin: 1rem;
-      }
-
-      &-image-left {
-        outline: 2px solid aqua;
       }
     }
 
