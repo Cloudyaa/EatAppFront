@@ -2,15 +2,17 @@
 @use '../utils/colors' as *;
 
 * {
-  outline: 3px solid slateblue;
+  //  outline: 3px solid slateblue;
   margin: 0;
 }
 
-body {
+body,
+html {
   @include main-font;
-  background-color: var(--background-color);
+  background-color: var(--main-background);
   scroll-behavior: smooth;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 section,
@@ -20,7 +22,7 @@ footer {
 
 header,
 main {
-  height: calc(100dvh - 4.5rem);
+  height: calc(100% - 4.5rem);
 }
 
 .section-header {
@@ -31,4 +33,13 @@ main {
   width: var(--container-width);
   min-height: 100%;
   margin-inline: auto;
+}
+
+p {
+  color: var(--main-text-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
