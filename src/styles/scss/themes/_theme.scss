@@ -4,6 +4,7 @@
   --color-primary: #{$blue-green};
   --color-secondary: #{$orange};
   --color-muted: #{$grey};
+  --color-light: #{$white-grey};
   --main-background: #{$white-grey};
 }
 
@@ -12,7 +13,7 @@
   --main-text-font-weight: 400;
   --main-text-font-style: normal;
   --main-text-font-size: 1.25rem;
-  --main-text-font-color: var(--primary);
+  --main-text-color: var(--color-primary);
 }
 
 @mixin section-header-utils {
@@ -20,5 +21,15 @@
   --section-header-font-weight: 700;
   --section-header-font-style: italic;
   --section-header-font-size: 5rem;
-  --section-header-font-color: var(--primary);
+  --section-header-color: var(--color-primary);
+}
+
+@mixin button-utils {
+  --btn-font-family: 'arboria', sans-serif;
+  --btn-font-color: var(--color-light);
+  //--btn-font-size: 1.5rem;
+  //--btn-background: var(--primary);
+  --btn-border: none;
+  --btn-radius: 10px;
+  //--btn-padding: 1rem 3rem;
 }

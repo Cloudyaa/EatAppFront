@@ -1,0 +1,23 @@
+@use '../utils/mixins' as *;
+
+.btn {
+  &-light {
+    --btn-background: var(--color-secondary);
+  }
+
+  &-dark {
+    --btn-background: var(--color-primary);
+  }
+
+  &-big {
+    --btn-font-size: 1.5rem;
+    --btn-padding: 1rem 3rem;
+  }
+
+  &-small {
+    --btn-font-size: 1rem;
+    --btn-padding: 0.8rem 2rem;
+  }
+
+  @include button;
+}
