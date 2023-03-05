@@ -20,16 +20,14 @@
   --section-header-font: 'dejanire-headline', serif;
   --section-header-font-weight: 700;
   --section-header-font-style: italic;
-  --section-header-font-size: 5rem;
+  --section-header-font-size: max(1rem, 8cqi);
   --section-header-color: var(--color-primary);
 }
 
 @mixin button-utils {
   --btn-font-family: 'arboria', sans-serif;
   --btn-font-color: var(--color-light);
-  //--btn-font-size: 1.5rem;
-  //--btn-background: var(--primary);
+  --btn-font-size: 1rem;
   --btn-border: none;
   --btn-radius: 10px;
-  //--btn-padding: 1rem 3rem;
 }

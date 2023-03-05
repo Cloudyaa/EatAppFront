@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import { Hero } from './Hero';
 
 export const HomeView = () => {
- // const [bestsellers, setBestsellers] = useState<SimpleProductEntity[] | null>(null);
+  // const [bestsellers, setBestsellers] = useState<SimpleProductEntity[] | null>(null);
 
   // useEffect(() => {
   //   (async () => {
@@ -20,7 +20,7 @@ export const HomeView = () => {
 
   return (
     <>
-      <Hero/>
+      <Hero />
       <section className="home__bestsellers">
         <Box className="container">
           <h2>Our bestsellers</h2>

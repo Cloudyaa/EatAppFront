@@ -14,18 +14,45 @@ import { Container } from '@mui/material';
 
 export const App = () => {
   return (
-      <Container maxWidth={false} disableGutters>
-        <nav>Navbar</nav>
-        <Routes>
-          <Route path={'/'} element={<HomeView />} />
-          <Route path={'/products/search'} element={<AllProductsView />} />
-          <Route path={'/products/search/:search_query'} element={<SearchResultsView />} />
-          <Route path={'/products/:product_id'} element={<SingleProductView />} />
-          <Route path={'/user/signup'} element={<SignupView />} />
-          <Route path={'/user/login'} element={<LoginView />} />
-          <Route path={'/user/login/:user_id'} element={<LoggedUserView />} />
-          <Route path={'*'} element={<NotFoundView />} />
-        </Routes>
-      </Container>
+    <Container
+      maxWidth={false}
+      disableGutters
+    >
+      <nav>Navbar</nav>
+      <Routes>
+        <Route
+          path={'/'}
+          element={<HomeView />}
+        />
+        <Route
+          path={'/products/search'}
+          element={<AllProductsView />}
+        />
+        <Route
+          path={'/products/search/:search_query'}
+          element={<SearchResultsView />}
+        />
+        <Route
+          path={'/products/:product_id'}
+          element={<SingleProductView />}
+        />
+        <Route
+          path={'/user/signup'}
+          element={<SignupView />}
+        />
+        <Route
+          path={'/user/login'}
+          element={<LoginView />}
+        />
+        <Route
+          path={'/user/login/:user_id'}
+          element={<LoggedUserView />}
+        />
+        <Route
+          path={'*'}
+          element={<NotFoundView />}
+        />
+      </Routes>
+    </Container>
   );
 };

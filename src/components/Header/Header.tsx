@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {
   children: React.ReactNode;
-  addClass: string;
+  addClass?: string;
 }
 
 export const Header = ({ children, addClass }: Props) => (

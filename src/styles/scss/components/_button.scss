@@ -1,6 +1,7 @@
 @use '../utils/mixins' as *;
 
 .btn {
+  @include button;
   &-light {
     --btn-background: var(--color-secondary);
   }
@@ -10,14 +11,26 @@
   }
 
   &-big {
-    --btn-font-size: 1.5rem;
-    --btn-padding: 1rem 3rem;
+    --btn-font-size: 1.2rem;
+    --btn-padding: 5% 15%;
   }
 
   &-small {
     --btn-font-size: 1rem;
-    --btn-padding: 0.8rem 2rem;
+    --btn-padding: 6px 12px;
   }
+}
 
-  @include button;
+@media (max-width: 768px) {
+  .btn {
+    &-big {
+      --btn-font-size: 1rem;
+      --btn-padding: 3% 12%;
+    }
+
+    &-small {
+      --btn-font-size: 0.8rem;
+      --btn-padding: 6px 12px;
+    }
+  }
 }

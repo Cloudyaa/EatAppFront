@@ -3,10 +3,10 @@ import React from 'react';
 interface Props {
   name: string;
   alt: string;
-  addClass: string;
+  addClass?: string;
 }
 
-export const Image = ({name, alt, addClass}: Props) => {
+export const Image = ({ name, alt, addClass }: Props) => {
   return (
     <img
       className={addClass}

@@ -1,82 +1,146 @@
 @use '../../utils/fonts' as *;
 @use '../../utils/colors' as *;
 
+nav {
+  background: red;
+  height: 3rem;
+}
+
 .home {
   &__hero {
     &-container {
+      --container-width: 100dvw;
       display: grid;
       grid-template-areas:
         'head head side img img'
         'desc desc side img img'
         'btm btm btm img img';
-      grid-template-columns: 1fr 1fr 5% 0.5fr 1fr;
-      grid-template-rows: 0.8fr 0.6fr 0.8fr;
+      grid-template-columns: 1fr 1.4fr 0.6fr 1fr 1fr;
+      grid-template-rows: 0.3fr 0.2fr 0.5fr;
       grid-auto-flow: column;
-      & > *:not(.home__hero-title-side) {
+
+      & > * {
         min-width: 100%;
         min-height: 100%;
       }
     }
 
     &-title {
-      --section-header-font-size: 3.4rem;
-      @include section-header-font;
       grid-area: head;
+      container-type: inline-size;
       display: flex;
-      align-items: flex-end;
       justify-content: flex-end;
-      margin-left: 1rem;
+      align-items: flex-end;
+
+      & > h2 {
+        @include section-header-font;
+        --section-header-font-size: max(1rem, 11cqi);
+      }
 
       &-side {
-        --section-header-color: var(--color-secondary);
-        --section-header-font-size: 6rem;
-        --section-header-font-style: normal;
-        @include section-header-font;
         grid-area: side;
-        rotate: 90deg;
-        margin: 5rem 0 0 6rem;
-        max-height: 6rem;
+        container-type: inline-size;
+        position: relative;
+
+        & > p {
+          @include section-header-font;
+          position: relative;
+          --section-header-color: var(--color-secondary);
+          --section-header-font-style: normal;
+          --section-header-font-size: max(1rem, 70cqi);
+          rotate: 90deg;
+          flex-grow: 1;
+          flex-shrink: 0;
+          top: 40%;
+        }
       }
     }
 
     &-desc {
-      --main-text-color: var(--color-muted);
       grid-area: desc;
-      text-align: right;
-      margin-left: 1rem;
+      container-type: inline-size;
+      font-size: max(0.6rem, 2cqi);
+
+      & > p {
+        --main-text-color: var(--color-muted);
+        text-align: right;
+      }
     }
 
     &-bottom {
       grid-area: btm;
-      position: relative;
-      display: flex;
-      &:not(&-image) {
-        justify-content: flex-end;
-        align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+
+      &-btn {
+        align-self: center;
+        margin: 1rem;
       }
 
       &-image-left {
-        max-width: 400px;
-        position: absolute;
-        inset: -20% 0 0 -10%;
-      }
-
-      // move it later to Button styles
-      > button {
-        padding: 1rem 3rem;
-        margin-right: 2rem;
-        font-size: 1.5rem;
-        font-family: 'arboria', sans-serif;
-        border: none;
-        border-radius: 10px;
-        background-color: var(--color-secondary);
-        color: $white-grey;
+        outline: 2px solid aqua;
       }
     }
 
     &-image-right {
       grid-area: img;
-      margin-left: 15%;
+    }
+  }
+}
+
+@media (max-width: 832px) {
+  .home {
+    &__hero {
+      &-container {
+        display: grid;
+        grid-template-areas:
+          'head head '
+          'desc img'
+          'btm btm';
+        grid-template-columns: 0.4fr 0.6fr;
+        grid-template-rows: 0.4fr 1fr 0.4fr;
+        grid-auto-flow: column;
+        justify-content: center;
+      }
+
+      &-title {
+        grid-area: head;
+        justify-content: center;
+        align-items: center;
+
+        &-side {
+          grid-area: head;
+
+          > p {
+            font-size: max(1rem, 12cqi);
+            rotate: unset;
+            text-align: right;
+            margin: 1rem;
+          }
+        }
+      }
+
+      &-desc {
+        font-size: max(0.5rem, 4cqi);
+      }
+
+      &-bottom {
+        display: unset;
+        text-align: center;
+
+        &-btn {
+          grid-area: btm;
+        }
+
+        &-image-left {
+          display: none;
+        }
+      }
+
+      &-image-right {
+        grid-area: img;
+        max-height: 100%;
+      }
     }
   }
 }

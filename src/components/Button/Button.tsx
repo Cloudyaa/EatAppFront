@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface Props {
   color: 'light' | 'dark';
@@ -10,9 +10,10 @@ export const Button = ({ color, size, children }: Props) => {
   const [colorClass, setColorClass] = useState('');
   const [sizeClass, setSizeClass] = useState('');
 
-  color === 'light' ? setColorClass('btn-light') : setColorClass('btn-dark');
-  size === 'sm' ? setSizeClass('btn-small') : setSizeClass('btn-big');
-
+  useEffect(() => {
+    color === 'light' ? setColorClass('btn-light') : setColorClass('btn-dark');
+    size === 'sm' ? setSizeClass('btn-small') : setSizeClass('btn-big');
+  }, []);
 
   return <button className={`btn ${colorClass} ${sizeClass}`}>{children}</button>;
 };
