@@ -1,18 +1,24 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import { Header } from '../../components/Header/Header';
+import { Button } from '../../components/Button/Button';
 
 export const Hero = () => (
   <header className="home__hero">
     <Box className="container home__hero-container">
-      <h1 className="home__hero-title">Because you must</h1>
+      <Header addClass="home__hero-title">Because you must</Header>
       <p className="home__hero-title-side">eat.</p>
       <p className="home__hero-desc">
         Our mission is to deliver the best quality food to people. We believe that fresh fruits and
         vegetables are necessary to keep you alive. And happy. Nobody likes to be hungry.
       </p>
       <div className="home__hero-bottom">
-        <img className="home__hero-bottom-image-left" src="/img/hero-left.png" alt="orange image" />
-        <button className="btn-big-light">See our products</button>
+        <img
+          className="home__hero-bottom-image-left"
+          src="/img/hero-left.png"
+          alt="orange image"
+        />
+        <Button size="xl" color="accent-light">See our products</Button>
       </div>
       <div className="home__hero-image-right">
         <img
