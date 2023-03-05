@@ -1,0 +1,10 @@
+@mixin button {
+  color: var(--btn-font-color);
+  background-color: var(--btn-background);
+  font-family: var(--btn-font-family);
+  font-size: var(--btn-font-size);
+  padding: var(--btn-padding);
+  border: var(--btn-border);
+  border-radius: var(--btn-radius);
+}
+
