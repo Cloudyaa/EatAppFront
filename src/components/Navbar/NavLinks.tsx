@@ -23,11 +23,7 @@ export const NavLinks = () => {
     <Box className="navbar__links-wrapper">
       {navLinks.map(({ linkText, id }) => {
         return (
-          <NavLink
-            to={`#${id}`}
-            key={id}
-            className="navbar__links-item"
-          >
+          <NavLink to={`#${id}`} key={id} className="navbar__links-item">
             {linkText}
           </NavLink>
         );

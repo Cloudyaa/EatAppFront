@@ -46,3 +46,13 @@
     }
   }
 }
+
+@media (max-width: 834px) {
+  .navbar {
+    &__links {
+      &-wrapper {
+        flex-direction: column;
+      }
+    }
+  }
+}
