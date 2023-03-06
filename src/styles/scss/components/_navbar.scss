@@ -1,4 +1,48 @@
-nav {
-  background: red;
-  height: 3rem;
+@use '../utils/fonts' as *;
+
+.navbar {
+  display: grid !important;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr 4.1rem 1fr;
+  background: rgba(255, 161, 1, 0.27);
+  // left side
+  &__links {
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-left: 2rem;
+      container-type: inline-size;
+    }
+    &-item {
+      --main-text-font-size: max(1rem, 3cqi);
+      flex-grow: 1;
+      flex-wrap: nowrap;
+      @include main-font;
+      text-decoration: none;
+      width: fit-content;
+    }
+  }
+
+  // middle
+  &__logo {
+    width: fit-content;
+    text-align: center;
+    & > h5 {
+      font-family: 'dejanire-headline', serif !important;
+      font-weight: 900 !important;
+      font-size: 2rem !important;
+      color: var(--color-secondary);
+    }
+  }
+
+  &__actions {
+    text-align: right;
+    @include main-font;
+    container-type: inline-size;
+
+    & > * {
+      --main-text-font-size: max(1rem, 3cqi) !important;
+    }
+  }
 }
