@@ -5,7 +5,7 @@ import { Button } from '../../components/common/Button/Button';
 import { Image } from '../../components/Image/Image';
 
 export const Hero = () => (
-  <header className="home__hero">
+  <main className="home__hero">
     <Box className="container home__hero-container">
       <SectionHeader classes="home__hero-title">Because you must</SectionHeader>
       <div className="home__hero-title-side">
@@ -39,5 +39,5 @@ export const Hero = () => (
         />
       </div>
     </Box>
-  </header>
+  </main>
 );
