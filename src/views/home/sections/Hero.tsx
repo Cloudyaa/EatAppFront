@@ -1,11 +1,10 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { SectionHeader } from '../../components/common/SectionHeader/SectionHeader';
-import { Button } from '../../components/common/Button/Button';
-import { Image } from '../../components/Image/Image';
+import { SectionHeader, Button, Image } from '../../../components';
+import { SectionId } from '../../../types';
 
 export const Hero = () => (
-  <header className="home__hero">
+  <header id={SectionId.home} className="home__hero">
     <Box className="container home__hero-container">
       <SectionHeader classes="home__hero-title">Because you must</SectionHeader>
       <div className="home__hero-title-side">
