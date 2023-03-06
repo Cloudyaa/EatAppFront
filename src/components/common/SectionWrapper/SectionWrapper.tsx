@@ -1,13 +1,15 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import { SectionId } from '../../../types';
 
 interface Props {
   classes: string;
+  id: SectionId;
   children: React.ReactNode;
 }
 
-export const SectionWrapper = ({ classes, children }: Props) => (
-  <section className={classes}>
+export const SectionWrapper = ({ classes, id, children }: Props) => (
+  <section id={id} className={classes}>
     <Box className="container">{children}</Box>
   </section>
 );
