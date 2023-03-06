@@ -1,11 +1,6 @@
 @use '../../utils/fonts' as *;
 @use '../../utils/colors' as *;
 
-nav {
-  background: red;
-  height: 3rem;
-}
-
 .home {
   &__hero {
     &-container {
@@ -27,13 +22,11 @@ nav {
 
     &-title {
       grid-area: head;
-      container-type: inline-size;
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
 
       & > h2 {
-        @include section-header-font;
         --section-header-font-size: max(1rem, 11cqi);
       }
 
@@ -75,10 +68,6 @@ nav {
       &-btn {
         align-self: center;
         margin: 1rem;
-      }
-
-      &-image-left {
-        outline: 2px solid aqua;
       }
     }
 

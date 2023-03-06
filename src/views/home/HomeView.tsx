@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { SimpleProductEntity } from 'types';
 import { Box } from '@mui/material';
 import { Hero } from './Hero';
+import { SectionWrapper } from '../../components/common/SectionWrapper/SectionWrapper';
+import { SectionHeader } from '../../components/common/SectionHeader/SectionHeader';
 
 export const HomeView = () => {
   // const [bestsellers, setBestsellers] = useState<SimpleProductEntity[] | null>(null);
@@ -21,31 +23,27 @@ export const HomeView = () => {
   return (
     <>
       <Hero />
-      <section className="home__bestsellers">
-        <Box className="container">
-          <h2>Our bestsellers</h2>
-          <ul>
-            {/* {bestsellers.map((one) => ( */}
-            {/*   <li key={one.productId}>{one.name}</li> */}
-            {/* ))} */}
-            <li className="txt-muted">test</li>
-          </ul>
-        </Box>
-      </section>
+      <SectionWrapper classes="home__bestsellers">
+        <SectionHeader>Our bestsellers</SectionHeader>
+        <ul>
+          {/* {bestsellers.map((one) => ( */}
+          {/*   <li key={one.productId}>{one.name}</li> */}
+          {/* ))} */}
+          <li className="txt-muted">test</li>
+        </ul>
+      </SectionWrapper>
 
-      <section className="home__discount">
-        <Box className="container">
-          <p className="txt-bolder">Discount</p>
-        </Box>
-      </section>
+      <SectionWrapper classes="home__discount">
+        <SectionHeader>Discount</SectionHeader>
+      </SectionWrapper>
 
-      <section className="home__about-us">
-        <Box className="container">About us</Box>
-      </section>
+      <SectionWrapper classes="home__about-us">
+        <SectionHeader>About us</SectionHeader>
+      </SectionWrapper>
 
-      <section className="home__contact">
-        <Box className="container">Contact</Box>
-      </section>
+      <SectionWrapper classes="home__contact">
+        <SectionHeader>Contact</SectionHeader>
+      </SectionWrapper>
 
       <footer>
         <Box className="container">Footer</Box>

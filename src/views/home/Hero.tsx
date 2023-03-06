@@ -1,17 +1,15 @@
 import React from 'react';
-import { Box } from '@mui/material';
-import { Header } from '../../components/Header/Header';
-import { Button } from '../../components/Button/Button';
+import { Box, Typography } from '@mui/material';
+import { SectionHeader } from '../../components/common/SectionHeader/SectionHeader';
+import { Button } from '../../components/common/Button/Button';
 import { Image } from '../../components/Image/Image';
 
 export const Hero = () => (
   <header className="home__hero">
     <Box className="container home__hero-container">
-      <div className="home__hero-title">
-        <Header>Because you must</Header>
-      </div>
+      <SectionHeader classes="home__hero-title">Because you must</SectionHeader>
       <div className="home__hero-title-side">
-        <p>eat.</p>
+        <Typography>eat.</Typography>
       </div>
       <div className="home__hero-desc">
         <p>
