@@ -22,13 +22,11 @@
 
     &-title {
       grid-area: head;
-      container-type: inline-size;
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
 
       & > h2 {
-        @include section-header-font;
         --section-header-font-size: max(1rem, 11cqi);
       }
 
