@@ -9,6 +9,7 @@ import { SignupView } from './views/user/SignupView';
 import { LoggedUserView } from './views/user/LoggedUserView';
 import { SearchResultsView } from './views/products/SearchResultsView';
 import { Container } from '@mui/material';
+import { Navbar } from './components';
 
 // import {ProductEntity} from 'types';
 
@@ -18,7 +19,7 @@ export const App = () => {
       maxWidth={false}
       disableGutters
     >
-      <nav>Navbar</nav>
+      <Navbar />
       <Routes>
         <Route
           path={'/'}
