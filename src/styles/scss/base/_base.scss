@@ -1,5 +1,6 @@
 @use '../utils/fonts' as *;
 @use '../utils/colors' as *;
+@use '../utils/mixins' as *;
 
 * {
   //  outline: 3px solid slateblue;
@@ -45,6 +46,25 @@ p {
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  @include links;
+}
+
+//reset mui button for better icons styling {
+button:not(.btn) {
+  border-radius: 0 !important;
+  margin: 0;
+  margin-inline: 0;
+  padding: 0;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  @include links;
+  &:hover {
+    background: none;
+  }
 }
 
 @media (max-width: 832px) {
