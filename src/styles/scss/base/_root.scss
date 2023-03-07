@@ -6,6 +6,8 @@
   @include text-utils;
   @include section-header-utils;
   @include button-utils;
+  @include nav-props;
+  @include nav-element-wrapper-props;
   --container-width: min(100% - 3rem, 80rem);
 }
 

@@ -31,3 +31,26 @@
   --btn-border: none;
   --btn-radius: 10px;
 }
+
+@mixin nav-props {
+  --nav-background: var(--color-light);
+}
+
+@mixin nav-element-wrapper-props {
+  --nav-el-wrapper-direction: row;
+  --nav-el-wrapper-margin: 0 0 0 2rem;
+  --nav-el-wrapper-align: center;
+  --nav-el-wrapper-justify: center;
+  --nav-el-wrapper-gap: 2rem;
+
+  @media (max-width: 800px) {
+    --nav-el-wrapper-margin: 0;
+    --nav-el-wrapper-direction: column;
+    --nav-el-wrapper-gap: 2rem;
+  }
+}
+
+@mixin links-props {
+  --link-color: var(--color-primary);
+  --link-decoration: none;
+}
