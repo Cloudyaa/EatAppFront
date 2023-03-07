@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Box } from '@mui/material';
-import { SectionId } from '../../types';
+import { HashLink } from 'react-router-hash-link';
+import { SectionId } from '../../../types';
+import { NavbarPartWrapper } from './NavbarPartWrapper';
 
 export const NavLinks = () => {
   const navLinks = [
@@ -20,14 +20,14 @@ export const NavLinks = () => {
   ];
 
   return (
-    <Box className="navbar__links-wrapper">
+    <NavbarPartWrapper>
       {navLinks.map(({ linkText, id }) => {
         return (
-          <NavLink to={`#${id}`} key={id} className="navbar__links-item">
+          <HashLink to={`#${id}`} key={id} className="navbar__links-item">
             {linkText}
-          </NavLink>
+          </HashLink>
         );
       })}
-    </Box>
+    </NavbarPartWrapper>
   );
 };
