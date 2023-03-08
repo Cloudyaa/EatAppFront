@@ -2,10 +2,9 @@
 @use '../../utils/mixins' as *;
 
 .navbar {
-  // display: grid !important;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr 4.1rem 1fr;
-  background: var(--color-light);
+  grid-auto-flow: var(--nav-flow);
+  grid-auto-columns: var(--nav-flow-size);
+  background: var(--nav-background);
   margin-inline: 1rem;
 
   &__element-wrapper {
@@ -16,22 +15,6 @@
       width: fit-content;
       margin: 1rem 0;
       // @include links;
-    }
-  }
-
-  &__actions {
-    container-type: inline-size;
-    & > * {
-      text-align: right;
-      flex-grow: 1;
-    }
-  }
-}
-
-@media (max-width: 800px) {
-  .navbar {
-    &__actions {
-      margin-bottom: 1rem;
     }
   }
 }

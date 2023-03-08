@@ -1,0 +1,25 @@
+@use '../../utils/fonts' as *;
+
+.navbar {
+  &__actions {
+    container-type: inline-size;
+
+    &-element {
+      @include main-font;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    &__actions {
+      margin-bottom: 1rem;
+    }
+  }
+}

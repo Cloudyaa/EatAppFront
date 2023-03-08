@@ -34,6 +34,8 @@
 
 @mixin nav-props {
   --nav-background: var(--color-light);
+  --nav-flow: column;
+  --nav-flow-size: 1fr 4.1rem 1fr;
 }
 
 @mixin nav-element-wrapper-props {
