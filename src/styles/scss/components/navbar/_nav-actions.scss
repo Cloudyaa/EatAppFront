@@ -10,8 +10,16 @@
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: center;
+      align-items: center;
       gap: 1rem;
       width: 100%;
+    }
+
+    &-icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin: 0;
     }
   }
 }
@@ -20,6 +28,11 @@
   .navbar {
     &__actions {
       margin-bottom: 1rem;
+      &-icons {
+        --main-text-font-size: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   }
 }

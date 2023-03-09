@@ -2,10 +2,7 @@
 @use '../../utils/mixins' as *;
 
 .navbar {
-  grid-auto-flow: var(--nav-flow);
-  grid-auto-columns: var(--nav-flow-size);
-  background: var(--nav-background);
-  margin-inline: 1rem;
+  @include navbar;
 
   &__element-wrapper {
     @include nav-element-wrapper;
@@ -14,7 +11,20 @@
       flex-wrap: nowrap;
       width: fit-content;
       margin: 1rem 0;
-      // @include links;
+    }
+  }
+
+  &__links-item {
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    --nav-display: flex;
+
+    justify-content: space-between;
+    &__element-wrapper {
+      --nav-el-wrapper-gap: 0 !important;
     }
   }
 }

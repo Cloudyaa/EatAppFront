@@ -10,6 +10,14 @@
   text-decoration: none;
 }
 
+@mixin navbar {
+  display: var(--nav-display) !important;
+  grid-auto-flow: var(--nav-flow);
+  grid-auto-columns: var(--nav-flow-size);
+  background: var(--nav-background) !important;
+  margin-inline: 1rem;
+}
+
 @mixin nav-element-wrapper {
   display: flex;
   flex-direction: var(--nav-el-wrapper-direction);

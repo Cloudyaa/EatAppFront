@@ -33,6 +33,7 @@
 }
 
 @mixin nav-props {
+  --nav-display: grid;
   --nav-background: var(--color-light);
   --nav-flow: column;
   --nav-flow-size: 1fr 4.1rem 1fr;
