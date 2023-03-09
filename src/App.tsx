@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Container } from '@mui/material';
-import { Navbar, SpaceFix } from './components';
+import { Navbar, SpaceFix, ScrollToTop } from './components';
 import { SearchContext } from './contexts/search.context';
 import {
   AllProductsView,
@@ -9,7 +9,8 @@ import {
   LoggedUserView,
   LoginView,
   NotFoundView,
-  SearchResultsView, SignupView,
+  SearchResultsView,
+  SignupView,
   SingleProductView,
 } from './views';
 
@@ -20,6 +21,7 @@ export const App = () => {
       <Container maxWidth={false} disableGutters>
         <Navbar />
         <SpaceFix />
+        <ScrollToTop showBelow={250} />
         <Routes>
           <Route path={'/'} element={<HomeView />} />
           <Route path={'/products/search'} element={<AllProductsView />} />
