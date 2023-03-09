@@ -5,26 +5,26 @@ import { About, Bestsellers, Contact, DiscountBar, Footer, Hero } from './sectio
 export const sectionList = [
   {
     id: SectionId.home,
-    section: <Hero />,
+    section: <Hero key={SectionId.home} />,
   },
   {
     id: SectionId.bestsellers,
-    section: <Bestsellers />,
+    section: <Bestsellers key={SectionId.bestsellers} />,
   },
   {
     id: SectionId.about,
-    section: <About />,
+    section: <About key={SectionId.about} />,
   },
   {
     id: SectionId.discount,
-    section: <DiscountBar />,
+    section: <DiscountBar key={SectionId.discount} />,
   },
   {
     id: SectionId.contact,
-    section: <Contact />,
+    section: <Contact key={SectionId.contact} />,
   },
   {
     id: SectionId.footer,
-    section: <Footer />,
+    section: <Footer key={SectionId.footer} />,
   },
 ];
