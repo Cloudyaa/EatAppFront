@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { useViewport } from '../../hooks';
+import { useViewport } from 'hooks';
 
 // add space after navbar
 export const SpaceFix = () => {

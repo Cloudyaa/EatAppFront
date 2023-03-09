@@ -1,13 +1,10 @@
 import React from 'react';
-import { SectionHeader, SectionWrapper } from '../../../components';
-import { SectionId } from '../../../types';
+import { SectionHeader, SectionWrapper } from 'components';
+import { SectionId } from 'frontTypes';
 
 export const Bestsellers = () => {
   return (
-    <SectionWrapper
-      id={SectionId.bestsellers}
-      classes="home__bestsellers"
-    >
+    <SectionWrapper id={SectionId.bestsellers} classes="home__bestsellers">
       <SectionHeader>Our bestsellers</SectionHeader>
       <ul>
         {/* {bestsellers.map((one) => ( */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionId } from '../../types';
+import { SectionId } from 'frontTypes';
 import { About, Bestsellers, Contact, DiscountBar, Footer, Hero } from './sections';
 
 export const sectionList = [

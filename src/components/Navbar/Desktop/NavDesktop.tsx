@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLinks, NavActions } from '../NavbarParts';
-import { LogoBtn } from '../../Logo/LogoBtn';
-import { DesktopToolbar } from './DesktopToolbar';
+import { LogoBtn, DesktopToolbar } from 'components';
 
 export const NavDesktop = () => {
   return (

@@ -4,7 +4,16 @@
     "paths": {
       "types": [
         "../eat-app-back/types"
-      ]
+      ],
+      "components": [
+        "src/components"
+      ],
+      "frontTypes": [
+        "src/frontTypes"
+      ],
+      "hooks": [
+        "src/hooks"
+      ],
     }
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Container } from '@mui/material';
-import { Navbar, SpaceFix, ScrollToTop } from './components';
+import { Navbar, SpaceFix, ScrollToTop } from 'components';
 import { SearchContext } from './contexts/search.context';
 import {
   AllProductsView,

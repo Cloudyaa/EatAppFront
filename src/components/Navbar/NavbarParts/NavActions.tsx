@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { NavbarPartWrapper } from './NavbarPartWrapper';
-import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
-import { Searchbar } from './Searchbar';
 import { NavLink } from 'react-router-dom';
-import { useViewport } from '../../../hooks';
-import { SpaceFix } from '../../common';
+import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
+import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
+import { useViewport } from 'hooks';
 
 interface Props {
   handleShow?: () => void;

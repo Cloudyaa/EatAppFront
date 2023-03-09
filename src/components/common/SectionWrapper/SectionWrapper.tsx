@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { SectionId } from '../../../types';
+import { SectionId } from 'frontTypes';
 
 interface Props {
   classes: string;

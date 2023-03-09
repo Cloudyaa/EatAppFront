@@ -1,7 +1,6 @@
 import React from 'react';
-import { useViewport } from '../../hooks';
-import { NavDesktop } from './Desktop';
-import { NavMobile } from './Mobile';
+import { useViewport } from 'hooks';
+import { NavDesktop, NavMobile } from 'components';
 
 export const Navbar = () => {
   const { viewportWidth, breakpoint } = useViewport();

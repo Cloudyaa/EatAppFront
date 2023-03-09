@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { MobileOpen } from './MobileOpen';
-import { MobileClosed } from './MobileClosed';
+import { MobileOpen, MobileClosed } from 'components';
 
 export const NavMobile = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

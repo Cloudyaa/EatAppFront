@@ -1,6 +1,6 @@
 import React from 'react';
-import { SectionHeader, SectionWrapper } from '../../../components';
-import { SectionId } from '../../../types';
+import { SectionHeader, SectionWrapper } from 'components';
+import { SectionId } from 'frontTypes';
 
 export const Contact = () => {
   return (
