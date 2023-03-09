@@ -1,0 +1,48 @@
+@use '../../utils/colors' as *;
+@use '../../utils/fonts' as *;
+
+.navbar {
+  &__search {
+    &-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &-input[type='text'] {
+      --main-text-font-size: 0.8rem;
+      @include main-font;
+      border-radius: 10px;
+      border: 2px solid var(--color-primary);
+      background: none;
+      height: 30px;
+      min-width: 20vw;
+      max-width: 40vw;
+      outline: none;
+      box-sizing: border-box;
+      padding-left: 0.5rem;
+      transition: border-color 0.2s ease-out;
+      &:is(:focus, :focus-within, :focus-visible) {
+        border-color: var(--color-secondary);
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    &__search {
+      &-wrapper {
+        // min-height: 160px;
+        align-items: center;
+        margin: 0 !important;
+      }
+      &-input[type='text'] {
+        min-width: 70vw;
+        max-width: 70vw;
+      }
+    }
+  }
+}

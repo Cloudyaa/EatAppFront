@@ -1,0 +1,23 @@
+.logo {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'dejanire-headline', serif;
+  font-weight: 900;
+  color: var(--color-secondary);
+  &__sm {
+    font-size: 2rem;
+  }
+
+  &__md {
+    font-size: 5.7vw;
+  }
+
+  &__lg {
+    font-size: 8.2vw;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
