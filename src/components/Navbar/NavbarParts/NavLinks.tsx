@@ -2,8 +2,13 @@ import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { SectionId } from '../../../types';
 import { NavbarPartWrapper } from './NavbarPartWrapper';
+import { offsetScroll } from '../../../utilis/offsetScroll';
 
-export const NavLinks = () => {
+interface Props {
+  handleShow?: () => void;
+}
+
+export const NavLinks = ({ handleShow }: Props) => {
   const navLinks = [
     {
       id: SectionId.home,
@@ -21,13 +26,17 @@ export const NavLinks = () => {
 
   return (
     <NavbarPartWrapper>
-      {navLinks.map(({ linkText, id }) => {
-        return (
-          <HashLink to={`#${id}`} key={id} className="navbar__links-item">
-            {linkText}
-          </HashLink>
-        );
-      })}
+      {navLinks.map(({ linkText, id }) => (
+        <HashLink
+          to={`/#${id}`}
+          key={id}
+          className="navbar__links-item"
+          onClick={handleShow}
+          scroll={(el) => offsetScroll(el)}
+        >
+          {linkText}
+        </HashLink>
+      ))}
     </NavbarPartWrapper>
   );
 };

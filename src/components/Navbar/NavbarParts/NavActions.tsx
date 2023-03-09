@@ -4,8 +4,13 @@ import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-mat
 import { Searchbar } from './Searchbar';
 import { NavLink } from 'react-router-dom';
 import { useViewport } from '../../../hooks';
+import { SpaceFix } from '../../common';
 
-export const NavActions = () => {
+interface Props {
+  handleShow?: () => void;
+}
+
+export const NavActions = ({ handleShow }: Props) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const { viewportWidth, breakpoint } = useViewport();
 
@@ -29,16 +34,18 @@ export const NavActions = () => {
 
   return (
     <NavbarPartWrapper classes="navbar__actions">
-      <Searchbar />
-
-      {navActions.map(({ name, to, icon }, index) => {
-        return (
-          <NavLink to={to} key={index} className="navbar__actions-element">
-            {icon}
-            {isMobile ? name : null}
-          </NavLink>
-        );
-      })}
+      <SpaceFix />
+      <Searchbar handleShow={handleShow} />
+      <div className="navbar__actions-icons">
+        {navActions.map(({ name, to, icon }, index) => {
+          return (
+            <NavLink to={to} key={index} className="navbar__actions-element" onClick={handleShow}>
+              {icon}
+              {isMobile ? name : null}
+            </NavLink>
+          );
+        })}
+      </div>
     </NavbarPartWrapper>
   );
 };

@@ -1,11 +1,9 @@
 import React from 'react';
-import { NavDesktop } from './Devices/NavDesktop';
-import { NavMobile } from './Devices/NavMobile';
 import { useViewport } from '../../hooks';
+import { NavDesktop } from './Desktop';
+import { NavMobile } from './Mobile';
 
 export const Navbar = () => {
-  const { viewportWidth } = useViewport();
-  const breakpoint = 800;
-
+  const { viewportWidth, breakpoint } = useViewport();
   return viewportWidth > breakpoint ? <NavDesktop /> : <NavMobile />;
 };
