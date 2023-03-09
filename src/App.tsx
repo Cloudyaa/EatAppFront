@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { HomeView } from './views/home/HomeView';
-import { AllProductsView } from './views/products/AllProductsView';
-import { NotFoundView } from './views/NotFoundView';
-import { SingleProductView } from './views/products/SingleProductView';
-import { LoginView } from './views/user/LoginView';
-import { SignupView } from './views/user/SignupView';
-import { LoggedUserView } from './views/user/LoggedUserView';
-import { SearchResultsView } from './views/products/SearchResultsView';
 import { Container } from '@mui/material';
 import { Navbar, SpaceFix } from './components';
 import { SearchContext } from './contexts/search.context';
+import {
+  AllProductsView,
+  HomeView,
+  LoggedUserView,
+  LoginView,
+  NotFoundView,
+  SearchResultsView, SignupView,
+  SingleProductView,
+} from './views';
 
 export const App = () => {
   const [search, setSearch] = useState('');
