@@ -48,7 +48,7 @@ img {
   height: auto;
 }
 
-a {
+a:not(.btn) {
   @include links;
 }
 

@@ -62,8 +62,9 @@
       grid-template-columns: 1fr 0.9fr;
 
       &-btn {
-        align-self: center;
-        margin: 1rem;
+        --btn-font-size: max(1rem, 5cqi);
+        align-self: start;
+        margin: 4rem 0;
       }
     }
 
@@ -122,6 +123,7 @@
 
         &-btn {
           grid-area: btm;
+          margin: 1rem 0;
         }
 
         &-image-left {
