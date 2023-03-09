@@ -35,16 +35,12 @@
         container-type: inline-size;
         position: relative;
 
-        & > p {
-          @include section-header-font;
+        .logo {
           position: relative;
-          --section-header-color: var(--color-secondary);
-          --section-header-font-style: normal;
-          --section-header-font-size: max(1rem, 70cqi);
+          top: 50%;
           rotate: 90deg;
           flex-grow: 1;
           flex-shrink: 0;
-          top: 40%;
         }
       }
     }
@@ -100,11 +96,14 @@
         &-side {
           grid-area: head;
 
-          > p {
-            font-size: max(1rem, 12cqi);
+          .logo {
             rotate: unset;
-            text-align: right;
-            margin: 1rem;
+            justify-content: flex-end;
+            top: 60%;
+            left: -10%;
+            p {
+              text-align: right;
+            }
           }
         }
       }

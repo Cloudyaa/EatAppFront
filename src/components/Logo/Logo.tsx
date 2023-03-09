@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 interface Props {
   size?: 'sm' | 'md' | 'lg' | undefined;
@@ -14,7 +14,7 @@ export const Logo = ({ size }: Props) => {
 
   return (
     <Box className="logo">
-      <span className={`logo__${logoSize}`}>eat.</span>
+      <p className={`logo__${logoSize}`}>eat.</p>
     </Box>
   );
 };
