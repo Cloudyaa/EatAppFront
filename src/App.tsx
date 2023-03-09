@@ -9,9 +9,8 @@ import { SignupView } from './views/user/SignupView';
 import { LoggedUserView } from './views/user/LoggedUserView';
 import { SearchResultsView } from './views/products/SearchResultsView';
 import { Container } from '@mui/material';
-import { Navbar } from './components';
+import { Navbar, SpaceFix } from './components';
 import { SearchContext } from './contexts/search.context';
-import { SpaceFix } from './components/Navbar/SpaceFix';
 
 export const App = () => {
   const [search, setSearch] = useState('');
