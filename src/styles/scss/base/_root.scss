@@ -9,10 +9,17 @@
   @include nav-props;
   @include nav-element-wrapper-props;
   --container-width: min(100% - 3rem, 80rem);
+  --container-height: auto;
 }
 
-@media (min-width: 420px) {
+@media (min-width: 800px) {
   :root {
     --container-width: min(100% - 6rem, 80rem);
+  }
+}
+
+@media (min-width: 1070px) {
+  :root {
+    --container-height: 100dvh;
   }
 }

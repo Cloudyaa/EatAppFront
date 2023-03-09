@@ -40,3 +40,12 @@
     color: var(--color-secondary);
   }
 }
+
+@mixin auto-grid {
+  display: grid;
+  gap: 1rem;
+  @media (min-width: 800px) {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}

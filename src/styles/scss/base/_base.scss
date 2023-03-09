@@ -18,7 +18,12 @@ html {
 
 section,
 footer {
-  height: 100dvh;
+  height: var(--container-height);
+  min-height: var(--container-height);
+
+  h2 {
+    margin-bottom: max(2rem, 4cqi);
+  }
 }
 
 main {
@@ -36,7 +41,12 @@ main {
 .container {
   width: var(--container-width);
   min-height: 100%;
+  max-height: fit-content;
   margin-inline: auto;
+}
+
+.auto-grid-container {
+  @include auto-grid;
 }
 
 p {
@@ -68,6 +78,10 @@ button:not(.btn) {
 }
 
 @media (max-width: 832px) {
+  .container {
+    padding-bottom: 3rem;
+  }
+
   .section-header {
     --section-header-font-size: max(1rem, 9cqi);
   }
