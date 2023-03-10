@@ -32,6 +32,8 @@ export const Searchbar = ({ handleShow }: Props) => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           className="navbar__search-input"
+          pattern="[A-Za-z\.]+"
+          title="Please use letters only."
         />
         <IconButton type="submit">
           <SearchOutlined />
