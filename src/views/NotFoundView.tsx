@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const NotFoundView = () => {
-  return <></>;
+  return <h1>Not found</h1>;
 };
