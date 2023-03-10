@@ -6,12 +6,11 @@ export const Bestsellers = () => {
   return (
     <SectionWrapper id={SectionId.bestsellers} classes="home__bestsellers">
       <SectionHeader>Our bestsellers</SectionHeader>
-      <ul>
-        {/* {bestsellers.map((one) => ( */}
-        {/*   <li key={one.productId}>{one.name}</li> */}
-        {/* ))} */}
-        <li className="txt-muted">test</li>
-      </ul>
+      <div className="auto-grid-container bestsellers__cards-container">
+        <div className="bestsellers__card-wrapper"></div>
+        <div className="bestsellers__card-wrapper"></div>
+        <div className="bestsellers__card-wrapper"></div>
+      </div>
     </SectionWrapper>
   );
 };

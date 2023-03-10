@@ -1,0 +1,32 @@
+.home__bestsellers {
+  .container {
+    background-color: rgba(255, 161, 1, 0.65);
+  }
+}
+
+// parent
+.bestsellers {
+  //parent also with class auto-grid-container
+  &__cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-gap: 20px;
+  }
+
+  // card box
+  &__card-wrapper {
+    padding-top: 75%; /* 4:3 aspect ratio */
+    text-align: center;
+    background: rgba(50, 81, 91, 0.62);
+    border: 2px solid #32515b;
+  }
+}
+
+@media (min-width: 800px) {
+  // parent
+  .bestsellers {
+    //parent also with class auto-grid-container
+    &__cards-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
