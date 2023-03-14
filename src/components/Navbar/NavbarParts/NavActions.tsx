@@ -19,7 +19,7 @@ export const NavActions = ({ handleShow }: Props) => {
   const navActions = [
     {
       name: <p>My account</p>,
-      to: '/user/login',
+      to: '/account/login',
       icon: <PersonOutlineOutlined />,
     },
 
