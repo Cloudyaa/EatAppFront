@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const LoggedUserView = () => {
+export const UserDashboard = () => {
   return (
     <div className="logged_user_view">
-      <h1>Logged user page</h1>
+      <h1>User dashboard</h1>
     </div>
   );
 };
