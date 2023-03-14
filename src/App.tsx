@@ -3,7 +3,7 @@ import { Routes } from 'react-router-dom';
 import { Container } from '@mui/material';
 import { Navbar, SpaceFix, ScrollToTop } from 'components';
 import { SearchContext } from './contexts/search.context';
-import { AdminRoutes, MiscRoutes, ProductsRoutes, UserRoutes } from './routes';
+import { AccountRoutes, AdminRoutes, MiscRoutes, ProductsRoutes, UserRoutes } from './routes';
 
 export const App = () => {
   const [search, setSearch] = useState('');
@@ -18,6 +18,7 @@ export const App = () => {
             {ProductsRoutes()}
             {UserRoutes()}
             {AdminRoutes()}
+            {AccountRoutes()}
             {MiscRoutes()}
           </>
         </Routes>
