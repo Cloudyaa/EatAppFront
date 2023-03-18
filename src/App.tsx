@@ -4,7 +4,19 @@ import { Container } from '@mui/material';
 import { Navbar, SpaceFix, ScrollToTop } from 'components';
 import { SearchContext } from './contexts/search.context';
 import { AccountRoutes, AdminRoutes, MiscRoutes, ProductsRoutes, UserRoutes } from './routes';
-import { AccountContext } from './contexts/Account.context';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#32515b', // your custom color here
+    },
+    secondary: {
+      main: '#ffa101',
+    },
+  },
+});
 
 export const App = () => {
   const [search, setSearch] = useState('');
@@ -12,8 +24,8 @@ export const App = () => {
   const [userId, setUserId] = useState('');
 
   return (
-    <AccountContext.Provider value={{ token, setToken, userId, setUserId }}>
-      <SearchContext.Provider value={{ search, setSearch }}>
+    <SearchContext.Provider value={{ search, setSearch }}>
+      <ThemeProvider theme={theme}>
         <Container maxWidth={false} disableGutters>
           <Navbar />
           <SpaceFix />
@@ -28,7 +40,7 @@ export const App = () => {
             </>
           </Routes>
         </Container>
-      </SearchContext.Provider>
-    </AccountContext.Provider>
+      </ThemeProvider>
+    </SearchContext.Provider>
   );
 };
