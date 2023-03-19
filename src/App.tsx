@@ -10,7 +10,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#32515b', // your custom color here
+      main: '#32515b',
     },
     secondary: {
       main: '#ffa101',
@@ -20,9 +20,6 @@ const theme = createTheme({
 
 export const App = () => {
   const [search, setSearch] = useState('');
-  const [token, setToken] = useState('');
-  const [userId, setUserId] = useState('');
-
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
       <ThemeProvider theme={theme}>
