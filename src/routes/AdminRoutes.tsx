@@ -1,12 +1,12 @@
 import React from 'react';
 import { getRoutes } from './getRoutes';
-import { AdminPanelView } from '../views';
+import { AdminDashboard } from '../views';
 
 export const AdminRoutes = () => {
   const routes = [
     {
       path: '/:admin_id',
-      element: <AdminPanelView />,
+      element: <AdminDashboard />,
     },
   ];
 
