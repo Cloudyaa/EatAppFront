@@ -5,10 +5,11 @@ import { SignupSchema } from '../../../utilis/validationSchemas';
 import { apiUrl } from '../../../config';
 import { CustomPasswordInput, CustomTextInput } from '../CustomInput';
 import { ButtonFull, SpaceFix } from '../../common';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AccountSignupResponse, AccountSignupDto, ErrorResponse } from 'types';
 import { ErrorMessage } from '../ErrorMessage';
 import { FormWrapper } from '../FormWrapper';
+import { Redirect } from '../Redirect';
 
 export const SignupForm = () => {
   const [apiResponse, setApiResponse] = useState<AccountSignupResponse | null>(null);
@@ -94,10 +95,7 @@ export const SignupForm = () => {
                   mt: 1,
                 }}
               >
-                <p>Already have account?</p>
-                <NavLink className="link-light" to={'/account/login'}>
-                  Login
-                </NavLink>
+                <Redirect to="login"></Redirect>
               </Box>
             </Form>
           )}

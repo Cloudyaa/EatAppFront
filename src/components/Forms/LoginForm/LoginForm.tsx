@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { Form, Formik } from 'formik';
-import { Box } from '@mui/material';
 import { AccountLoginResponse, AccountLoginDto, ErrorResponse } from 'types';
 import { apiUrl } from '../../../config';
 import { LoginSchema } from '../../../utilis/validationSchemas';
@@ -12,6 +11,7 @@ import {
   ErrorMessage,
   CustomPasswordInput,
   CustomTextInput,
+  Redirect,
 } from 'components';
 
 export const LoginForm = () => {
@@ -96,21 +96,7 @@ export const LoginForm = () => {
 
             <ButtonFull>Submit</ButtonFull>
 
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontSize: '0.9rem',
-                mt: 1,
-              }}
-            >
-              <p>Don&apos;t have account?</p>
-              <NavLink className="link-light" to={'/account/signup'}>
-                Sign up
-              </NavLink>
-            </Box>
+            <Redirect to="signup"></Redirect>
           </Form>
         )}
       </Formik>
