@@ -28,9 +28,11 @@
 @mixin button-props {
   --btn-font-family: 'arboria', sans-serif;
   --btn-font-color: var(--color-light);
+  --btn-background: var(--color-secondary);
   --btn-font-size: 1rem;
   --btn-border: none;
   --btn-radius: 10px;
+  --btn-padding: 6px 12px;
 }
 
 @mixin nav-props {
