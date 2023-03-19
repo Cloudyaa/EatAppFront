@@ -12,7 +12,6 @@ const CustomButton = styled(ButtonUnstyled)`
   color: var(--color-light);
   padding: 12px 24px;
   font-size: 1.3rem;
-  border-radius: 4px;
   margin-top: 2rem;
   transition: all 200ms ease-out;
   cursor: pointer;
