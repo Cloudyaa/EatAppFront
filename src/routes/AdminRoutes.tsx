@@ -5,7 +5,7 @@ import { AdminPanelView } from '../views';
 export const AdminRoutes = () => {
   const routes = [
     {
-      path: '',
+      path: '/:admin_id',
       element: <AdminPanelView />,
     },
   ];
