@@ -4,7 +4,7 @@ import { useButton } from 'hooks';
 
 interface Props {
   color: 'light' | 'dark';
-  size: 'sm' | 'lg';
+  size: 'sm' | 'lg' | 'xl';
   children: React.ReactNode;
   to: string;
 }
