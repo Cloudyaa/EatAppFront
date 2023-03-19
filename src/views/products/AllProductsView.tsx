@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import {
-  ProductCardMedium,
-  SectionHeader,
-  SectionWrapper,
-  SkeletonMedium,
-  SpaceFix,
-} from 'components';
+import { ProductCardMedium, SectionHeader, SectionWrapper, SpaceFix } from 'components';
 import { apiUrl } from '../../config';
 import { SimpleProductEntity } from 'types';
+import { useSkeletons } from '../../hooks/useSkeletons';
 
 export const AllProductsView = () => {
   const [products, setProducts] = useState<SimpleProductEntity[] | null>(null);
+
+  const { skeletons } = useSkeletons('md');
 
   useEffect(() => {
     (async () => {
@@ -23,11 +20,6 @@ export const AllProductsView = () => {
       }
     })();
   }, []);
-
-  const skeletons: JSX.Element[] = [];
-  for (let i = 0; i < 3; i++) {
-    skeletons.push(<SkeletonMedium />);
-  }
 
   return (
     <SectionWrapper classes="products__all">

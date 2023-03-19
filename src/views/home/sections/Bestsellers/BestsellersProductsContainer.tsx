@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { ProductCardMedium, SkeletonMedium } from 'components';
+import { ProductCardMedium } from 'components';
 import { apiUrl } from '../../../../config';
 import { SimpleProductEntity } from 'types';
+import { useSkeletons } from '../../../../hooks/useSkeletons';
 
 export const BestsellersProductsContainer = () => {
   const [bestsellers, setBestsellers] = useState<SimpleProductEntity[] | null>(null);
+
+  const { skeletons } = useSkeletons('md');
 
   useEffect(() => {
     (async () => {
@@ -18,10 +21,6 @@ export const BestsellersProductsContainer = () => {
     })();
   }, []);
 
-  const skeletons: JSX.Element[] = [];
-  for (let i = 0; i < 3; i++) {
-    skeletons.push(<SkeletonMedium />);
-  }
 
   return (
     <div className="auto-grid-container bestsellers__cards-container">
