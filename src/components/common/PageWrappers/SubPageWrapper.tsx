@@ -3,9 +3,10 @@ import { Box } from '@mui/material';
 
 interface Props {
   children: React.ReactNode;
+  addSx?: object;
 }
 
-export const SubPageWrapper = ({ children }: Props) => (
+export const SubPageWrapper = ({ children, addSx }: Props) => (
   <Box
     sx={{
       display: 'flex',
@@ -13,6 +14,7 @@ export const SubPageWrapper = ({ children }: Props) => (
       justifyContent: 'center',
       alignItems: 'center',
       gap: '1rem',
+      ...addSx,
     }}
   >
     {children}
