@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
 import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
 import { useViewport } from 'hooks';
+import { useCookies } from 'react-cookie';
 
 interface Props {
   handleShow?: () => void;
@@ -16,10 +17,12 @@ export const NavActions = ({ handleShow }: Props) => {
     viewportWidth < breakpoint ? setIsMobile(true) : setIsMobile(false);
   }, [viewportWidth]);
 
+  const [cookies] = useCookies();
+
   const navActions = [
     {
       name: <p>My account</p>,
-      to: '/account/login',
+      to: cookies.token ? `user/dashboard/${cookies.userId}` : '/account/login',
       icon: <PersonOutlineOutlined />,
     },
 
