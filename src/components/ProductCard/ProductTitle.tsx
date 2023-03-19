@@ -5,6 +5,5 @@ interface Props {
 }
 
 export const ProductTitle = ({ children }: Props) => (
-  <div className="bestsellers__card-title">{children}</div>
+  <div className="product-card__title">{children}</div>
 );
-

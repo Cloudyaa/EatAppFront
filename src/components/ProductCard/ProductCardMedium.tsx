@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  ProductPrice,
-  ProductTitle,
-  ProductImage,
-  ChangeQtyBtns,
-  AddToBasketBtn,
-} from 'components';
+import { ProductPrice, ProductTitle, ProductImage, AddToBasketBtn } from 'components';
 
 interface Props {
   name: string;
@@ -14,7 +8,7 @@ interface Props {
 
 export const ProductCardMedium = ({ name, price }: Props) => {
   return (
-    <div className="bestsellers__card-wrapper">
+    <div className="bestsellers product-card__wrapper medium">
       <ProductImage productName={name} />
       <ProductTitle>{name}</ProductTitle>
       <ProductPrice>{price}</ProductPrice>
