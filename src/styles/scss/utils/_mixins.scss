@@ -46,7 +46,7 @@
   display: grid;
   gap: 1rem;
   @media (min-width: 800px) {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 6rem;
   }
 }
