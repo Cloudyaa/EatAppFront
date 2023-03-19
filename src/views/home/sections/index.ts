@@ -1,5 +1,5 @@
 export * from './Hero/Hero';
-export * from './Bestsellers';
+export * from './Bestsellers/Bestsellers';
 export * from './DiscountBar';
 export * from './About';
 export * from './Contact';
