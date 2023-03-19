@@ -1,32 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Alert, Button } from '@mui/material';
+import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 import { Form, Formik } from 'formik';
-import { CustomPasswordInput, CustomTextInput } from '../CustomInput';
-import Snackbar from '@mui/material/Snackbar';
-import { AccountLoginResponse, AccountLoginDto } from 'types';
-import { useNavigate } from 'react-router-dom';
-import { AccountContext } from '../../../contexts/Account.context';
+import { Box } from '@mui/material';
+import { AccountLoginResponse, AccountLoginDto, ErrorResponse } from 'types';
 import { apiUrl } from '../../../config';
+import { LoginSchema } from '../../../utilis/validationSchemas';
+import {
+  FormWrapper,
+  ButtonFull,
+  ErrorMessage,
+  CustomPasswordInput,
+  CustomTextInput,
+} from 'components';
 
 export const LoginForm = () => {
-  const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
   const [apiResponse, setApiResponse] = useState<AccountLoginResponse | null>(null);
+  const [errorResponse, setErrorResponse] = useState<ErrorResponse | null>(null);
 
-  const { token, setToken, userId, setUserId } = useContext(AccountContext);
+  // eslint-disable-next-line
+  const [cookies, setCookie, removeCookie] = useCookies(['token', 'userId']);
+
   const navigate = useNavigate();
-
-  const handleSnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setSnackbarOpen(false);
-  };
-
-  const handleFormReset = () => {
-    setTimeout(() => {
-      //  resStatus !== 400 && formik.resetForm();
-    }, 1000);
-  };
 
   const loginUser = async (values: AccountLoginDto) => {
     try {
@@ -38,73 +33,87 @@ export const LoginForm = () => {
         body: JSON.stringify(values),
       });
 
-      const data: AccountLoginResponse = await res.json();
-      setApiResponse(data);
+      if (res.ok) {
+        const data: AccountLoginResponse = await res.json();
+        setApiResponse(data);
+
+        const cookieOptions = {
+          path: '/',
+          secure: true,
+          maxAge: 3 * 60 * 60,
+        };
+
+        setCookie('token', data.token, { ...cookieOptions });
+        setCookie('userId', data.userId, { ...cookieOptions });
+      } else {
+        const data: ErrorResponse = await res.json();
+        setErrorResponse(data);
+      }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
-  useEffect(() => {
-    if (apiResponse) {
-      setToken(apiResponse.token);
-      setUserId(apiResponse.userId);
-    }
-  }, [apiResponse]);
-
   // if login successful
-  if (apiResponse && apiResponse.status === 200 && token) {
+  if (apiResponse && apiResponse.status === 200 && apiResponse.token) {
     // if user
     if (apiResponse.role === 'user') {
-      navigate(`/user/dashboard/${userId}`);
+      navigate(`/user/dashboard/${apiResponse.userId}`);
     }
-
     // if admin
     if (apiResponse.role === 'admin') {
-      navigate(`/admin/${userId}`);
+      navigate(`/admin/${apiResponse.userId}`);
     }
   }
 
   return (
-    <Formik
-      initialValues={{
-        email: '',
-        password: '',
-      }}
-      onSubmit={async (values: AccountLoginDto) => {
-        await loginUser(values);
-        setSnackbarOpen(true);
-      }}
-    >
-      {(formik) => (
-        <Form className="d-flex flex-column justify-content-center align-items-center">
-          {/* Email */}
-          <CustomTextInput name="email" label="Email *" />
+    <FormWrapper>
+      {!apiResponse && errorResponse && <ErrorMessage>{errorResponse.message}</ErrorMessage>}
 
-          {/* Password */}
-          <CustomPasswordInput name="password" label="Password *" />
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        onSubmit={async (values: AccountLoginDto) => await loginUser(values)}
+        validationSchema={LoginSchema}
+      >
+        {(formik) => (
+          <Form>
+            {/* Email */}
+            <CustomTextInput name="email" label="Email *" />
 
-          <Button
-            fullWidth
-            color="primary"
-            variant="contained"
-            type="submit"
-            onClick={handleFormReset}
-          >
-            Submit
-          </Button>
+            {/* Password */}
+            <CustomPasswordInput
+              sx={{
+                borderColor: 'var(--color-primary)',
+                color: 'var(--color-primary)',
+                borderWidth: '2px !important',
+              }}
+              name="password"
+              label="Password *"
+            />
 
-          <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
-            <Alert
-              onClose={handleSnackbarClose}
-              severity={apiResponse && apiResponse.status === 200 ? 'success' : 'error'}
-              sx={{ width: '100%' }}
+            <ButtonFull>Submit</ButtonFull>
+
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.9rem',
+                mt: 1,
+              }}
             >
-              Message
-            </Alert>
-          </Snackbar>
-        </Form>
-      )}
-    </Formik>
+              <p>Don&apos;t have account?</p>
+              <NavLink className="link-light" to={'/account/signup'}>
+                Sign up
+              </NavLink>
+            </Box>
+          </Form>
+        )}
+      </Formik>
+    </FormWrapper>
   );
 };

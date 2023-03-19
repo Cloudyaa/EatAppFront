@@ -62,6 +62,14 @@ a:not(.btn) {
   @include links;
 }
 
+a:is(.link-light) {
+  font-size: inherit;
+  color: var(--color-secondary) !important;
+  &:hover {
+    color: var(--color-primary) !important;
+  }
+}
+
 //reset mui button for better icons styling {
 button:not(.btn) {
   border-radius: 0 !important;
@@ -74,6 +82,22 @@ button:not(.btn) {
   @include links;
   &:hover {
     background: none;
+  }
+}
+
+* input {
+  font-family: var(--main-text-font) !important;
+  color: var(--main-text-color) !important;
+}
+
+.form-wrapper {
+  .MuiOutlinedInput-root fieldset {
+    border: 2px solid var(--color-primary) !important;
+    font-family: var(--main-text-font) !important;
+  }
+
+  .MuiOutlinedInput-root:is(:focus, :focus-within, :focus-visible) fieldset {
+    border: 2px solid var(--color-secondary) !important;
   }
 }
 

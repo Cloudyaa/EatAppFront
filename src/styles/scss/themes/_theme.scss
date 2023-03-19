@@ -3,6 +3,7 @@
 @mixin theme-colors {
   --color-primary: #{$blue-green};
   --color-secondary: #{$orange};
+  --color-secondary-hover: #{lighten($orange, 10%)};
   --color-muted: #{$grey};
   --color-light: #{$white-grey};
   --main-background: #{$white-grey};
