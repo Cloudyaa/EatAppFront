@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Form, Formik } from 'formik';
-import { Box, Button, MenuItem } from '@mui/material';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import { Box } from '@mui/material';
 import { SignupSchema } from '../../../utilis/validationSchemas';
 import { apiUrl } from '../../../config';
 import { CustomPasswordInput, CustomTextInput } from '../CustomInput';
-
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { ButtonFull, SpaceFix } from '../../common';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { AccountSignupResponse, AccountSignupDto, ErrorResponse } from 'types';
+import { ErrorMessage } from '../ErrorMessage';
+import { FormWrapper } from '../FormWrapper';
 
 export const SignupForm = () => {
-  const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
-  const [resStatus, setResStatus] = useState<number>(0);
-  const [apiData, setApiData] = useState<any | null>(null);
+  const [apiResponse, setApiResponse] = useState<AccountSignupResponse | null>(null);
+  const [errorResponse, setErrorResponse] = useState<ErrorResponse | null>(null);
+
+  const navigate = useNavigate();
 
   const handleFormReset = () => {
     setTimeout(() => {
@@ -22,14 +22,7 @@ export const SignupForm = () => {
     }, 1000);
   };
 
-  const handleSnackbarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setSnackbarOpen(false);
-  };
-
-  const saveUser = async (values: any) => {
+  const saveUser = async (values: AccountSignupDto) => {
     try {
       const res = await fetch(`${apiUrl}/account/signup`, {
         method: 'POST',
@@ -41,27 +34,31 @@ export const SignupForm = () => {
         }),
       });
 
-      setResStatus(res.status);
-
       if (res.ok) {
-        const data = await res.text();
-        if (!data || data.length === 0) {
-          // Handle empty response here
+        const data: AccountSignupResponse = await res.json();
+        setApiResponse(data);
+
+        if (!data) {
           return console.log('Empty response');
         }
       } else {
-        const data = await res.text();
-        const parsed = JSON.parse(data);
-        setApiData(parsed);
+        const data: ErrorResponse = await res.json();
+        setErrorResponse(data);
       }
     } catch (err) {
       console.log(err);
     }
   };
 
+  // if signup successful
+  if (apiResponse && apiResponse.status === 200) {
+    navigate('/account/signup/success');
+  }
+
   return (
     <>
-      <Box sx={{ width: '35ch', margin: '0 auto' }}>
+      <FormWrapper>
+        {!apiResponse && errorResponse && <ErrorMessage>{errorResponse.message}</ErrorMessage>}
         <Formik
           initialValues={{
             email: '',
@@ -69,10 +66,9 @@ export const SignupForm = () => {
             confirmPassword: '',
           }}
           validationSchema={SignupSchema}
-          onSubmit={async (values: any) => {
+          onSubmit={async (values: AccountSignupDto) => {
             // alert(JSON.stringify(values, null, 2));
             await saveUser(values);
-            setSnackbarOpen(true);
           }}
         >
           {(formik) => (
@@ -86,29 +82,28 @@ export const SignupForm = () => {
               {/* Confirm password */}
               <CustomPasswordInput name="confirmPassword" label="Confirm password *" />
 
-              <Button
-                fullWidth
-                color="primary"
-                variant="contained"
-                type="submit"
-                onClick={handleFormReset}
-              >
-                Submit
-              </Button>
+              <ButtonFull onClick={handleFormReset}>Submit</ButtonFull>
 
-              <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
-                <Alert
-                  onClose={handleSnackbarClose}
-                  severity={resStatus === 200 ? 'success' : 'error'}
-                  sx={{ width: '100%' }}
-                >
-                  Message
-                </Alert>
-              </Snackbar>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontSize: '0.9rem',
+                  mt: 1,
+                }}
+              >
+                <p>Already have account?</p>
+                <NavLink className="link-light" to={'/account/login'}>
+                  Login
+                </NavLink>
+              </Box>
             </Form>
           )}
         </Formik>
-      </Box>
+        <SpaceFix />
+      </FormWrapper>
     </>
   );
 };
