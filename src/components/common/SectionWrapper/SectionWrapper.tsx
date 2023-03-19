@@ -4,7 +4,7 @@ import { SectionId } from 'frontTypes';
 import { SpaceFix } from '../SpaceFix';
 
 interface Props {
-  classes: string;
+  classes?: string;
   id?: SectionId;
   children: React.ReactNode;
 }
