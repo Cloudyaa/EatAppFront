@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginPage, SignupPage } from '../views';
+import { LoginPage, SignupPage, SuccessSignupPage } from '../views';
 import { getRoutes } from './getRoutes';
 
 export const AccountRoutes = () => {
@@ -7,6 +7,11 @@ export const AccountRoutes = () => {
     {
       path: '/signup',
       element: <SignupPage />,
+    },
+
+    {
+      path: '/signup/success',
+      element: <SuccessSignupPage />,
     },
     {
       path: '/login',
