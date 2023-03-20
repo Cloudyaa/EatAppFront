@@ -13,7 +13,9 @@ export const SubPageWrapper = ({ children, addSx }: Props) => (
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      textAlign: 'center',
       gap: '1rem',
+      paddingBottom: '2rem',
       ...addSx,
     }}
   >
