@@ -1,6 +1,8 @@
 @media (max-width: 800px) {
   .bestsellers__cards-container {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    width: fit-content;
+    margin: auto;
   }
 }
 
