@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
-import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
+import { SpaceFix, Searchbar, NavbarPartWrapper, StyledBadge } from 'components';
 import { useViewport } from 'hooks';
 import { useCookies } from 'react-cookie';
 
@@ -29,7 +29,11 @@ export const NavActions = ({ handleShow }: Props) => {
     {
       name: <p>Basket</p>,
       to: '/basket',
-      icon: <LocalGroceryStoreOutlined />,
+      icon: (
+        <StyledBadge badgeContent={2} max={10}>
+          <LocalGroceryStoreOutlined />
+        </StyledBadge>
+      ),
     },
   ];
 
