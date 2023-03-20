@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { ProductCardMedium, SectionHeader, SectionWrapper, SpaceFix } from 'components';
 import { apiUrl } from '../../config';
-import { SimpleProductEntity } from 'types';
 import { useSkeletons } from '../../hooks/useSkeletons';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store';
+import { fetchProducts } from '../../features/product/product.slice';
 
 export const AllProductsView = () => {
-  const [products, setProducts] = useState<SimpleProductEntity[] | null>(null);
+  const dispatch: AppDispatch = useDispatch();
+  const products = useSelector((state: RootState) => state.products.products);
 
   const { skeletons } = useSkeletons('md', 3);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const res = await fetch(`${apiUrl}/products/search`);
-        const data: SimpleProductEntity[] = await res.json();
-        setProducts(data);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
+    dispatch(fetchProducts(`${apiUrl}/products/search`));
+  }, [dispatch]);
 
   return (
     <SectionWrapper classes="products__all">

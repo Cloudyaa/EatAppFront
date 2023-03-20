@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { ProductCardMedium } from 'components';
 import { apiUrl } from '../../../../config';
-import { SimpleProductEntity } from 'types';
 import { useSkeletons } from '../../../../hooks/useSkeletons';
+import { AppDispatch, RootState } from '../../../../store';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../../../features/product/product.slice';
 
 export const BestsellersProductsContainer = () => {
-  const [bestsellers, setBestsellers] = useState<SimpleProductEntity[] | null>(null);
+  const dispatch: AppDispatch = useDispatch();
+  const bestsellers = useSelector((state: RootState) => state.products.products);
 
   const { skeletons } = useSkeletons('md', 3);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const res = await fetch(`${apiUrl}/products/bestsellers`);
-        const data: SimpleProductEntity[] = await res.json();
-        setBestsellers(data);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
-
+    dispatch(fetchProducts(`${apiUrl}/products/bestsellers`));
+  }, [dispatch]);
 
   return (
     <div className="auto-grid-container bestsellers__cards-container">
