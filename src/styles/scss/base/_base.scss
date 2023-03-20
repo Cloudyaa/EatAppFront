@@ -102,10 +102,6 @@ button:not(.btn) {
 }
 
 @media (max-width: 832px) {
-  .container {
-    padding-bottom: 3rem;
-  }
-
   .section-header {
     --section-header-font-size: max(1rem, 9cqi);
   }
