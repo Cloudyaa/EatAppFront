@@ -28,7 +28,7 @@ export const NavActions = ({ handleShow }: Props) => {
 
     {
       name: <p>Basket</p>,
-      to: '/user/checkout',
+      to: '/basket',
       icon: <LocalGroceryStoreOutlined />,
     },
   ];

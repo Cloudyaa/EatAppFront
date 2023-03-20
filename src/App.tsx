@@ -3,7 +3,14 @@ import { Routes } from 'react-router-dom';
 import { Container } from '@mui/material';
 import { Navbar, SpaceFix, ScrollToTop } from 'components';
 import { SearchContext } from './contexts/search.context';
-import { AccountRoutes, AdminRoutes, MiscRoutes, ProductsRoutes, UserRoutes } from './routes';
+import {
+  AccountRoutes,
+  AdminRoutes,
+  MiscRoutes,
+  ProductsRoutes,
+  UserRoutes,
+  BasketRouter,
+} from './routes';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -33,6 +40,7 @@ export const App = () => {
               {UserRoutes()}
               {AdminRoutes()}
               {AccountRoutes()}
+              {BasketRouter()}
               {MiscRoutes()}
             </>
           </Routes>
