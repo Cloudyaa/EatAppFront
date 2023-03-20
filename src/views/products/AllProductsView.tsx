@@ -7,7 +7,7 @@ import { useSkeletons } from '../../hooks/useSkeletons';
 export const AllProductsView = () => {
   const [products, setProducts] = useState<SimpleProductEntity[] | null>(null);
 
-  const { skeletons } = useSkeletons('md');
+  const { skeletons } = useSkeletons('md', 3);
 
   useEffect(() => {
     (async () => {
