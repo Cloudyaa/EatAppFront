@@ -29,6 +29,11 @@
 
 @media (max-width: 768px) {
   .btn {
+    &-xl {
+      --btn-font-size: 1.3rem;
+      --btn-padding: 10px 20px;
+    }
+
     &-big {
       --btn-font-size: 1rem;
       --btn-padding: 3% 12%;
@@ -37,6 +42,15 @@
     &-small {
       --btn-font-size: 0.8rem;
       --btn-padding: 6px 12px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .btn {
+    &-xl {
+      --btn-font-size: 1.2rem;
+      --btn-padding: 10px 20px;
     }
   }
 }
