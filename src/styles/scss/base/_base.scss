@@ -42,10 +42,6 @@ main {
   margin-inline: auto;
 }
 
-.auto-grid-container {
-  @include auto-grid;
-}
-
 h3 {
   font-size: max(1.3rem, 2.7cqi);
 }
@@ -72,19 +68,19 @@ a:is(.link-light) {
 }
 
 //reset mui button for better icons styling {
-button:not(.btn) {
-  border-radius: 0 !important;
-  margin: 0;
-  margin-inline: 0;
-  padding: 0;
-  max-width: 40px;
-  min-height: 40px;
-  max-height: 40px;
-  @include links;
-  &:hover {
-    background: none;
-  }
-}
+//button:not(.btn) {
+//  border-radius: 0 !important;
+//  margin: 0;
+//  margin-inline: 0;
+//  padding: 0;
+//  max-width: 40px;
+//  min-height: 40px;
+//  max-height: 40px;
+//  @include links;
+//  &:hover {
+//    background: none;
+//  }
+//}
 
 * input {
   font-family: var(--main-text-font) !important;

@@ -42,23 +42,3 @@
     color: var(--color-secondary);
   }
 }
-
-@mixin auto-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6rem 1rem;
-  justify-items: center;
-  & > * {
-    width: 100%;
-  }
-
-  @media (max-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem 1rem;
-  }
-  @media (max-width: 470px) {
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-    gap: 3rem 0;
-  }
-}
