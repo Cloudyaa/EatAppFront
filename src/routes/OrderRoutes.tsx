@@ -1,12 +1,12 @@
 import React from 'react';
-import { BasketFull } from '../views';
+import { BasketFullView } from '../views';
 import { getRoutes } from './getRoutes';
 
 export const BasketRouter = () => {
   const routes = [
     {
       path: '/',
-      element: <BasketFull />,
+      element: <BasketFullView />,
     },
   ];
 

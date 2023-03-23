@@ -1,2 +1,2 @@
-export * from './BasketFull';
+export * from './BasketFullView';
 export * from './EmptyBasketView';
