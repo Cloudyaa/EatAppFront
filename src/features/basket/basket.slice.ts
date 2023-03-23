@@ -34,7 +34,7 @@ export const basketSlice = createSlice({
 
       // Update total
       state.totalQty += 1;
-      state.totalPrice -= action.payload.price;
+      state.totalPrice += action.payload.price;
     },
 
     reduceQtyInBasket(state, action: PayloadAction<string>) {
