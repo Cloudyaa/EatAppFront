@@ -1,7 +1,7 @@
 import { styled } from '@mui/system';
 import BadgeUnstyled, { badgeUnstyledClasses } from '@mui/base/BadgeUnstyled';
 
-export const StyledBadge = styled(BadgeUnstyled)(
+export const BadgeStyled = styled(BadgeUnstyled)(
   () => `
   box-sizing: border-box;
   margin: 0;
