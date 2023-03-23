@@ -6,8 +6,8 @@ interface Props {
   size?: 'small' | 'medium' | 'large';
 }
 
-export const ProductPrice = ({ children, size }: Props) => (
-  <CardPartWrapperStyled size={size} gridArea="price">
-    {children}/kg
+export const ProductName = ({ children, size }: Props) => (
+  <CardPartWrapperStyled size={size} gridArea="name">
+    {children}
   </CardPartWrapperStyled>
 );

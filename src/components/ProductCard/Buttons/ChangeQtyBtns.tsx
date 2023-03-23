@@ -1,23 +1,24 @@
 import React from 'react';
-import { ButtonCustom } from 'components';
 import { AddRounded, RemoveRounded } from '@mui/icons-material';
+import { CardBtnChangeQtyStyled, CardBtnWrapperStyled } from 'emotion-styled-components';
 
-export const ChangeQtyBtns = () => {
+interface Props {
+  add: () => void;
+  remove: () => void;
+  qty: number;
+  size?: 'small' | 'medium' | 'large';
+}
+
+export const ChangeQtyBtns = ({ add, remove, qty, size }: Props) => {
   return (
-    <div className="bestsellers__card-button-group has-change-qty">
-      <ButtonCustom
-        classes="bestsellers__card-button-change-qty"
-        onClick={() => console.log('added')}
-      >
+    <CardBtnWrapperStyled hasChangeQty size={size}>
+      <CardBtnChangeQtyStyled size={size} type="button" onClick={add}>
         <AddRounded />
-      </ButtonCustom>
-      <span>3</span>
-      <ButtonCustom
-        classes="bestsellers__card-button-change-qty"
-        onClick={() => console.log('added')}
-      >
+      </CardBtnChangeQtyStyled>
+      <span>{Math.min(qty, 20)}</span>
+      <CardBtnChangeQtyStyled size={size} type="button" onClick={remove}>
         <RemoveRounded />
-      </ButtonCustom>
-    </div>
+      </CardBtnChangeQtyStyled>
+    </CardBtnWrapperStyled>
   );
 };

@@ -1,13 +1,15 @@
 import React from 'react';
+import { CardPartWrapperStyled, ProductImageStyled } from 'emotion-styled-components';
 
 interface Props {
   productName: string;
+  size?: 'small' | 'medium' | 'large';
 }
 
-export const ProductImage = ({ productName }: Props) => {
+export const ProductImage = ({ productName, size }: Props) => {
   return (
-    <div className="product-card__image-wrapper">
-      <img src={`/img/products/${productName}.jpg`} alt={productName} />
-    </div>
+    <CardPartWrapperStyled gridArea="img">
+      <ProductImageStyled src={`/img/products/${productName}.jpg`} alt={productName} size={size} />
+    </CardPartWrapperStyled>
   );
 };

@@ -1,12 +1,17 @@
 import React from 'react';
-import { ButtonCustom } from 'components';
+import { CardBtnWrapperStyled, CardBtnAddStyled } from 'emotion-styled-components';
 
-export const AddToBasketBtn = () => {
+interface Props {
+  add: () => void;
+  size?: 'small' | 'medium' | 'large';
+}
+
+export const AddToBasketBtn = ({ add }: Props) => {
   return (
-    <div className="product-card__button-group has-add">
-      <ButtonCustom classes="product-card__button-add" onClick={() => console.log('added')}>
+    <CardBtnWrapperStyled hasAdd>
+      <CardBtnAddStyled type="button" onClick={add}>
         Add
-      </ButtonCustom>
-    </div>
+      </CardBtnAddStyled>
+    </CardBtnWrapperStyled>
   );
 };
