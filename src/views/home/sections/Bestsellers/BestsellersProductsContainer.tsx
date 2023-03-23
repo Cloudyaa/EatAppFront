@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
-import { ProductCardMedium } from 'components';
-import { apiUrl } from '../../../../config';
-import { useSkeletons } from '../../../../hooks/useSkeletons';
-import { AppDispatch, RootState } from '../../../../store';
+import { ProductCard } from 'components';
+import { apiUrl } from 'config';
+import { useSkeletons } from 'hooks';
+import { AppDispatch, RootState } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../../../features/product/product.slice';
+import { fetchProducts } from 'features/product';
+import { selectProductQty } from 'features/basket';
+import { BestsellersGridStyled } from 'emotion-styled-components';
 
 export const BestsellersProductsContainer = () => {
   const dispatch: AppDispatch = useDispatch();
   const bestsellers = useSelector((state: RootState) => state.products.products);
+
+  const getProductQty = useSelector(selectProductQty);
 
   const { skeletons } = useSkeletons('md', 3);
 
@@ -17,16 +21,16 @@ export const BestsellersProductsContainer = () => {
   }, [dispatch]);
 
   return (
-    <div className="auto-grid-container bestsellers__cards-container">
+    <BestsellersGridStyled>
       {bestsellers === null ? (
         skeletons
       ) : (
         <>
           {bestsellers.map((one) => (
-            <ProductCardMedium name={one.name} price={one.price} key={one.productId} />
+            <ProductCard product={one} key={one.productId} qty={getProductQty(one.productId)} />
           ))}
         </>
       )}
-    </div>
+    </BestsellersGridStyled>
   );
 };

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { Form, Formik } from 'formik';
 import { AccountLoginResponse, AccountLoginDto, ErrorResponse } from 'types';
-import { apiUrl } from '../../../config';
-import { LoginSchema } from '../../../utilis/validationSchemas';
+import { apiUrl } from 'config';
+import { LoginSchema } from 'utils';
 import {
   FormWrapper,
   ButtonFull,

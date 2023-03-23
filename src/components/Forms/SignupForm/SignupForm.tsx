@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Form, Formik } from 'formik';
 import { Box } from '@mui/material';
-import { SignupSchema } from '../../../utilis/validationSchemas';
-import { apiUrl } from '../../../config';
-import { CustomPasswordInput, CustomTextInput } from '../CustomInput';
-import { ButtonFull, SpaceFix } from '../../common';
+import { SignupSchema } from 'utils';
+import { apiUrl } from 'config';
+import {
+  Redirect,
+  FormWrapper,
+  ErrorMessage,
+  ButtonFull,
+  SpaceFix,
+  CustomPasswordInput,
+  CustomTextInput,
+} from 'components';
 import { useNavigate } from 'react-router-dom';
 import { AccountSignupResponse, AccountSignupDto, ErrorResponse } from 'types';
-import { ErrorMessage } from '../ErrorMessage';
-import { FormWrapper } from '../FormWrapper';
-import { Redirect } from '../Redirect';
 
 export const SignupForm = () => {
   const [apiResponse, setApiResponse] = useState<AccountSignupResponse | null>(null);

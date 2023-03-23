@@ -13,6 +13,24 @@
       ],
       "hooks": [
         "src/hooks"
+      ],
+      "store": [
+        "src/store"
+      ],
+      "features/basket": [
+        "src/features/basket"
+      ],
+      "features/product": [
+        "src/features/product"
+      ],
+      "emotion-styled-components": [
+        "src/styles/emotion-styled-components"
+      ],
+      "utils": [
+        "src/utils"
+      ],
+      "config": [
+        "src/config"
       ]
     }
   }

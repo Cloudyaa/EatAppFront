@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from './Logo';
-import { offsetScroll } from '../../utilis/offsetScroll';
+import { offsetScroll } from 'utils';
 import { NavHashLink } from 'react-router-hash-link';
 
 interface Props {

@@ -2,7 +2,7 @@ import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { SectionId } from 'frontTypes';
 import { NavbarPartWrapper } from './NavbarPartWrapper';
-import { offsetScroll } from '../../../utilis/offsetScroll';
+import { offsetScroll } from 'utils';
 
 interface Props {
   handleShow?: () => void;
