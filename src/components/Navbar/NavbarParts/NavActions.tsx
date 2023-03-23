@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
-import { SpaceFix, Searchbar, NavbarPartWrapper, StyledBadge } from 'components';
-import { useViewport } from 'hooks';
 import { useCookies } from 'react-cookie';
+import { useSelector } from 'react-redux';
+import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
+import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
+import { useViewport } from 'hooks';
+import { RootState } from 'store';
+import { BadgeStyled } from 'emotion-styled-components';
 
 interface Props {
   handleShow?: () => void;
@@ -11,13 +14,14 @@ interface Props {
 
 export const NavActions = ({ handleShow }: Props) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const { viewportWidth, breakpoint } = useViewport();
+  const { viewportWidth, breakpointDesktop } = useViewport();
 
   useEffect(() => {
-    viewportWidth < breakpoint ? setIsMobile(true) : setIsMobile(false);
+    viewportWidth < breakpointDesktop ? setIsMobile(true) : setIsMobile(false);
   }, [viewportWidth]);
 
   const [cookies] = useCookies();
+  const getBasketQty = useSelector((state: RootState) => state.basket.totalQty);
 
   const navActions = [
     {
@@ -30,9 +34,9 @@ export const NavActions = ({ handleShow }: Props) => {
       name: <p>Basket</p>,
       to: '/basket',
       icon: (
-        <StyledBadge badgeContent={2} max={10}>
+        <BadgeStyled badgeContent={getBasketQty} max={10}>
           <LocalGroceryStoreOutlined />
-        </StyledBadge>
+        </BadgeStyled>
       ),
     },
   ];
