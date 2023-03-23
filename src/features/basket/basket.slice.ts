@@ -61,6 +61,8 @@ export const basketSlice = createSlice({
 
     clearBasket(state) {
       state.products = [];
+      state.totalQty = 0;
+      state.totalPrice = 0;
     },
   },
 });
