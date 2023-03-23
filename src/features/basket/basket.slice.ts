@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SimpleProductEntity } from 'types';
+import { handleRemoveProduct } from './handleRemoveProduct';
 
 export interface BasketProductEntity extends SimpleProductEntity {
   qtyInBasket: number;
@@ -36,25 +37,17 @@ export const basketSlice = createSlice({
       state.totalPrice -= action.payload.price;
     },
 
+    reduceQtyInBasket(state, action: PayloadAction<string>) {
+      handleRemoveProduct(state, action.payload, 1);
+    },
+
     removeFromBasket(state, action: PayloadAction<string>) {
       const productIndex = state.products.findIndex(
         (product: BasketProductEntity) => product.productId === action.payload,
       );
       if (productIndex !== -1) {
-        const productPrice = state.products[productIndex].price;
-
-        if (state.products[productIndex].qtyInBasket > 1) {
-          state.products[productIndex].qtyInBasket -= 1;
-
-          state.totalQty -= 1;
-          state.totalPrice -= productPrice;
-        } else {
-          state.totalQty -= state.products[productIndex].qtyInBasket;
-          state.totalPrice -= productPrice * state.products[productIndex].qtyInBasket;
-
-          // Remove product from basket
-          state.products.splice(productIndex, 1);
-        }
+        const productQty = state.products[productIndex].qtyInBasket;
+        handleRemoveProduct(state, action.payload, productQty);
       }
     },
 
@@ -64,4 +57,5 @@ export const basketSlice = createSlice({
   },
 });
 
-export const { addToBasket, removeFromBasket, clearBasket } = basketSlice.actions;
+export const { addToBasket, reduceQtyInBasket, removeFromBasket, clearBasket } =
+  basketSlice.actions;
