@@ -1,12 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { ErrorResponse, SimpleProductEntity } from 'types';
 
-interface Product extends SimpleProductEntity {
-  qtyInBasket: number;
-}
-
 interface ProductState {
-  products: Product[] | null;
+  products: SimpleProductEntity[] | null;
   status: 'idle' | 'loading' | 'success' | 'failed';
   error: ErrorResponse | null;
 }
@@ -17,22 +13,23 @@ const initialState: ProductState = {
   error: null,
 };
 
-export const fetchProducts = createAsyncThunk<Product[], string, { rejectValue: ErrorResponse }>(
-  'products/fetchProducts',
-  async (path, { rejectWithValue }) => {
-    const res = await fetch(path);
-    if (res.ok) {
-      const data: SimpleProductEntity[] = await res.json();
-      return data.map((product) => ({
-        ...product,
-        qtyInBasket: 0,
-      }));
-    } else {
-      const errorData: ErrorResponse = await res.json();
-      return rejectWithValue(errorData);
-    }
-  },
-);
+export const fetchProducts = createAsyncThunk<
+  SimpleProductEntity[],
+  string,
+  { rejectValue: ErrorResponse }
+>('products/fetchProducts', async (path, { rejectWithValue }) => {
+  const res = await fetch(path);
+  if (res.ok) {
+    const data: SimpleProductEntity[] = await res.json();
+    return data.map((product) => ({
+      ...product,
+      qtyInBasket: 0,
+    }));
+  } else {
+    const errorData: ErrorResponse = await res.json();
+    return rejectWithValue(errorData);
+  }
+});
 
 export const productSlice = createSlice({
   name: 'products',
