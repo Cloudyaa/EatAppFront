@@ -1,19 +1,23 @@
 import styled from '@emotion/styled';
+import { CSSProperties } from '@mui/material/styles/createMixins';
 
 type StyledButtonProps = {
   size?: 'small' | 'medium' | 'large';
-  sx?: object;
+  color?: 'light' | 'dark';
+  sx?: CSSProperties;
 };
 
 export const ButtonStyled = styled.button`
   --btn-font-family: 'arboria', sans-serif;
   --btn-font-color: var(--color-light);
-  --btn-background: var(--color-secondary);
+  --btn-background: ${({ color }: StyledButtonProps) =>
+    color === 'dark' ? 'var(--color-primary)' : 'var(--color-secondary)'};
   --btn-font-size: ${({ size }: StyledButtonProps) =>
-    size === 'small' ? '1rem' : 'max(1.3rem, 2cqi);'};
+    size === 'small' ? '1rem' : size === 'large' ? '1.6 rem' : 'max(1.3rem, 2cqi);'};
   --btn-border: none;
   --btn-radius: 10px;
-  --btn-padding: ${({ size }: StyledButtonProps) => (size === 'small' ? '2px 4px' : '6px 12px')};
+  --btn-padding: ${({ size }: StyledButtonProps) =>
+    size === 'small' ? '4px 10px' : size === 'large' ? '14px 30px' : '6px 12px'};
 
   color: var(--btn-font-color);
   background-color: var(--btn-background);
@@ -27,6 +31,7 @@ export const ButtonStyled = styled.button`
   cursor: pointer;
   white-space: nowrap;
   max-height: 100%;
+  max-width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
