@@ -6,7 +6,7 @@ import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-mat
 import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
 import { useViewport } from 'hooks';
 import { RootState } from 'store';
-import { BadgeStyled } from 'emotion-styled-components';
+import { BadgeStyled } from 'styles';
 
 interface Props {
   handleShow?: () => void;

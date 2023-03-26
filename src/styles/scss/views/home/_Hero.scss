@@ -60,12 +60,6 @@
       grid-area: btm;
       display: grid;
       grid-template-columns: 1fr 0.9fr;
-
-      &-btn {
-        --btn-font-size: max(1rem, 5cqi);
-        align-self: start;
-        margin: 4rem 0;
-      }
     }
 
     &-image-right {
@@ -120,11 +114,6 @@
       &-bottom {
         display: unset;
         text-align: center;
-
-        &-btn {
-          grid-area: btm;
-          margin: 1rem 0;
-        }
 
         &-image-left {
           display: none;

@@ -55,9 +55,9 @@ img {
   height: auto;
 }
 
-a:not(.btn) {
-  @include links;
-}
+//a:not(.btn) {
+//  @include links;
+//}
 
 a:is(.link-light) {
   font-size: inherit;
