@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { ProductCard } from 'components';
 import { apiUrl } from 'config';
 import { useSkeletons } from 'hooks';
@@ -11,6 +11,7 @@ import { BestsellersGridStyled } from 'styles';
 export const BestsellersProductsContainer = () => {
   const dispatch: AppDispatch = useDispatch();
   const bestsellers = useSelector((state: RootState) => state.products.products);
+  const [showSkeletons, setShowSkeletons] = useState<boolean>(false)
 
   const getProductQty = useSelector(selectProductQty);
 
@@ -18,10 +19,13 @@ export const BestsellersProductsContainer = () => {
 
   useEffect(() => {
     dispatch(fetchProducts(`${apiUrl}/products/bestsellers`));
+    if(bestsellers === null){
+      setShowSkeletons(true);
+    } else setShowSkeletons(false)
   }, [dispatch]);
 
   return (
-    <BestsellersGridStyled>
+    <BestsellersGridStyled showSkeletons={showSkeletons}>
       {bestsellers === null ? (
         skeletons
       ) : (
@@ -29,6 +33,7 @@ export const BestsellersProductsContainer = () => {
           {bestsellers.map((one) => (
             <ProductCard product={one} key={one.productId} qty={getProductQty(one.productId)} />
           ))}
+
         </>
       )}
     </BestsellersGridStyled>
