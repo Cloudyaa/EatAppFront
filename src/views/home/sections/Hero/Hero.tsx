@@ -4,12 +4,12 @@ import { SectionId } from 'frontTypes';
 import {HeroContainerStyled} from "styles";
 
 export const Hero = () => (
-  <header id={SectionId.home} className="home__hero">
+  <main id={SectionId.home} className="hero">
     <HeroContainerStyled>
       <HeroTitle />
       <HeroDescription />
       <HeroBottom />
       <HeroImage />
     </HeroContainerStyled>
-  </header>
+  </main>
 );
