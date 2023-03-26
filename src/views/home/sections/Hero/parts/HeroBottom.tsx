@@ -1,14 +1,15 @@
 import React from 'react';
-import { ButtonLink, Image } from 'components';
+import { Image } from 'components';
+import { ButtonLinkStyled } from '../../../../../styles/emotion-styled-components/Button/ButtonLink.styled';
 
 export const HeroBottom = () => {
   return (
     <div className="home__hero-bottom">
       <Image name={'hero-left'} alt={'orange image'} addClass="home__hero-bottom-image-left" />
       <div className="home__hero-bottom-btn">
-        <ButtonLink to={'/products/search'} color={'light'} size={'lg'}>
+        <ButtonLinkStyled to={'/products/search'} color={'light'} size={'large'}>
           See our products
-        </ButtonLink>
+        </ButtonLinkStyled>
       </div>
     </div>
   );

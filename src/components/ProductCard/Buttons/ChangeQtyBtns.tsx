@@ -1,6 +1,6 @@
 import React from 'react';
 import { AddRounded, RemoveRounded } from '@mui/icons-material';
-import { CardBtnChangeQtyStyled, CardBtnWrapperStyled } from 'emotion-styled-components';
+import { CardBtnChangeQtyStyled, CardBtnWrapperStyled } from 'styles';
 
 interface Props {
   add: () => void;

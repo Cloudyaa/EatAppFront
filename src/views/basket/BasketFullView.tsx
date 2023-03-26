@@ -3,8 +3,7 @@ import { ProductCard, SectionHeader, SectionWrapper, SpaceFix, SubPageWrapper } 
 import { EmptyBasketView } from './EmptyBasketView';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from 'store';
-import { BasketItemStyled, ButtonStyled } from 'emotion-styled-components';
-import { BasketGridContainerStyled } from '../../styles/emotion-styled-components/Grid/BasketGridContainer.styled';
+import { BasketItemStyled, ButtonStyled, BasketGridContainerStyled } from 'styles';
 import { Close } from '@mui/icons-material';
 import { Box, IconButton } from '@mui/material';
 import { clearBasket, removeFromBasket } from 'features/basket';

@@ -23,8 +23,8 @@
       "features/product": [
         "src/features/product"
       ],
-      "emotion-styled-components": [
-        "src/styles/emotion-styled-components"
+      "styles": [
+        "src/styles"
       ],
       "utils": [
         "src/utils"

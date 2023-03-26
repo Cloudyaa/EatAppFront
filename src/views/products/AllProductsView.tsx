@@ -6,7 +6,7 @@ import { selectProductQty } from 'features/basket';
 import { apiUrl } from 'config';
 import { useSkeletons } from 'hooks';
 import { ProductCard, SectionHeader, SectionWrapper, SpaceFix } from 'components';
-import { AutoGridContainerStyled } from 'emotion-styled-components';
+import { AutoGridContainerStyled } from 'styles';
 
 export const AllProductsView = () => {
   const dispatch: AppDispatch = useDispatch();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardPartWrapperStyled, ProductImageStyled } from 'emotion-styled-components';
+import { CardPartWrapperStyled, ProductImageStyled } from 'styles';
 
 interface Props {
   productName: string;

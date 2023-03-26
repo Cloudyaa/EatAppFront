@@ -6,7 +6,7 @@ import { AppDispatch, RootState } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from 'features/product';
 import { selectProductQty } from 'features/basket';
-import { BestsellersGridStyled } from 'emotion-styled-components';
+import { BestsellersGridStyled } from 'styles';
 
 export const BestsellersProductsContainer = () => {
   const dispatch: AppDispatch = useDispatch();

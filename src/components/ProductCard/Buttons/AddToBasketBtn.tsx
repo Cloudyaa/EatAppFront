@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardBtnWrapperStyled, CardBtnAddStyled } from 'emotion-styled-components';
+import { CardBtnWrapperStyled, CardBtnAddStyled } from 'styles';
 
 interface Props {
   add: () => void;
