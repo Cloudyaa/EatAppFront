@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { Box } from '@mui/material';
+import { HashLinkStyled } from 'styles';
 
 interface Props {
   to: 'login' | 'signup';
 }
 
-export const Redirect = ({ to }: Props) => {
+export const FormRedirect = ({ to }: Props) => {
   return (
     <Box
       sx={{
@@ -20,9 +20,9 @@ export const Redirect = ({ to }: Props) => {
     >
       {/* prettier-ignore */}
       <p>{to === 'login' ? 'Already have account?' : 'Don\'t have account?'}</p>
-      <NavLink className="link-light" to={`/account/${to}`}>
+      <HashLinkStyled color={'light'} size={'inherit'} to={`/account/${to}`}>
         {to === 'login' ? 'Login now!' : 'Sign up now!'}
-      </NavLink>
+      </HashLinkStyled>
     </Box>
   );
 };

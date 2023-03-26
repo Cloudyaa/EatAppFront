@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import { SignupSchema } from 'utils';
 import { apiUrl } from 'config';
 import {
-  Redirect,
+  FormRedirect,
   FormWrapper,
   ErrorMessage,
   ButtonFull,
@@ -99,7 +99,7 @@ export const SignupForm = () => {
                   mt: 1,
                 }}
               >
-                <Redirect to="login"></Redirect>
+                <FormRedirect to="login"></FormRedirect>
               </Box>
             </Form>
           )}

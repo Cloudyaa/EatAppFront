@@ -11,7 +11,7 @@ import {
   ErrorMessage,
   CustomPasswordInput,
   CustomTextInput,
-  Redirect,
+  FormRedirect,
 } from 'components';
 
 export const LoginForm = () => {
@@ -96,7 +96,7 @@ export const LoginForm = () => {
 
             <ButtonFull>Submit</ButtonFull>
 
-            <Redirect to="signup"></Redirect>
+            <FormRedirect to="signup"></FormRedirect>
           </Form>
         )}
       </Formik>
