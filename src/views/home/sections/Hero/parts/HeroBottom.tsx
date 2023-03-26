@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'components';
-import { ButtonLinkStyled } from '../../../../../styles/emotion-styled-components/Button/ButtonLink.styled';
+import { ButtonLinkStyled } from 'styles';
 
 export const HeroBottom = () => {
   return (
