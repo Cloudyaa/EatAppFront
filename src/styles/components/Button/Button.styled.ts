@@ -13,11 +13,18 @@ export const ButtonStyled = styled.button`
   --btn-background: ${({ color }: StyledButtonProps) =>
     color === 'dark' ? 'var(--color-primary)' : 'var(--color-secondary)'};
   --btn-font-size: ${({ size }: StyledButtonProps) =>
-    size === 'small' ? '1rem' : size === 'large' ? '1.6 rem' : 'max(1.3rem, 2cqi);'};
+    size === 'small' ? '1rem' : size === 'large' ? 'max(1.6rem, 2cqi)' : 'max(1.3rem, 2cqi);'};
   --btn-border: none;
   --btn-radius: 10px;
   --btn-padding: ${({ size }: StyledButtonProps) =>
     size === 'small' ? '4px 10px' : size === 'large' ? '14px 30px' : '6px 12px'};
+
+  @media (max-width: 768px) {
+    --btn-font-size: ${({ size }: StyledButtonProps) =>
+      size === 'small' ? '0.8rem' : size === 'large' ? 'max(1.3rem, 2cqi)' : 'max(1rem, 2cqi);'};
+    --btn-padding: ${({ size }: StyledButtonProps) =>
+      size === 'large' ? '10px 20px' : '6px 12px'};
+  }
 
   color: var(--btn-font-color);
   background-color: var(--btn-background);
