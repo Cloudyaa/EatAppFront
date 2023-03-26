@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IconButton } from '@mui/material';
 import { ExpandLess } from '@mui/icons-material';
+import {ScrollToTopWrapperStyled} from "styles";
 
 interface Props {
   showBelow: number;
@@ -33,11 +34,11 @@ export const ScrollToTop = ({ showBelow }: Props) => {
   return (
     <>
       {show && (
-        <div className="scroll-to-top">
+        <ScrollToTopWrapperStyled>
           <IconButton onClick={handleClick}>
             <ExpandLess />
           </IconButton>
-        </div>
+        </ScrollToTopWrapperStyled>
       )}
     </>
   );

@@ -3,17 +3,8 @@
 :root {
   // load theme mixins here
   @include theme-colors;
-  @include text-props;
-  @include section-header-props;
-  @include button-props;
   @include nav-props;
   @include nav-element-wrapper-props;
-  --container-width: min(100% - 3rem, 80rem);
-  --container-height: auto;
+
 }
 
-@media (min-width: 800px) {
-  :root {
-    --container-width: min(100% - 6rem, 80rem);
-  }
-}
