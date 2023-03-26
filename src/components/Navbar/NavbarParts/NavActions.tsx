@@ -6,6 +6,7 @@ import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
 import { useViewport } from 'hooks';
 import { RootState } from 'store';
 import { BadgeStyled, HashLinkStyled } from 'styles';
+import { Box } from '@mui/material';
 
 interface Props {
   handleShow?: () => void;
@@ -48,8 +49,10 @@ export const NavActions = ({ handleShow }: Props) => {
         {navActions.map(({ name, to, icon }, index) => {
           return (
             <HashLinkStyled to={to} key={index} onClick={handleShow}>
-              {icon}
-              {isMobile ? name : null}
+              <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+                {icon}
+                {isMobile ? name : null}
+              </Box>
             </HashLinkStyled>
           );
         })}
