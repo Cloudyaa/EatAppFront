@@ -1,11 +1,13 @@
 import React from 'react';
-import { Logo, SectionHeader } from 'components';
+import { Logo } from 'components';
+import { HeroSideLogoStyled } from 'styles';
+import {HeroHeader} from "./HeroHeader";
 
 export const HeroTitle = () => (
   <>
-    <SectionHeader classes="home__hero-title">Because you must</SectionHeader>
-    <div className="home__hero-title-side">
-      <Logo size="lg" />
-    </div>
+    <HeroHeader>Because you must</HeroHeader>
+    <HeroSideLogoStyled>
+      <Logo size="large" />
+    </HeroSideLogoStyled>
   </>
 );
