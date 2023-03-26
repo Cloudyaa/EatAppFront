@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image } from 'components';
-import { ButtonLinkStyled, ButtonWrapperStyled, HeroBottomWrapperStyled } from 'styles';
+import { ButtonLinkStyled, Image } from 'components';
+import { ButtonWrapperStyled, HeroBottomWrapperStyled } from '../styles';
 
 export const HeroBottom = () => {
   return (

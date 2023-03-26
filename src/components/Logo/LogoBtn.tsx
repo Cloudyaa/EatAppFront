@@ -1,7 +1,7 @@
 import React from 'react';
 import { Logo } from './Logo';
 import { offsetScroll } from 'utils';
-import { NavHashLink } from 'react-router-hash-link';
+import { HashLinkStyled } from '../styled';
 
 interface Props {
   handleShow?: () => void;
@@ -12,13 +12,13 @@ export const LogoBtn = ({ handleShow, isOpen }: Props) => {
   const closeMobileNav = () => isOpen && handleShow && handleShow();
 
   return (
-    <NavHashLink
+    <HashLinkStyled
       to="/#"
       className="logo__link"
       scroll={(el) => offsetScroll(el)}
       onClick={closeMobileNav}
     >
       <Logo />
-    </NavHashLink>
+    </HashLinkStyled>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardBtnWrapperStyled, CardBtnAddStyled } from 'styles';
+import { CardBtnAddStyled, CardBtnWrapperStyled } from '../styles';
 
 interface Props {
   add: () => void;

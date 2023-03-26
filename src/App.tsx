@@ -13,9 +13,8 @@ import {
 } from './routes';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {GlobalStyles} from "styles";
-import {Global} from "@emotion/react";
-import {typography} from "./styles/theme/typography";
+import { GlobalStyles, typography } from 'styles';
+import { Global } from '@emotion/react';
 
 const theme = createTheme({
   palette: {
@@ -34,7 +33,7 @@ export const App = () => {
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
       <ThemeProvider theme={theme}>
-        <Global styles={GlobalStyles}/>
+        <Global styles={GlobalStyles} />
         <Container maxWidth={false} disableGutters>
           <Navbar />
           <SpaceFix />

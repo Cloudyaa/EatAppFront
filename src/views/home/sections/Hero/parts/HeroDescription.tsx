@@ -1,5 +1,5 @@
 import React from 'react';
-import {HeroDescriptionWrapperStyled} from "styles";
+import { HeroDescriptionWrapperStyled } from '../styles';
 
 export const HeroDescription = () => (
   <HeroDescriptionWrapperStyled>

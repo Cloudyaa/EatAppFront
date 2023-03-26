@@ -1,7 +1,12 @@
 import React from 'react';
-import { SectionHeader, SectionWrapper, SpaceFix, SubPageWrapper } from 'components';
+import {
+  ButtonLinkStyled,
+  SectionHeader,
+  SectionWrapper,
+  SpaceFix,
+  SubPageWrapper,
+} from 'components';
 import { useViewport } from 'hooks';
-import {ButtonLinkStyled} from "styles";
 
 export const SuccessSignupPage = () => {
   const { viewportWidth, breakpointDesktop } = useViewport();

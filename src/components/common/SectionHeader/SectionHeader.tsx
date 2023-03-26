@@ -1,5 +1,5 @@
 import React from 'react';
-import {HeaderStyled} from "styles";
+import { HeaderStyled } from './Header.styled';
 
 interface Props {
   children: React.ReactNode;

@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import {colors} from "../../theme/colors";
+import styled from '@emotion/styled';
+import { colors } from 'styles';
 
 export const ScrollToTopWrapperStyled = styled.div`
   position: fixed !important;
@@ -28,4 +28,4 @@ export const ScrollToTopWrapperStyled = styled.div`
       color: ${colors.secondary.main};
     }
   }
-`
+`;

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {colors} from "../../../theme/colors";
+import {colors} from 'styles';
 
 
 export const HeaderStyled = styled.h2`

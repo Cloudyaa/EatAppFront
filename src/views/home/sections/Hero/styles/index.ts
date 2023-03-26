@@ -6,4 +6,3 @@ export * from './HeroContainer.styled';
 export * from './HeroDescriptionWrapper.styled';
 export * from './HeroBottomWrapper.styled';
 export * from './HeroMainImage.styled';
-

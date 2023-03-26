@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeroHeaderStyled, HeroHeaderWrapperStyled } from 'styles';
+import { HeroHeaderStyled, HeroHeaderWrapperStyled } from '../styles';
 
 interface Props {
   children: React.ReactNode;

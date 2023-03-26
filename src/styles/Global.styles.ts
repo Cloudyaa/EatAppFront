@@ -1,13 +1,12 @@
-import {css} from "@emotion/react";
+import { css } from '@emotion/react';
 
 export const GlobalStyles = css`
-  
   --container-height: auto;
 
   * {
     margin: 0;
   }
-  
+
   body,
   html {
     background-color: var(--main-background);
@@ -50,6 +49,4 @@ export const GlobalStyles = css`
   //    border: 2px solid var(--color-secondary) !important;
   //  }
   //}
-
-
-`
+`;

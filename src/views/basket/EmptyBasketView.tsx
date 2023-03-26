@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductionQuantityLimitsRoundedIcon from '@mui/icons-material/ProductionQuantityLimitsRounded';
-import { SpaceFix, SubPageWrapper } from 'components';
-import {ButtonLinkStyled} from "styles";
+import { ButtonLinkStyled, SpaceFix, SubPageWrapper } from 'components';
 
 export const EmptyBasketView = () => {
   return (

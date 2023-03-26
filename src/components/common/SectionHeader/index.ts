@@ -1,2 +1,2 @@
-export * from './Text.styled';
+export * from './SectionHeader';
 export * from './Header.styled';

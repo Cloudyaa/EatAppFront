@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box } from '@mui/material';
 import { SectionId } from 'frontTypes';
 import { SpaceFix } from '../SpaceFix';
-import {ContainerStyled} from "styles";
+import { ContainerStyled } from './Container.styled';
 
 interface Props {
   classes?: string;

@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useSelector } from 'react-redux';
 import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
-import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
+import { SpaceFix, Searchbar, NavbarPartWrapper, BadgeStyled, HashLinkStyled } from 'components';
 import { useViewport } from 'hooks';
 import { RootState } from 'store';
-import { BadgeStyled, HashLinkStyled } from 'styles';
 import { Box } from '@mui/material';
 
 interface Props {

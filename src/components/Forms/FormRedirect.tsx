@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { HashLinkStyled } from 'styles';
+import { HashLinkStyled } from '../styled';
 
 interface Props {
   to: 'login' | 'signup';

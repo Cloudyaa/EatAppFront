@@ -5,8 +5,13 @@ import { fetchProducts } from 'features/product';
 import { selectProductQty } from 'features/basket';
 import { apiUrl } from 'config';
 import { useSkeletons } from 'hooks';
-import { ProductCard, SectionHeader, SectionWrapper, SpaceFix } from 'components';
-import { AutoGridContainerStyled } from 'styles';
+import {
+  AutoGridContainerStyled,
+  ProductCard,
+  SectionHeader,
+  SectionWrapper,
+  SpaceFix,
+} from 'components';
 
 export const AllProductsView = () => {
   const dispatch: AppDispatch = useDispatch();

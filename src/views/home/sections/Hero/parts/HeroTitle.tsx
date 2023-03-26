@@ -1,7 +1,7 @@
 import React from 'react';
 import { Logo } from 'components';
-import { HeroSideLogoStyled } from 'styles';
-import {HeroHeader} from "./HeroHeader";
+import { HeroHeader } from './HeroHeader';
+import { HeroSideLogoStyled } from '../styles';
 
 export const HeroTitle = () => (
   <>

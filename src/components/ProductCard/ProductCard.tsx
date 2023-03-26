@@ -4,7 +4,7 @@ import { capitalizeAndSplit, pricier } from 'utils';
 import { useAppDispatch } from 'store';
 import { SimpleProductEntity } from 'types';
 import { addToBasket, reduceQtyInBasket } from 'features/basket';
-import { CardWrapperStyled } from 'styles';
+import { CardWrapperStyled } from './styles';
 
 interface Props {
   product: SimpleProductEntity;

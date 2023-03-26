@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardPartWrapperStyled } from 'styles';
+import { CardPartWrapperStyled } from './styles';
 
 interface Props {
   children: React.ReactNode;

@@ -1,8 +1,7 @@
 import React from 'react';
-import { SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
+import { ButtonLinkStyled, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 import { SectionId } from 'frontTypes';
 import { BestsellersProductsContainer } from './BestsellersProductsContainer';
-import {ButtonLinkStyled} from "styles";
 
 export const Bestsellers = () => {
   return (

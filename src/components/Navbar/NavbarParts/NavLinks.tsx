@@ -2,7 +2,7 @@ import React from 'react';
 import { SectionId } from 'frontTypes';
 import { NavbarPartWrapper } from './NavbarPartWrapper';
 import { offsetScroll } from 'utils';
-import { HashLinkStyled } from 'styles';
+import { HashLinkStyled } from '../../styled';
 
 interface Props {
   handleShow?: () => void;

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { ButtonGroupProps, ButtonStyled } from 'styles';
+import { ButtonStyled } from 'components';
+import { ButtonGroupProps } from './CardBtnWrapper.styled';
 
 export const CardBtnChangeQtyStyled = styled(ButtonStyled)`
   @media (max-width: 900px) {

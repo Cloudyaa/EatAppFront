@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IconButton } from '@mui/material';
 import { ExpandLess } from '@mui/icons-material';
-import {ScrollToTopWrapperStyled} from "styles";
+import { ScrollToTopWrapperStyled } from './ScrollToTopWrapper.styled';
 
 interface Props {
   showBelow: number;
