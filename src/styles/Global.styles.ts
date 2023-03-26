@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import {colors} from "./theme";
 
 export const GlobalStyles = css`
   --container-height: auto;
@@ -9,7 +10,7 @@ export const GlobalStyles = css`
 
   body,
   html {
-    background-color: var(--main-background);
+    background-color: ${colors.light.main};
     scroll-behavior: smooth;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -17,7 +18,7 @@ export const GlobalStyles = css`
     font-weight: 400;
     font-style: normal;
     font-size: 1.25rem;
-    color: var(--color-primary);
+    color: ${colors.primary.main};
   }
 
   section,
@@ -38,15 +39,15 @@ export const GlobalStyles = css`
     max-width: 100%;
     height: auto;
   }
-  //
-  //.form-wrapper {
-  //  .MuiOutlinedInput-root fieldset {
-  //    border: 2px solid var(--color-primary) !important;
-  //    font-family: var(--main-text-font) !important;
-  //  }
-  //
-  //  .MuiOutlinedInput-root:is(:focus, :focus-within, :focus-visible) fieldset {
-  //    border: 2px solid var(--color-secondary) !important;
-  //  }
-  //}
+
+  .form-wrapper {
+    .MuiOutlinedInput-root fieldset {
+      border: 2px solid ${colors.primary.main} !important;
+     // font-family: var(--main-text-font) !important;
+    }
+
+    .MuiOutlinedInput-root:is(:focus, :focus-within, :focus-visible) fieldset {
+      border: 2px solid ${colors.secondary.main} !important;
+    }
+  }
 `;

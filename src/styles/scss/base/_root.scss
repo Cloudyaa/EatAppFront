@@ -1,8 +1,0 @@
-@use '../themes/theme' as *;
-
-:root {
-  // load theme mixins here
-  @include theme-colors;
-  @include nav-props;
-  @include nav-element-wrapper-props;
-}

@@ -1,4 +1,3 @@
-export * from './NavActions';
-export * from './NavbarPartWrapper';
+export * from './NavActions/NavActions';
 export * from './NavLinks';
 export * from './Searchbar';

@@ -31,8 +31,7 @@
   "scripts": {
     "start": "vite --port 3000",
     "build": "tsc && vite build",
-    "test": "jest src",
-    "sass:watch": "sass --watch src/styles/scss:src/styles/css"
+    "test": "jest src"
   },
   "eslintConfig": {
     "extends": [

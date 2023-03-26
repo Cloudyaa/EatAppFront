@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { HashLink } from 'react-router-hash-link';
+import {colors} from "styles";
 
 type StyledButtonProps = {
   color?: 'light' | 'dark';
@@ -11,14 +12,14 @@ export const HashLinkStyled = styled(HashLink)`
   font-size: ${({ size }: StyledButtonProps) =>
     size === 'inherit' ? 'inherit' : 'max(1rem, 3cqi)'};
   color: ${({ color }: StyledButtonProps) =>
-    color === 'light' ? 'var(--color-secondary)' : 'var(--color-primary)'};
+    color === 'light' ? colors.secondary.main : colors.primary.main};
   transition: color 0.6s ease;
   &:is(:visited, :focus) {
     color: ${({ color }: StyledButtonProps) =>
-      color === 'light' ? 'var(--color-secondary)' : 'var(--color-primary)'};
+      color === 'light' ? colors.secondary.main : colors.primary.main};
   }
   &:hover {
     color: ${({ color }: StyledButtonProps) =>
-      color === 'light' ? 'var(--color-primary)' : 'var(--color-secondary)'};
+      color === 'light' ? colors.primary.main : colors.secondary.main};
   }
 `;

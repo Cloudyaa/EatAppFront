@@ -1,8 +1,8 @@
 import React from 'react';
 import { SectionId } from 'frontTypes';
-import { NavbarPartWrapper } from './NavbarPartWrapper';
 import { offsetScroll } from 'utils';
 import { HashLinkStyled } from '../../styled';
+import { NavPartWrapperStyled } from './NavPartWrapper.styled';
 
 interface Props {
   handleShow?: () => void;
@@ -25,7 +25,7 @@ export const NavLinks = ({ handleShow }: Props) => {
   ];
 
   return (
-    <NavbarPartWrapper>
+    <NavPartWrapperStyled>
       {navLinks.map(({ linkText, id }) => (
         <HashLinkStyled
           to={`/#${id}`}
@@ -36,6 +36,6 @@ export const NavLinks = ({ handleShow }: Props) => {
           {linkText}
         </HashLinkStyled>
       ))}
-    </NavbarPartWrapper>
+    </NavPartWrapperStyled>
   );
 };

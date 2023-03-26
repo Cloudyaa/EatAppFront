@@ -14,7 +14,6 @@ export const LogoBtn = ({ handleShow, isOpen }: Props) => {
   return (
     <HashLinkStyled
       to="/#"
-      className="logo__link"
       scroll={(el) => offsetScroll(el)}
       onClick={closeMobileNav}
     >

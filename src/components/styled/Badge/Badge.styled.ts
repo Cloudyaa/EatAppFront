@@ -1,5 +1,6 @@
 import { styled } from '@mui/system';
 import BadgeUnstyled, { badgeUnstyledClasses } from '@mui/base/BadgeUnstyled';
+import { colors } from 'styles';
 
 export const BadgeStyled = styled(BadgeUnstyled)(
   () => `
@@ -19,14 +20,14 @@ export const BadgeStyled = styled(BadgeUnstyled)(
     min-width: 22px;
     height: 22px;
     padding: 0 3%;
-    color: var(--color-light);
+    color: ${colors.light.main};
     font-weight: 600;
     font-size: 12px;
     line-height: 19px;
     white-space: nowrap;
     text-align: center;
     border-radius: 12px;
-    background: var(--color-secondary);
+    background: ${colors.secondary.main};
     transform: translate(50%, -50%);
     transform-origin: 100% 0; 
   }

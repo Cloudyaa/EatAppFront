@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import { styled } from '@mui/system';
+import { colors } from 'styles';
 
 interface Props {
   children: React.ReactNode;
@@ -8,10 +9,12 @@ interface Props {
 }
 
 const CustomButton = styled(ButtonUnstyled)`
-  background-color: var(--color-secondary);
-  color: var(--color-light);
+  background-color: ${colors.secondary.main};
+  color: ${colors.light.main};
   padding: 12px 24px;
   font-size: 1.3rem;
+  font-family: "arboria", sans-serif;
+  border-radius: 5px;
   margin-top: 2rem;
   transition: all 200ms ease-out;
   cursor: pointer;
@@ -20,11 +23,11 @@ const CustomButton = styled(ButtonUnstyled)`
   width: 100%;
 
   &:hover {
-    background-color: var(--color-secondary-hover);
+    background-color: ${colors.secondary.light};
   }
 
   &.${buttonUnstyledClasses.active} {
-    background-color: var(--color-secondary);
+    background-color: ${colors.secondary.main};
   }
 ;
 }

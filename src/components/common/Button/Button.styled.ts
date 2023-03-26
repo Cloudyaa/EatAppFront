@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { CSSProperties } from '@mui/material/styles/createMixins';
+import { colors } from 'styles';
 
 type StyledButtonProps = {
   size?: 'small' | 'medium' | 'large';
@@ -9,9 +10,9 @@ type StyledButtonProps = {
 
 export const ButtonStyled = styled.button`
   --btn-font-family: 'arboria', sans-serif;
-  --btn-font-color: var(--color-light);
+  --btn-font-color: ${colors.light.main};
   --btn-background: ${({ color }: StyledButtonProps) =>
-    color === 'dark' ? 'var(--color-primary)' : 'var(--color-secondary)'};
+    color === 'dark' ? colors.primary.main : colors.secondary.main};
   --btn-font-size: ${({ size }: StyledButtonProps) =>
     size === 'small' ? '1rem' : size === 'large' ? 'max(1.6rem, 2cqi)' : 'max(1.3rem, 2cqi);'};
   --btn-border: none;

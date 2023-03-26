@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar } from '@mui/material';
+import { ToolbarStyled } from './Toolbar.styled';
+import {colors} from 'styles';
 
 interface Props {
   children: React.ReactNode;
@@ -8,13 +10,13 @@ interface Props {
 }
 
 interface AppBar {
-  background: 'var(--main-background)';
+  background: string;
   boxShadow?: 'none' | undefined;
 }
 
 export const NavToolbar = ({ children, position, shadow }: Props) => {
   const [appBarProps, setAppBarProps] = useState<AppBar>({
-    background: 'var(--main-background)',
+    background: colors.light.main,
   });
 
   useEffect(() => {
@@ -27,7 +29,7 @@ export const NavToolbar = ({ children, position, shadow }: Props) => {
 
   return (
     <AppBar position={position} sx={appBarProps}>
-      <Toolbar className="navbar">{children}</Toolbar>
+      <ToolbarStyled>{children}</ToolbarStyled>
     </AppBar>
   );
 };

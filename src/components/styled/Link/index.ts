@@ -1,1 +1,1 @@
-export * from './HashLinkStyled';
+export * from './HashLink.styled';

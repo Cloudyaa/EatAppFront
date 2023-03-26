@@ -3,6 +3,7 @@ import { Dialog } from '@mui/material';
 import { NavActions, NavLinks } from '../NavbarParts';
 import { MobileToolbar } from './MobileToolbar';
 import { Transition } from '../Transition';
+import {colors} from "styles";
 
 interface Props {
   isOpen: boolean;
@@ -19,7 +20,7 @@ export const MobileOpen = ({ isOpen, handleShow }: Props) => (
     onClose={Transition}
     PaperProps={{
       style: {
-        backgroundColor: 'var(--nav-background)',
+        backgroundColor: colors.light.main,
       },
     }}
   >

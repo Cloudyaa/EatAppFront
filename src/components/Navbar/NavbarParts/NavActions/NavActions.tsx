@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useSelector } from 'react-redux';
 import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
-import { SpaceFix, Searchbar, NavbarPartWrapper, BadgeStyled, HashLinkStyled } from 'components';
+import { SpaceFix, Searchbar, BadgeStyled, HashLinkStyled } from 'components';
 import { useViewport } from 'hooks';
 import { RootState } from 'store';
 import { Box } from '@mui/material';
+import { IconWrapperStyled } from './IconWrapper.styled';
+import {NavActionsWrapperStyled} from './NavActionsWrapper.styled';
 
 interface Props {
   handleShow?: () => void;
@@ -41,10 +43,10 @@ export const NavActions = ({ handleShow }: Props) => {
   ];
 
   return (
-    <NavbarPartWrapper classes="navbar__actions">
+    <NavActionsWrapperStyled>
       <SpaceFix />
       <Searchbar handleShow={handleShow} />
-      <div className="navbar__actions-icons">
+      <IconWrapperStyled>
         {navActions.map(({ name, to, icon }, index) => {
           return (
             <HashLinkStyled to={to} key={index} onClick={handleShow}>
@@ -55,7 +57,7 @@ export const NavActions = ({ handleShow }: Props) => {
             </HashLinkStyled>
           );
         })}
-      </div>
-    </NavbarPartWrapper>
+      </IconWrapperStyled>
+    </NavActionsWrapperStyled>
   );
 };
