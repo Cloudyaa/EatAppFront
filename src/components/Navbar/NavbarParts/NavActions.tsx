@@ -47,12 +47,7 @@ export const NavActions = ({ handleShow }: Props) => {
       <div className="navbar__actions-icons">
         {navActions.map(({ name, to, icon }, index) => {
           return (
-            <HashLinkStyled
-              to={to}
-              key={index}
-              className="navbar__actions-element"
-              onClick={handleShow}
-            >
+            <HashLinkStyled to={to} key={index} onClick={handleShow}>
               {icon}
               {isMobile ? name : null}
             </HashLinkStyled>
