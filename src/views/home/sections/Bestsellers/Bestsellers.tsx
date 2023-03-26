@@ -1,7 +1,8 @@
 import React from 'react';
-import { ButtonLink, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
+import { SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 import { SectionId } from 'frontTypes';
 import { BestsellersProductsContainer } from './BestsellersProductsContainer';
+import {ButtonLinkStyled} from "styles";
 
 export const Bestsellers = () => {
   return (
@@ -9,9 +10,9 @@ export const Bestsellers = () => {
       <SectionHeader>Our bestsellers</SectionHeader>
       <BestsellersProductsContainer />
       <SubPageWrapper addSx={{ height: '8rem' }}>
-        <ButtonLink color="dark" size="xl" to="/products/search">
+        <ButtonLinkStyled color="dark" size="large" to="/products/search">
           Shop all
-        </ButtonLink>
+        </ButtonLinkStyled>
       </SubPageWrapper>
     </SectionWrapper>
   );

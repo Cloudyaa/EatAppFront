@@ -1,6 +1,7 @@
 import React from 'react';
-import { ButtonLink, SectionHeader, SectionWrapper, SpaceFix, SubPageWrapper } from 'components';
+import { SectionHeader, SectionWrapper, SpaceFix, SubPageWrapper } from 'components';
 import { useViewport } from 'hooks';
+import {ButtonLinkStyled} from "styles";
 
 export const SuccessSignupPage = () => {
   const { viewportWidth, breakpointDesktop } = useViewport();
@@ -12,9 +13,9 @@ export const SuccessSignupPage = () => {
         <h3>Your account has been created successfully</h3>
         {viewportWidth > breakpointDesktop ? <SpaceFix /> : null}
         <p>You can now log into your account</p>
-        <ButtonLink to={'/account/login'} size="sm" color="light">
+        <ButtonLinkStyled to={'/account/login'} color="light">
           Go to login page
-        </ButtonLink>
+        </ButtonLinkStyled>
       </SubPageWrapper>
     </SectionWrapper>
   );

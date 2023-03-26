@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductionQuantityLimitsRoundedIcon from '@mui/icons-material/ProductionQuantityLimitsRounded';
-import { ButtonLink, SpaceFix, SubPageWrapper } from 'components';
+import { SpaceFix, SubPageWrapper } from 'components';
+import {ButtonLinkStyled} from "styles";
 
 export const EmptyBasketView = () => {
   return (
@@ -9,9 +10,9 @@ export const EmptyBasketView = () => {
       <h3>Your basket is empty</h3>
       <SpaceFix />
 
-      <ButtonLink color="light" size="lg" to="/products/search">
+      <ButtonLinkStyled size="large" to="/products/search">
         Browse products
-      </ButtonLink>
+      </ButtonLinkStyled>
     </SubPageWrapper>
   );
 };
