@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
-import { colors } from '../../theme/colors';
+import {colors} from "../../../theme/colors";
 
-interface HeaderProps {
-  hero?: boolean;
-}
 
 export const HeaderStyled = styled.h2`
   --section-header-font: 'dejanire-headline', serif;
@@ -13,7 +10,7 @@ export const HeaderStyled = styled.h2`
   --section-header-color: ${colors.primary.main};
 
   @media (max-width: 832px) {
-    font-size: ${({ hero }: HeaderProps) => (hero ? 'max(1rem, 11cqi)' : 'max(2rem, 4cqi)')};
+    font-size: max(2rem, 4cqi);
   }
 
   font-family: var(--section-header-font);

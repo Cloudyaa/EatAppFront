@@ -2,6 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { SectionId } from 'frontTypes';
 import { SpaceFix } from '../SpaceFix';
+import {ContainerStyled} from "styles";
 
 interface Props {
   classes?: string;
@@ -12,6 +13,6 @@ interface Props {
 export const SectionWrapper = ({ classes, id, children }: Props) => (
   <section id={id} className={classes}>
     <SpaceFix />
-    <Box className="container">{children}</Box>
+    <ContainerStyled>{children}</ContainerStyled>
   </section>
 );

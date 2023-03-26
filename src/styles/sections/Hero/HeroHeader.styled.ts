@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { HeaderStyled } from '../../components/typography/Header.styled';
+import {HeaderStyled} from "../../components";
 
 export const HeroHeaderStyled = styled(HeaderStyled)`
   padding-bottom: 0;
