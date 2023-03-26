@@ -1,9 +1,10 @@
 import React from 'react';
 import { Image } from 'components';
+import {HeroMainImageStyled} from "styles";
 
 export const HeroImage = () => (
-  <div className="home__hero-image-right">
+  <HeroMainImageStyled>
     <Image name={'hero-right'} alt={'vegetables image'} />
-  </div>
+  </HeroMainImageStyled>
 );
 

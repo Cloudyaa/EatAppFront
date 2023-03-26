@@ -13,6 +13,6 @@ export const colors = {
     main: '#ececec',
   },
   dark: {
-    main: '#939393',
+    light: '#939393',
   },
 };
