@@ -15,6 +15,7 @@ import {
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {GlobalStyles} from "styles";
 import {Global} from "@emotion/react";
+import {typography} from "./styles/theme/typography";
 
 const theme = createTheme({
   palette: {
@@ -25,6 +26,7 @@ const theme = createTheme({
       main: '#ffa101',
     },
   },
+  typography,
 });
 
 export const App = () => {
