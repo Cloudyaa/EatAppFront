@@ -1,8 +1,8 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
 import { SectionId } from 'frontTypes';
 import { NavbarPartWrapper } from './NavbarPartWrapper';
 import { offsetScroll } from 'utils';
+import { HashLinkStyled } from 'styles';
 
 interface Props {
   handleShow?: () => void;
@@ -27,15 +27,14 @@ export const NavLinks = ({ handleShow }: Props) => {
   return (
     <NavbarPartWrapper>
       {navLinks.map(({ linkText, id }) => (
-        <HashLink
+        <HashLinkStyled
           to={`/#${id}`}
           key={id}
-          className="navbar__links-item"
           onClick={handleShow}
           scroll={(el) => offsetScroll(el)}
         >
           {linkText}
-        </HashLink>
+        </HashLinkStyled>
       ))}
     </NavbarPartWrapper>
   );

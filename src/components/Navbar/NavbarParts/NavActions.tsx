@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { useSelector } from 'react-redux';
 import { LocalGroceryStoreOutlined, PersonOutlineOutlined } from '@mui/icons-material';
 import { SpaceFix, Searchbar, NavbarPartWrapper } from 'components';
 import { useViewport } from 'hooks';
 import { RootState } from 'store';
-import { BadgeStyled } from 'styles';
+import { BadgeStyled, HashLinkStyled } from 'styles';
 
 interface Props {
   handleShow?: () => void;
@@ -48,10 +47,15 @@ export const NavActions = ({ handleShow }: Props) => {
       <div className="navbar__actions-icons">
         {navActions.map(({ name, to, icon }, index) => {
           return (
-            <NavLink to={to} key={index} className="navbar__actions-element" onClick={handleShow}>
+            <HashLinkStyled
+              to={to}
+              key={index}
+              className="navbar__actions-element"
+              onClick={handleShow}
+            >
               {icon}
               {isMobile ? name : null}
-            </NavLink>
+            </HashLinkStyled>
           );
         })}
       </div>
