@@ -18,7 +18,7 @@ export const ButtonStyled = styled.button`
   --btn-border: none;
   --btn-radius: 10px;
   --btn-padding: ${({ size }: StyledButtonProps) =>
-    size === 'small' ? '4px 10px' : size === 'large' ? '14px 30px' : '6px 12px'};
+    size === 'small' ? '4px 10px' : size === 'large' ? '14px 30px' : '8px 20px'};
 
   @media (max-width: 768px) {
     --btn-font-size: ${({ size }: StyledButtonProps) =>
