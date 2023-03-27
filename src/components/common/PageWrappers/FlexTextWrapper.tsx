@@ -15,6 +15,7 @@ export const FlexTextWrapper = ({ children, addSx }: Props) => (
       gap: '0.5rem',
       fontSize: '0.9rem',
       mt: 1,
+      mb: 5,
       ...addSx,
     }}
   >
