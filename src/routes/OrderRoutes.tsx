@@ -1,5 +1,5 @@
 import React from 'react';
-import {BasketFullView, OrderCheckoutView} from '../views';
+import {BasketFullView, OrderRedirectView} from '../views';
 import { getRoutes } from './getRoutes';
 
 export const BasketRouter = () => {
@@ -11,7 +11,7 @@ export const BasketRouter = () => {
 
     {
       path: '/order/checkout',
-      element: <OrderCheckoutView />,
+      element: <OrderRedirectView />,
     },
   ];
 
