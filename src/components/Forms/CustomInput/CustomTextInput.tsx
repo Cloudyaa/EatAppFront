@@ -3,7 +3,7 @@ import { FormControl, TextField } from '@mui/material';
 import { styled } from '@mui/system';
 import { useField } from 'formik';
 import { InvalidInputMessage } from './InvalidInputMessage';
-import { customInputStyles } from './CustomInputStyles';
+import { customInputStyles } from './CustomInput.styles';
 
 const CustomTextField = styled(TextField)(customInputStyles);
 
