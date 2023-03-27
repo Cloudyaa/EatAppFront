@@ -1,12 +1,14 @@
 import React from 'react';
 import {
   ButtonLinkStyled,
-  ButtonStyled, HashLinkStyled,
+  ButtonStyled,
+  HashLinkStyled,
   ProductCard,
   SectionHeader,
   SectionWrapper,
   SpaceFix,
   SubPageWrapper,
+  FlexTextWrapper
 } from 'components';
 import { EmptyBasketView } from './EmptyBasketView';
 import { useSelector } from 'react-redux';
@@ -26,57 +28,51 @@ export const BasketFullView = () => {
   console.log(`Products: ${basket.totalQty} for price of: ${basket.totalPrice.toFixed(2)}`);
 
   return (
-      <SectionWrapper classes="basket__full">
-        <SectionHeader>Your basket</SectionHeader>
-        {basket.products.length === 0 ? (
-            <EmptyBasketView />
-        ) : (
-            <SubPageWrapper addSx={{ textAlign: 'left' }}>
-              <ButtonStyled onClick={() => dispatch(clearBasket())} color={'dark'}>
-                Clear basket
-              </ButtonStyled>
-              <SpaceFix />
+    <SectionWrapper classes="basket__full">
+      <SectionHeader>Your basket</SectionHeader>
+      {basket.products.length === 0 ? (
+        <EmptyBasketView />
+      ) : (
+        <SubPageWrapper addSx={{ textAlign: 'left' }}>
+          <ButtonStyled onClick={() => dispatch(clearBasket())} color={'dark'}>
+            Clear basket
+          </ButtonStyled>
+          <SpaceFix />
 
-              <BasketGridContainerStyled>
-                {basket.products.map((one) => (
-                    <BasketItemStyled key={one.productId}>
-                      <ProductCard product={one} qty={one.qtyInBasket} size="small" />
-                      <IconButton>
-                        <Close onClick={() => dispatch(removeFromBasket(one.productId))} />
-                      </IconButton>
-                    </BasketItemStyled>
-                ))}
-                <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '0.5rem',
-                      fontSize: '0.9rem',
-                      mt: 1,
-                    }}
-                >
-                  <Typography variant="body2" display="block">
-                    Forgot something?
-                  </Typography> <HashLinkStyled color={'light'} size={'inherit'} to={'/products/search'}>Back to products
-                </HashLinkStyled>
-                </Box>
-              </BasketGridContainerStyled>
+          <BasketGridContainerStyled>
+            {basket.products.map((one) => (
+              <BasketItemStyled key={one.productId}>
+                <ProductCard product={one} qty={one.qtyInBasket} size="small" />
+                <IconButton>
+                  <Close onClick={() => dispatch(removeFromBasket(one.productId))} />
+                </IconButton>
+              </BasketItemStyled>
+            ))}
+          </BasketGridContainerStyled>
 
-              <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-around', marginBlock: 5}}>
-                <h3>Total price</h3>
-                <h3>{pricier.format(basket.totalPrice)}</h3>
-              </Box>
-              <Chip
-                  label={'If you are eligible for discount, it will be applied on the next step'}
-                  sx={{ color: colors.dark.light, marginBlock: 2 }}
-              ></Chip>
+          <FlexTextWrapper>
+            <Typography variant="body2">Forgot something?</Typography>
+            <HashLinkStyled color={'light'} size={'inherit'} to={'/products/search'}>
+              Back to products
+            </HashLinkStyled>
+          </FlexTextWrapper>
 
-              <ButtonLinkStyled to={'/basket/order/checkout'} size={'large'}>
-                Proceed to checkout
-              </ButtonLinkStyled>
-            </SubPageWrapper>
-        )}
-      </SectionWrapper>
+          <Box
+            sx={{ width: '100%', display: 'flex', justifyContent: 'space-around', marginBlock: 5 }}
+          >
+            <h3>Total price</h3>
+            <h3>{pricier.format(basket.totalPrice)}</h3>
+          </Box>
+          <Chip
+            label={'If you are eligible for discount, it will be applied on the next step'}
+            sx={{ color: colors.dark.light, marginBlock: 2 }}
+          ></Chip>
+
+          <ButtonLinkStyled to={'/basket/order/checkout'} size={'large'}>
+            Proceed to checkout
+          </ButtonLinkStyled>
+        </SubPageWrapper>
+      )}
+    </SectionWrapper>
   );
 };
