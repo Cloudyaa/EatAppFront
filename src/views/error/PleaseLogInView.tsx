@@ -9,8 +9,8 @@ export const PleaseLogInView = () => {
       <SubPageWrapper>
         <h3>You need to log in to place an order in our shop. </h3>
         <Typography>
-          It is a simple step that will ensure a seamless checkout experience.
-          <br/>Do not worry if you do not have an account yet, creating one only takes a few moments.
+          It&apos;s a simple step that will ensure a seamless checkout experience.
+          <br/>Don&apos;t worry if you don&apos;t have an account yet, creating one only takes a few moments.
           <br/>Join now and discover our great selection of products!
         </Typography>
 
