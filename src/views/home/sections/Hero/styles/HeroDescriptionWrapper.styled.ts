@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import { colors } from '../../../../../styles/theme';
+import { colors } from 'styles';
 
 export const HeroDescriptionWrapperStyled = styled.div`
   grid-area: desc;
   container-type: inline-size;
-  font-size: max(0.6 rem, 2 cqi);
+  font-size: max(0.6rem, 2cqi);
   padding-left: 0.3rem;
 
   & > p {
@@ -13,7 +13,7 @@ export const HeroDescriptionWrapperStyled = styled.div`
   }
 
   @media (max-width: 832px) {
-    font-size: max(0.5 rem, 4 cqi);
+    font-size: max(0.5rem, 4cqi);
     padding-left: 1.2rem;
     & > p {
       text-align: left;
