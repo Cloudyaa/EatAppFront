@@ -3,6 +3,20 @@ import { useField } from 'formik';
 import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { InvalidInputMessage } from './InvalidInputMessage';
+import { colors } from 'styles';
+import { styled } from '@mui/system';
+
+const CustomOutlinedInput = styled(OutlinedInput)`
+    &.MuiOutlinedInput-root fieldset {
+      border: 2px solid ${colors.primary.main} !important;
+      border-radius: 10px;
+      color: ${colors.primary.main},
+    }
+
+    &.MuiOutlinedInput-root:is(:focus, :focus-within, :focus-visible) fieldset {
+      border: 2px solid ${colors.secondary.main} !important;
+    }
+`;
 
 // eslint-disable-next-line
 export const CustomPasswordInput = ({ label, ...props }: any) => {
@@ -17,18 +31,13 @@ export const CustomPasswordInput = ({ label, ...props }: any) => {
 
   return (
     <FormControl fullWidth variant="outlined" sx={{ marginBlock: 2 }}>
-      <InputLabel
-        color="secondary"
-        sx={{ fontFamily: 'var(--main-text-font) !important' }}
-        htmlFor="password"
-      >
+      <InputLabel color="secondary" htmlFor="password">
         {label}
       </InputLabel>
-      <OutlinedInput
+      <CustomOutlinedInput
         id={props.id}
         label={label}
         type={showPassword ? 'text' : 'password'}
-        color="secondary"
         {...field}
         {...props}
         endAdornment={

@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import {colors} from "./theme";
+import { colors } from './theme';
 
 export const GlobalStyles = css`
   --container-height: auto;
@@ -38,16 +38,5 @@ export const GlobalStyles = css`
   img {
     max-width: 100%;
     height: auto;
-  }
-
-  .form-wrapper {
-    .MuiOutlinedInput-root fieldset {
-      border: 2px solid ${colors.primary.main} !important;
-     // font-family: var(--main-text-font) !important;
-    }
-
-    .MuiOutlinedInput-root:is(:focus, :focus-within, :focus-visible) fieldset {
-      border: 2px solid ${colors.secondary.main} !important;
-    }
   }
 `;
