@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { HashLink } from 'react-router-hash-link';
-import {colors} from "styles";
+import { colors } from 'styles';
 
 type StyledButtonProps = {
   color?: 'light' | 'dark';
@@ -14,10 +14,13 @@ export const HashLinkStyled = styled(HashLink)`
   color: ${({ color }: StyledButtonProps) =>
     color === 'light' ? colors.secondary.main : colors.primary.main};
   transition: color 0.6s ease;
+  width: fit-content;
+
   &:is(:visited, :focus) {
     color: ${({ color }: StyledButtonProps) =>
       color === 'light' ? colors.secondary.main : colors.primary.main};
   }
+
   &:hover {
     color: ${({ color }: StyledButtonProps) =>
       color === 'light' ? colors.primary.main : colors.secondary.main};
