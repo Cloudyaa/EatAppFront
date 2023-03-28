@@ -1,23 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SimpleProductEntity } from 'types';
+import { OrderDTO, OrderedProductEntity } from 'types';
 import { handleRemoveProduct } from './handleRemoveProduct';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-export interface BasketProductEntity extends SimpleProductEntity {
-  qtyInBasket: number;
-}
-
-export interface BasketState {
-  products: BasketProductEntity[];
-  totalQty: number;
-  totalPrice: number;
-}
+export type BasketProductEntity = OrderedProductEntity;
+export type BasketState = OrderDTO;
 
 const initialState: BasketState = {
   products: [],
   totalQty: 0,
-  totalPrice: 0,
+  totalValue: 0,
 };
 
 const persistConfig = {
@@ -42,7 +35,7 @@ export const basketSlice = createSlice({
 
       // Update total
       state.totalQty += 1;
-      state.totalPrice += action.payload.price;
+      state.totalValue += action.payload.price;
     },
 
     reduceQtyInBasket(state, action: PayloadAction<string>) {
@@ -62,7 +55,7 @@ export const basketSlice = createSlice({
     clearBasket(state) {
       state.products = [];
       state.totalQty = 0;
-      state.totalPrice = 0;
+      state.totalValue = 0;
     },
   },
 });

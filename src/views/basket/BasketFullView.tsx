@@ -8,7 +8,7 @@ import {
   SectionWrapper,
   SpaceFix,
   SubPageWrapper,
-  FlexTextWrapper
+  FlexTextWrapper,
 } from 'components';
 import { EmptyBasketView } from './EmptyBasketView';
 import { useSelector } from 'react-redux';
@@ -24,8 +24,6 @@ import { colors } from 'styles';
 export const BasketFullView = () => {
   const basket = useSelector((state: RootState) => state.basket);
   const dispatch = useAppDispatch();
-
-  console.log(`Products: ${basket.totalQty} for price of: ${basket.totalPrice.toFixed(2)}`);
 
   return (
     <SectionWrapper classes="basket__full">
@@ -61,14 +59,18 @@ export const BasketFullView = () => {
             sx={{ width: '100%', display: 'flex', justifyContent: 'space-around', marginBlock: 5 }}
           >
             <h3>Total price</h3>
-            <h3>{pricier.format(basket.totalPrice)}</h3>
+            <h3>{pricier.format(basket.totalValue)}</h3>
           </Box>
           <Chip
             label={'If you are eligible for discount, it will be applied on the next step'}
             sx={{ color: colors.dark.light, marginBlock: 2 }}
           ></Chip>
 
-          <ButtonLinkStyled to={'/basket/order/checkout'} size={'large'}>
+          <ButtonLinkStyled
+            to={'/basket/order/checkout'}
+            size={'large'}
+            // onClick={() => console.log(basket)}
+          >
             Proceed to checkout
           </ButtonLinkStyled>
         </SubPageWrapper>
