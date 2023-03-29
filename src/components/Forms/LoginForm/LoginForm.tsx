@@ -58,7 +58,7 @@ export const LoginForm = () => {
   if (apiResponse && apiResponse.status === 200 && apiResponse.token) {
     // if user
     if (apiResponse.role === 'user') {
-      navigate(`/user/dashboard/${apiResponse.userId}`);
+      navigate(`/user/${apiResponse.userId}/dashboard`);
     }
     // if admin
     if (apiResponse.role === 'admin') {

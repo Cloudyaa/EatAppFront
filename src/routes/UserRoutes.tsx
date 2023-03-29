@@ -5,7 +5,7 @@ import { getRoutes } from './getRoutes';
 export const UserRoutes = () => {
   const routes = [
     {
-      path: '/dashboard/:user_id',
+      path: '/:user_id/dashboard',
       element: <UserDashboard />,
     },
   ];

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { SafeUserEntity, ErrorResponse } from 'types';
-import { apiUrl } from '../../../config';
+import { apiUrl } from 'config';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { ButtonFull, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
@@ -17,7 +17,7 @@ export const UserDashboard = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(`${apiUrl}/user/dashboard/${user_id}`, {
+      const res = await fetch(`${apiUrl}/user/${user_id}/dashboard`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const UserDashboard = () => {
 
       if (res.ok) {
         const data: SafeUserEntity = await res.json();
-        console.log(data);
+
         setUser(data);
       } else {
         const data: ErrorResponse = await res.json();

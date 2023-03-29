@@ -7,7 +7,7 @@ import { useViewport } from 'hooks';
 import { RootState } from 'store';
 import { Box } from '@mui/material';
 import { IconWrapperStyled } from './IconWrapper.styled';
-import {NavActionsWrapperStyled} from './NavActionsWrapper.styled';
+import { NavActionsWrapperStyled } from './NavActionsWrapper.styled';
 
 interface Props {
   handleShow?: () => void;
@@ -27,7 +27,7 @@ export const NavActions = ({ handleShow }: Props) => {
   const navActions = [
     {
       name: <p>My account</p>,
-      to: cookies.token ? `user/dashboard/${cookies.userId}` : '/account/login',
+      to: cookies.token ? `user/${cookies.userId}/dashboard` : '/account/login',
       icon: <PersonOutlineOutlined />,
     },
 
