@@ -84,15 +84,7 @@ export const LoginForm = () => {
             <CustomTextInput name="email" label="Email *" />
 
             {/* Password */}
-            <CustomPasswordInput
-              sx={{
-                borderColor: 'var(--color-primary)',
-                color: 'var(--color-primary)',
-                borderWidth: '2px !important',
-              }}
-              name="password"
-              label="Password *"
-            />
+            <CustomPasswordInput name="password" label="Password *" />
 
             <ButtonFull>Submit</ButtonFull>
 
