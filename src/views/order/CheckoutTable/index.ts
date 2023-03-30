@@ -1,3 +1,3 @@
-export * from './DiscountRow.styled';
-export * from './TotalRow.styled';
-export * from './TableCell.styled';
+export * from './CheckoutTable';
+export * from './CheckoutTableHead';
+export * from './CheckoutTableBody';
