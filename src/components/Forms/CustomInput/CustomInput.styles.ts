@@ -9,7 +9,9 @@ export const customInputStyles = {
     borderColor: colors.primary.main,
     color: colors.primary.main,
     borderWidth: 2,
+    borderRadius: 10,
   },
+
   '& input:invalid + fieldset': {
     borderColor: 'red',
     borderWidth: 1,
@@ -17,5 +19,6 @@ export const customInputStyles = {
 
   '& input:valid:focus + fieldset': {
     borderColor: colors.secondary.main,
+    color: colors.primary.main,
   },
 };

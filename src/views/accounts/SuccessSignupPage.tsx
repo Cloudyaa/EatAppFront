@@ -5,6 +5,7 @@ import {
   SectionWrapper,
   SpaceFix,
   SubPageWrapper,
+  TimerHomeRedirect,
 } from 'components';
 import { useViewport } from 'hooks';
 
@@ -21,6 +22,7 @@ export const SuccessSignupPage = () => {
         <ButtonLinkStyled to={'/account/login'} color="light">
           Go to login page
         </ButtonLinkStyled>
+        <TimerHomeRedirect />
       </SubPageWrapper>
     </SectionWrapper>
   );

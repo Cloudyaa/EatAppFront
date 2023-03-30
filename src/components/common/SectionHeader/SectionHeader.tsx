@@ -3,11 +3,10 @@ import { HeaderStyled } from './Header.styled';
 
 interface Props {
   children: React.ReactNode;
-  classes?: string;
 }
 
-export const SectionHeader = ({ children, classes }: Props) => (
-  <div className={`section-header__wrapper ${classes}`}>
+export const SectionHeader = ({ children }: Props) => (
+  <div className={'section-header__wrapper'}>
     <HeaderStyled>{children}</HeaderStyled>
   </div>
 );

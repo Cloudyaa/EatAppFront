@@ -12,12 +12,12 @@ interface Props {
 export const ChangeQtyBtns = ({ add, remove, qty, size }: Props) => {
   return (
     <CardBtnWrapperStyled hasChangeQty size={size}>
-      <CardBtnChangeQtyStyled size={size} type="button" onClick={add}>
-        <AddRounded />
-      </CardBtnChangeQtyStyled>
-      <span>{Math.min(qty, 20)}</span>
       <CardBtnChangeQtyStyled size={size} type="button" onClick={remove}>
         <RemoveRounded />
+      </CardBtnChangeQtyStyled>
+      <span>{Math.min(qty, 20)}</span>
+      <CardBtnChangeQtyStyled size={size} type="button" onClick={add}>
+        <AddRounded />
       </CardBtnChangeQtyStyled>
     </CardBtnWrapperStyled>
   );

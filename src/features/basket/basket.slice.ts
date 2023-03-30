@@ -11,19 +11,18 @@ export interface BasketProductEntity extends SimpleProductEntity {
 export interface BasketState {
   products: BasketProductEntity[];
   totalQty: number;
-  totalPrice: number;
+  totalValue: number;
 }
 
 const initialState: BasketState = {
   products: [],
   totalQty: 0,
-  totalPrice: 0,
+  totalValue: 0,
 };
 
 const persistConfig = {
   key: 'root',
   storage,
-  expires: 3 * 60 * 60 * 1000, // 3 hours
 };
 
 export const basketSlice = createSlice({
@@ -42,7 +41,7 @@ export const basketSlice = createSlice({
 
       // Update total
       state.totalQty += 1;
-      state.totalPrice += action.payload.price;
+      state.totalValue += action.payload.price;
     },
 
     reduceQtyInBasket(state, action: PayloadAction<string>) {
@@ -62,7 +61,7 @@ export const basketSlice = createSlice({
     clearBasket(state) {
       state.products = [];
       state.totalQty = 0;
-      state.totalPrice = 0;
+      state.totalValue = 0;
     },
   },
 });
