@@ -20,5 +20,9 @@ export const HeaderStyled = styled.h2`
   color: var(--section-header-color);
 
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  
+  @media (max-width: 800px) {
+    padding-bottom: 2rem;
+  }
 `;
