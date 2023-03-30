@@ -48,7 +48,7 @@ export const OrderCheckoutView = () => {
 
       if (res.ok) {
         dispatch(clearBasket());
-        navigate(`/user/${cookies.userId}/order/success`);
+        navigate('/basket/order/success');
       }
     } catch (e) {
       console.error(e);
