@@ -78,7 +78,7 @@ export const LoginForm = () => {
         onSubmit={async (values: AccountLoginDto) => await loginUser(values)}
         validationSchema={LoginSchema}
       >
-        {(formik) => (
+        {() => (
           <Form>
             {/* Email */}
             <CustomTextInput name="email" label="Email *" />

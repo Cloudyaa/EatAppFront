@@ -67,8 +67,8 @@ export const SignupForm = () => {
             await saveUser(values);
           }}
         >
-          {(formik) => (
-            <Form className="d-flex flex-column justify-content-center align-items-center">
+          {() => (
+            <Form>
               {/* Email */}
               <CustomTextInput name="email" label="Email *" />
 
