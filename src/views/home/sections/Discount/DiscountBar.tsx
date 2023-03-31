@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionWrapper } from 'components';
+import { MoveSectionUp, SectionWrapper } from 'components';
 import { SectionId } from 'frontTypes';
 import { DiscountWrapperStyled } from './styled';
 import { DiscountBarImage } from './DiscountBarImage';
@@ -8,12 +8,14 @@ import { DiscountBarButton } from './DiscountBarButton';
 
 export const DiscountBar = () => {
   return (
-    <SectionWrapper id={SectionId.discount} classes="home__discount" fullWidth>
-      <DiscountWrapperStyled fullWidth>
-        <DiscountBarImage />
-        <DiscountBarContent />
-        <DiscountBarButton />
-      </DiscountWrapperStyled>
-    </SectionWrapper>
+    <MoveSectionUp>
+      <SectionWrapper id={SectionId.discount} classes="home__discount" fullWidth>
+        <DiscountWrapperStyled fullWidth>
+          <DiscountBarImage />
+          <DiscountBarContent />
+          <DiscountBarButton />
+        </DiscountWrapperStyled>
+      </SectionWrapper>
+    </MoveSectionUp>
   );
 };

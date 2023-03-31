@@ -9,9 +9,7 @@ export const DiscountWrapperStyled = styled(ContainerStyled)`
   grid-auto-columns: 0.9fr 1.1fr;
   align-content: center;
   justify-content: center;
-
-  margin-top: -2rem;
-
+  
   > * {
     min-width: 100%;
     min-height: 100%;
