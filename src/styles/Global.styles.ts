@@ -20,13 +20,7 @@ export const GlobalStyles = css`
     font-size: 1.25rem;
     color: ${colors.primary.main};
   }
-
-  section,
-  footer {
-    height: var(--container-height);
-    min-height: var(--container-height);
-  }
-
+  
   main {
     height: calc(100% - 4.5rem);
   }

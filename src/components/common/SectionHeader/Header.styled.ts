@@ -6,27 +6,17 @@ type StyledHeaderProps = {
 };
 
 export const HeaderStyled = styled.h2`
-  --section-header-font: 'dejanire-headline', serif;
-  --section-header-font-weight: 700;
-  --section-header-font-style: italic;
-  --section-header-font-size: max(2.3rem, 5cqi);
-  --section-header-color: ${({ color }: StyledHeaderProps) =>
-          color === 'light' ? colors.secondary.main : colors.primary.main};
-  
-  @media (max-width: 832px) {
-    font-size: max(2rem, 4cqi);
-  }
-
-  font-family: var(--section-header-font);
-  font-weight: var(--section-header-font-weight);
-  font-style: var(--section-header-font-style);
-  font-size: var(--section-header-font-size);
-  color: var(--section-header-color);
+  font-family: 'dejanire-headline', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: ${({color}: StyledHeaderProps) => color === 'light' ? 'max(1.5em, 5cqi)' : 'max(2.3rem, 5cqi)'};
+  color: ${({color}: StyledHeaderProps) => color === 'light' ? colors.secondary.main : colors.primary.main};
 
   text-align: center;
-  padding-bottom: 3rem;
-  
+  padding-bottom: ${({color}: StyledHeaderProps) => color === 'light' ? '1rem' : '3rem'};
+
   @media (max-width: 800px) {
-    padding-bottom: 2rem;
+    font-size: ${({color}: StyledHeaderProps) => color === 'light' ? 'max(1.3em, 3cqi)' : 'max(2rem, 4cqi)'};
+    padding-bottom: ${({color}: StyledHeaderProps) => color === 'light' ? '0.5rem' : '2rem'};
   }
 `;
