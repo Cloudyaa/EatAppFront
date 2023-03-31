@@ -6,7 +6,7 @@ export const DiscountWrapperStyled = styled(ContainerStyled)`
   grid-template-areas:
     'img content'
     'img btn';
-  grid-auto-columns: 0.7fr 1.3fr;
+  grid-auto-columns: 0.9fr 1.1fr;
   align-content: center;
   justify-content: center;
 
