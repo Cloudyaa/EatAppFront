@@ -1,14 +1,18 @@
 import styled from '@emotion/styled';
 import {colors} from 'styles';
 
+type StyledHeaderProps = {
+  color?: 'light' | 'dark';
+};
 
 export const HeaderStyled = styled.h2`
   --section-header-font: 'dejanire-headline', serif;
   --section-header-font-weight: 700;
   --section-header-font-style: italic;
   --section-header-font-size: max(2.3rem, 5cqi);
-  --section-header-color: ${colors.primary.main};
-
+  --section-header-color: ${({ color }: StyledHeaderProps) =>
+          color === 'light' ? colors.secondary.main : colors.primary.main};
+  
   @media (max-width: 832px) {
     font-size: max(2rem, 4cqi);
   }
