@@ -5,7 +5,7 @@ import { HeroContainerStyled } from './styles';
 
 export const Hero = () => (
   <main id={SectionId.home} className="hero">
-    <HeroContainerStyled>
+    <HeroContainerStyled fullWidth>
       <HeroTitle />
       <HeroDescription />
       <HeroBottom />

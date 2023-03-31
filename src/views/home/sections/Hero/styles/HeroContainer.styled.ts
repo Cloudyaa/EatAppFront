@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { ContainerStyled } from 'components';
 
 export const HeroContainerStyled = styled(ContainerStyled)`
-  --container-width: 100dvw;
   display: grid;
   grid-template-areas:
     'head head side img img'
