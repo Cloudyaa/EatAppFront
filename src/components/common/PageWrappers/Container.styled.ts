@@ -5,7 +5,6 @@ interface ContainerStyledProps {
 }
 
 export const ContainerStyled = styled.div`
-  --container-height: auto;
 
   width: ${({ fullWidth }: ContainerStyledProps) =>
     fullWidth !== undefined ? '100dvw' : 'min(100% - 3rem, 80rem)'};
