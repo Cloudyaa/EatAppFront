@@ -9,6 +9,6 @@ interface Props {
 export const FatFontStyled = styled(Typography)`
   font-weight: 900;
   font-size: max(1.4rem, 2cqi);
-  padding-block: 1.3rem;
+  padding-bottom: 1.3rem;
   color: ${({ light }: Props) => (light ? colors.secondary.main : 'inherit')};
 `;
