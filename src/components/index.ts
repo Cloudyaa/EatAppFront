@@ -6,3 +6,5 @@ export * from './Logo';
 export * from './Forms';
 export * from './ProductCard';
 export * from './styled';
+export * from './Icons';
+export * from './MoveSectionUp';
