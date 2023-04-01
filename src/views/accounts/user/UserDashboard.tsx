@@ -5,10 +5,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { ButtonFull, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 import { Box } from '@mui/material';
+import { ErrorView } from '../../error';
 
 export const UserDashboard = () => {
   const [user, setUser] = useState<SafeUserEntity | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [error, setError] = useState({
+    message: '',
+    status: 0,
+  });
 
   const { user_id } = useParams();
   const navigate = useNavigate();
@@ -32,7 +36,10 @@ export const UserDashboard = () => {
       } else {
         const data: ErrorResponse = await res.json();
         if ('message' in data) {
-          setErrorMessage(data.message);
+          setError({
+            message: data.message,
+            status: data.status,
+          });
         }
       }
     })();
@@ -46,7 +53,7 @@ export const UserDashboard = () => {
   return (
     <SectionWrapper classes="user__dashboard">
       {!user ? (
-        errorMessage
+        <ErrorView errorMessage={error.message} status={error.status} />
       ) : (
         <>
           <SectionHeader>My account</SectionHeader>

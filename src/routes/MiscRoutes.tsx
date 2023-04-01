@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeView, CreditsView, NotFoundView } from '../views';
+import { HomeView, CreditsView, ErrorView } from '../views';
 import { getRoutes } from './getRoutes';
 
 export const MiscRoutes = () => {
@@ -15,7 +15,7 @@ export const MiscRoutes = () => {
 
     {
       path: '/*',
-      element: <NotFoundView />,
+      element: <ErrorView errorMessage="Page that you requested was not found" status={404} />,
     },
   ];
 
