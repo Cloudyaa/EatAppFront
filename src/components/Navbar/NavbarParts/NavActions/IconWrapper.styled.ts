@@ -9,6 +9,8 @@ export const IconWrapperStyled = styled.div`
   @media (max-width: 800px) {
     font-size: 1rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
   }
-`
+`;

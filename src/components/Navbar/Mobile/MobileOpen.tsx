@@ -1,9 +1,9 @@
 import React from 'react';
-import { Dialog } from '@mui/material';
+import { Dialog, Divider } from '@mui/material';
 import { NavActions, NavLinks } from '../NavbarParts';
 import { MobileToolbar } from './MobileToolbar';
 import { Transition } from '../Transition';
-import {colors} from "styles";
+import { colors } from 'styles';
 
 interface Props {
   isOpen: boolean;
@@ -27,7 +27,7 @@ export const MobileOpen = ({ isOpen, handleShow }: Props) => (
     <MobileToolbar handleShow={handleShow} isOpen={isOpen} />
     {/* nav body start*/}
     <NavActions handleShow={handleShow} />
-    <hr />
+    <Divider />
     <NavLinks handleShow={handleShow} />
     {/*   nav body end */}
   </Dialog>
