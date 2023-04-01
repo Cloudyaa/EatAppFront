@@ -10,11 +10,11 @@ export const customInputStyles = {
     color: colors.primary.main,
     borderWidth: 2,
     borderRadius: 10,
+    transition: 'all 0.2s ease-out',
   },
 
-  '& input:invalid + fieldset': {
-    borderColor: 'red',
-    borderWidth: 1,
+  '& input:hover + fieldset': {
+    borderColor: `${colors.secondary.main} !important`,
   },
 
   '& input:valid:focus + fieldset': {
