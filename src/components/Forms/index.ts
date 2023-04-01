@@ -4,3 +4,4 @@ export * from './CustomInput';
 export * from './ErrorMessage';
 export * from './FormWrapper';
 export * from './FormRedirect';
+export * from './ContactForm';
