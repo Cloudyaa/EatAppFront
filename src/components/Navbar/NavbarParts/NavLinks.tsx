@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionId } from 'frontTypes';
 import { offsetScroll } from 'utils';
-import { HashLinkStyled } from '../../styled';
+import { HashLinkStyled } from 'components';
 import { NavPartWrapperStyled } from './NavPartWrapper.styled';
 
 interface Props {

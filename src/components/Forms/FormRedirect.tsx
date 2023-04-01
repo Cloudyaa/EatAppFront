@@ -1,6 +1,5 @@
 import React from 'react';
-import { HashLinkStyled } from '../styled';
-import { FlexTextWrapper } from '../common';
+import { FlexTextWrapper, HashLinkStyled } from '../common';
 
 interface Props {
   to: 'login' | 'signup';
