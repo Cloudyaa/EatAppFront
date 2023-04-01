@@ -8,10 +8,10 @@ export const CreditsView = () => {
     <SectionWrapper classes="credits">
       <SectionHeader>Credits</SectionHeader>
       <SubPageWrapper>
-        <List sx={{ width: 'max(14rem, 60vw)' }}>
+        <List sx={{ width: 'max(14rem, 90vw)' }}>
           {creditsData.map((one, index) => (
             <>
-              <ListItem key={index}>
+              <ListItem key={index} sx={{ display: 'block' }}>
                 {one.type}: Image by&nbsp;
                 <OutsideLink to={one.link}>{one.by}</OutsideLink>
               </ListItem>
