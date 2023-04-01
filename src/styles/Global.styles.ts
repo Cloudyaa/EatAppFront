@@ -20,7 +20,7 @@ export const GlobalStyles = css`
     font-size: 1.25rem;
     color: ${colors.primary.main};
   }
-  
+
   main {
     height: calc(100% - 4.5rem);
   }
@@ -32,5 +32,6 @@ export const GlobalStyles = css`
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 `;
