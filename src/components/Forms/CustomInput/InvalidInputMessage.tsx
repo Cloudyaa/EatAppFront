@@ -21,7 +21,7 @@ export const InvalidInputMessage = ({ children }: Props) => {
           alignSelf: 'start',
           fontSize: '60%',
           marginInline: 1,
-          fontFamily: 'var(--main-text-font)',
+          textAlign: 'left',
         }}
       >
         {children}
