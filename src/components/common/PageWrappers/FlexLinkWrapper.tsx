@@ -6,7 +6,7 @@ interface Props {
   addSx?: object;
 }
 
-export const FlexTextWrapper = ({ children, addSx }: Props) => (
+export const FlexLinkWrapper = ({ children, addSx }: Props) => (
   <Box
     sx={{
       display: 'flex',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexTextWrapper, HashLinkStyled } from '../common';
+import { FlexLink } from '../common';
 
 interface Props {
   to: 'login' | 'signup';
@@ -7,12 +7,14 @@ interface Props {
 
 export const FormRedirect = ({ to }: Props) => {
   return (
-    <FlexTextWrapper>
+    <>
       {/* prettier-ignore */}
-      <p>{to === 'login' ? 'Already have account?' : 'Don\'t have account?'}</p>
-      <HashLinkStyled color={'light'} size={'inherit'} to={`/account/${to}`}>
-        {to === 'login' ? 'Login now!' : 'Sign up now!'}
-      </HashLinkStyled>
-    </FlexTextWrapper>
+      <FlexLink
+          text={to === 'login' ? 'Already have account?' : 'Don\'t have account?'}
+          to={`/account/${to}`}
+        >
+          {to === 'login' ? 'Login now!' : 'Sign up now!'}
+        </FlexLink>
+    </>
   );
 };

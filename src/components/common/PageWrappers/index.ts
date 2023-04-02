@@ -1,5 +1,5 @@
 export * from './SectionWrapper';
 export * from './SubPageWrapper';
 export * from './Container.styled';
-export * from './FlexTextWrapper';
+export * from './FlexLinkWrapper';
 export * from './FlexEvenlyWrapper';

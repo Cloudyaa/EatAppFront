@@ -9,14 +9,12 @@ import { useDiscount } from 'hooks';
 import { OrderDTO, OrderedProductEntity } from 'types';
 import {
   ButtonStyled,
-  FlexTextWrapper,
-  HashLinkStyled,
+  FlexLink,
   SectionHeader,
   SectionWrapper,
   SubPageWrapper,
 } from 'components';
 import { CheckoutTable } from './CheckoutTable';
-import { Typography } from '@mui/material';
 
 export const OrderCheckoutView = () => {
   const basket = useSelector((state: RootState) => state.basket);
@@ -70,12 +68,10 @@ export const OrderCheckoutView = () => {
         <h3>Your order summary</h3>
         <CheckoutTable />
         <ButtonStyled onClick={handleCheckout}>Checkout</ButtonStyled>
-        <FlexTextWrapper>
-          <Typography variant="body2">Something wrong?</Typography>
-          <HashLinkStyled color={'light'} size={'inherit'} to={'/basket'}>
-            Back to basket
-          </HashLinkStyled>
-        </FlexTextWrapper>
+
+        <FlexLink to={'/basket'} text={'Something wrong?'}>
+          Back to basket
+        </FlexLink>
       </SubPageWrapper>
     </SectionWrapper>
   );
