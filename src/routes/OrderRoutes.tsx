@@ -1,13 +1,12 @@
 import React from 'react';
-import { BasketFullView, OrderRedirectView } from '../views';
+import { BasketRedirectView, OrderRedirectView, OrderSuccessView } from 'views';
 import { getRoutes } from './getRoutes';
-import { OrderSuccessView } from '../views/order';
 
 export const BasketRouter = () => {
   const routes = [
     {
       path: '/',
-      element: <BasketFullView />,
+      element: <BasketRedirectView />,
     },
 
     {
