@@ -7,8 +7,16 @@ import { clearBasket } from 'features/basket';
 import { apiUrl } from 'config';
 import { useDiscount } from 'hooks';
 import { OrderDTO, OrderedProductEntity } from 'types';
-import { ButtonStyled, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
+import {
+  ButtonStyled,
+  FlexTextWrapper,
+  HashLinkStyled,
+  SectionHeader,
+  SectionWrapper,
+  SubPageWrapper,
+} from 'components';
 import { CheckoutTable } from './CheckoutTable';
+import { Typography } from '@mui/material';
 
 export const OrderCheckoutView = () => {
   const basket = useSelector((state: RootState) => state.basket);
@@ -62,6 +70,12 @@ export const OrderCheckoutView = () => {
         <h3>Your order summary</h3>
         <CheckoutTable />
         <ButtonStyled onClick={handleCheckout}>Checkout</ButtonStyled>
+        <FlexTextWrapper>
+          <Typography variant="body2">Something wrong?</Typography>
+          <HashLinkStyled color={'light'} size={'inherit'} to={'/basket'}>
+            Back to basket
+          </HashLinkStyled>
+        </FlexTextWrapper>
       </SubPageWrapper>
     </SectionWrapper>
   );

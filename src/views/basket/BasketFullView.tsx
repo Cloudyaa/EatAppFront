@@ -9,6 +9,7 @@ import {
   SpaceFix,
   SubPageWrapper,
   FlexTextWrapper,
+  FatFontStyled,
 } from 'components';
 import { EmptyBasketView } from './EmptyBasketView';
 import { useSelector } from 'react-redux';
@@ -25,6 +26,8 @@ export const BasketFullView = () => {
   const basket = useSelector((state: RootState) => state.basket);
   const dispatch = useAppDispatch();
 
+  const toSpend = basket.totalValue < 50 ? 50 - basket.totalValue : 0;
+
   return (
     <SectionWrapper classes="basket__full">
       <SectionHeader>Your basket</SectionHeader>
@@ -36,6 +39,22 @@ export const BasketFullView = () => {
             Clear basket
           </ButtonStyled>
           <SpaceFix />
+
+          {toSpend > 0 && (
+            <Typography
+              sx={{
+                fontSize: '1.1rem',
+                color: colors.primary.light,
+                marginBottom: 2,
+              }}
+            >
+              Spend&nbsp;
+              <FatFontStyled as="span" color="light">
+                {pricier.format(toSpend)}
+              </FatFontStyled>
+              &nbsp;more to get free delivery!
+            </Typography>
+          )}
 
           <BasketGridContainerStyled>
             {basket.products.map((one) => (
@@ -66,11 +85,7 @@ export const BasketFullView = () => {
             sx={{ color: colors.dark.light, marginBlock: 2 }}
           ></Chip>
 
-          <ButtonLinkStyled
-            to={'/basket/order/checkout'}
-            size={'large'}
-            // onClick={() => console.log(basket)}
-          >
+          <ButtonLinkStyled to={'/basket/order/checkout'} size={'large'}>
             Proceed to checkout
           </ButtonLinkStyled>
         </SubPageWrapper>

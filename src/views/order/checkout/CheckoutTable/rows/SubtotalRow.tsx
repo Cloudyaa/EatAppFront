@@ -10,7 +10,7 @@ export const SubtotalRow = () => {
 
   return (
     <MutedRowStyled>
-      <TableCell rowSpan={3} />
+      <TableCell rowSpan={4} />
       <TableCellStyled colSpan={2}>Subtotal</TableCellStyled>
       <TableCellStyled align="right">{pricier.format(basket.totalValue)}</TableCellStyled>
     </MutedRowStyled>
