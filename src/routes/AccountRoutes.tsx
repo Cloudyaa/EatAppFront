@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginPage, SignupPage, SuccessSignupPage } from '../views';
+import { LoginPage, SignupPage, SuccessSignupPage } from 'views';
 import { getRoutes } from './getRoutes';
 
 export const AccountRoutes = () => {

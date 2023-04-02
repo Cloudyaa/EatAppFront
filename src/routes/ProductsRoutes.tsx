@@ -1,5 +1,5 @@
 import React from 'react';
-import { AllProductsView, SearchResultsView, SingleProductView } from '../views';
+import { AllProductsView, SearchResultsView, SingleProductView } from 'views';
 import { getRoutes } from './getRoutes';
 
 export const ProductsRoutes = () => {

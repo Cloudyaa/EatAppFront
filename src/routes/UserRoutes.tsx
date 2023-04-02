@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserDashboard } from '../views';
+import { UserDashboard } from 'views';
 import { getRoutes } from './getRoutes';
 
 export const UserRoutes = () => {

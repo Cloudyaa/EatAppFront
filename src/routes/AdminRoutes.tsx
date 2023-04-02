@@ -1,6 +1,6 @@
 import React from 'react';
 import { getRoutes } from './getRoutes';
-import { AdminDashboard } from '../views';
+import { AdminDashboard } from 'views';
 
 export const AdminRoutes = () => {
   const routes = [

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeView, CreditsView, ErrorView } from '../views';
+import { HomeView, CreditsView, ErrorView } from 'views';
 import { getRoutes } from './getRoutes';
 
 export const MiscRoutes = () => {
