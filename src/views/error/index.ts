@@ -1,2 +1,2 @@
-export * from './NotFoundView';
+export * from './400';
 export * from './PleaseLogInView';
