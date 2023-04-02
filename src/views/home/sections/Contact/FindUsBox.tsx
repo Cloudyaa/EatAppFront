@@ -7,7 +7,7 @@ import { ContactIcons } from './ContactIcons';
 export const FindUsBox = () => {
   return (
     <Box sx={{ gridArea: 'findUs', paddingTop: '1.5rem' }}>
-      <FatFontStyled light>Find us there</FatFontStyled>
+      <FatFontStyled color="light">Find us there</FatFontStyled>
       <ContactAddress />
       <SpaceFix />
       <ContactIcons />
