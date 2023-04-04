@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { AppDispatch, RootState } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProductQty } from 'features/basket';
-import { useSkeletons } from 'hooks';
+import { useProductSeletons } from 'hooks';
 import { fetchProducts } from 'features/product';
 import { apiUrl } from 'config';
 import {
@@ -30,7 +30,7 @@ export const SearchResultsView = () => {
   const getProductQty = useSelector(selectProductQty);
 
   const { search_query } = useParams();
-  const { skeletons } = useSkeletons('md', 3);
+  const { skeletons } = useProductSeletons('md', 3);
 
   useEffect(() => {
     dispatch(fetchProducts(`${apiUrl}/products/search/${search_query}`));

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Skeleton, Stack } from '@mui/material';
 
-export const SkeletonMedium = () => {
+export const ProductSkeleton = () => {
   return (
     <Stack spacing={1} sx={{ maxWidth: 350 }}>
       <Skeleton variant="rounded" height={230} sx={{ maxWidth: 350 }} />
