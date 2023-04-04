@@ -3,8 +3,9 @@ import { SafeUserEntity, ErrorResponse } from 'types';
 import { apiUrl } from 'config';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import { ButtonFull, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 import { Box } from '@mui/material';
+import { ButtonFull, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
+import { UsersOrderTable } from './UserOrdersTable';
 import { ErrorView } from '../../error';
 
 export const UserDashboard = () => {
@@ -17,11 +18,11 @@ export const UserDashboard = () => {
   const { user_id } = useParams();
   const navigate = useNavigate();
 
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const [cookies, , removeCookie] = useCookies();
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(`${apiUrl}/user/${user_id}/dashboard`, {
+      const userRes = await fetch(`${apiUrl}/user/${user_id}/dashboard`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -29,12 +30,11 @@ export const UserDashboard = () => {
         },
       });
 
-      if (res.ok) {
-        const data: SafeUserEntity = await res.json();
-
+      if (userRes.ok) {
+        const data: SafeUserEntity = await userRes.json();
         setUser(data);
       } else {
-        const data: ErrorResponse = await res.json();
+        const data: ErrorResponse = await userRes.json();
         if ('message' in data) {
           setError({
             message: data.message,
@@ -56,9 +56,10 @@ export const UserDashboard = () => {
         <ErrorView errorMessage={error.message} status={error.status} />
       ) : (
         <>
-          <SectionHeader>My account</SectionHeader>
+          <SectionHeader>Hello {user.email.split('@')[0]}</SectionHeader>
           <SubPageWrapper>
-            <p>Created at: {user.createdAt}</p>
+            <h3>Your orders</h3>
+            <UsersOrderTable />
             <Box sx={{ maxWidth: '40ch' }}>
               <ButtonFull onClick={handleLogout}>Log out</ButtonFull>
             </Box>
