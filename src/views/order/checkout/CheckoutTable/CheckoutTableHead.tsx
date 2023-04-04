@@ -1,6 +1,6 @@
 import React from 'react';
 import { TableCell, TableHead } from '@mui/material';
-import { HeadRowStyled } from './rows/styles';
+import { HeadRowStyled } from 'components';
 
 export const CheckoutTableHead = () => {
   const columnHeads = ['Name', 'Net price', 'Ordered qty', 'Total price'];

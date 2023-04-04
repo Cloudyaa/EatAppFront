@@ -1,7 +1,7 @@
 import React from 'react';
 import { TableCell } from '@mui/material';
 import { pricier } from 'utils';
-import { TotalRowStyled } from './styles';
+import { TotalRowStyled } from 'components';
 
 interface Props {
   total: number;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MutedRowStyled, TableCellStyled } from './styles';
+import { MutedRowStyled, TableCellStyled } from 'components';
 import { pricier } from 'utils';
 
 interface Props {

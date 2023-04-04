@@ -1,6 +1,6 @@
 import React from 'react';
 import { TableCell } from '@mui/material';
-import { MutedRowStyled, TableCellStyled } from './styles';
+import { MutedRowStyled, TableCellStyled } from 'components';
 import { pricier } from 'utils';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
