@@ -15,7 +15,7 @@ export const BasketRouter = () => {
     },
 
     {
-      path: '/order/success',
+      path: '/order/success/:order_number',
       element: <OrderSuccessView />,
     },
   ];

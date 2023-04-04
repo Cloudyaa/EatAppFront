@@ -1,7 +1,7 @@
 import React from 'react';
 import { TableBody, TableRow } from '@mui/material';
 import { OrderEntity } from 'types';
-import { pricier } from 'utils';
+import { pricier, makeOrderNumber } from 'utils';
 import { TableCellStyled } from 'components';
 import moment from 'moment';
 
@@ -15,7 +15,7 @@ export const UserOrdersTableBody = ({ orders }: Props) => {
       {orders &&
         orders.map((one) => (
           <TableRow key={one.orderId}>
-            <TableCellStyled>{one.orderNo.toString().padStart(4, '0')}</TableCellStyled>
+            <TableCellStyled>{makeOrderNumber(one.orderNo)}</TableCellStyled>
             <TableCellStyled align="right">
               {moment.utc(one.createdAt).format('DD-MM-YYYY')}
             </TableCellStyled>

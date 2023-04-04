@@ -6,14 +6,8 @@ import { RootState, useAppDispatch } from 'store';
 import { clearBasket } from 'features/basket';
 import { apiUrl } from 'config';
 import { useDiscount } from 'hooks';
-import { OrderDTO, OrderedProductEntity } from 'types';
-import {
-  ButtonStyled,
-  FlexLink,
-  SectionHeader,
-  SectionWrapper,
-  SubPageWrapper,
-} from 'components';
+import { OrderDTO, OrderedProductEntity, SuccessOrderResponse } from 'types';
+import { ButtonStyled, FlexLink, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 import { CheckoutTable } from './CheckoutTable';
 
 export const OrderCheckoutView = () => {
@@ -53,8 +47,9 @@ export const OrderCheckoutView = () => {
       });
 
       if (res.ok) {
+        const data: SuccessOrderResponse = await res.json();
         dispatch(clearBasket());
-        navigate('/basket/order/success');
+        navigate(`/basket/order/success/${data.orderNumber}`);
       }
     } catch (e) {
       console.error(e);
