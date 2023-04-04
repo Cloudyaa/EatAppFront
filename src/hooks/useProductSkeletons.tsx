@@ -1,7 +1,7 @@
 import { ProductSkeleton } from 'components';
 import React from 'react';
 
-export const useProductSeletons = (size: 'sm' | 'md', qty: number) => {
+export const useProductSkeletons = (size: 'sm' | 'md', qty: number) => {
   const skeletons: JSX.Element[] = [];
   if (size === 'md') {
     for (let i = 0; i < qty; i++) {

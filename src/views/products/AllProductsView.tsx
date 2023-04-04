@@ -4,7 +4,7 @@ import { AppDispatch, RootState } from 'store';
 import { fetchProducts } from 'features/product';
 import { selectProductQty } from 'features/basket';
 import { apiUrl } from 'config';
-import { useProductSeletons } from 'hooks';
+import { useProductSkeletons } from 'hooks';
 import {
   AutoGridContainerStyled,
   ProductCard,
@@ -18,7 +18,7 @@ export const AllProductsView = () => {
   const products = useSelector((state: RootState) => state.products.products);
   const getProductQty = useSelector(selectProductQty);
 
-  const { skeletons } = useProductSeletons('md', 3);
+  const { skeletons } = useProductSkeletons('md', 3);
 
   useEffect(() => {
     dispatch(fetchProducts(`${apiUrl}/products/search`));
