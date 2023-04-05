@@ -51,21 +51,23 @@ export const UserDashboard = () => {
   };
 
   return (
-    <SectionWrapper classes="user__dashboard">
+    <>
       {!user ? (
         <ErrorView errorMessage={error.message} status={error.status} />
       ) : (
-        <>
-          <SectionHeader>Hello {user.email.split('@')[0]}</SectionHeader>
-          <SubPageWrapper>
-            <h3>Your orders</h3>
-            <UsersOrderTable />
-            <Box sx={{ maxWidth: '40ch' }}>
-              <ButtonFull onClick={handleLogout}>Log out</ButtonFull>
-            </Box>
-          </SubPageWrapper>
-        </>
+        <SectionWrapper classes="user__dashboard">
+          <>
+            <SectionHeader>Hello {user.email.split('@')[0]}</SectionHeader>
+            <SubPageWrapper>
+              <h3>Your orders</h3>
+              <UsersOrderTable />
+              <Box sx={{ maxWidth: '40ch' }}>
+                <ButtonFull onClick={handleLogout}>Log out</ButtonFull>
+              </Box>
+            </SubPageWrapper>
+          </>
+        </SectionWrapper>
       )}
-    </SectionWrapper>
+    </>
   );
 };
