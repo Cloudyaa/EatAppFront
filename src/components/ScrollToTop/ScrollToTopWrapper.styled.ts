@@ -16,6 +16,7 @@ export const ScrollToTopWrapperStyled = styled.div`
   margin: 0 !important;
   padding: 0 !important;
   transition: all 0.4s ease-in-out;
+  z-index: 100;
 
   > button {
     color: unset;
