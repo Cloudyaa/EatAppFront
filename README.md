@@ -38,7 +38,8 @@ Please note that you will be running only static Front-End version of this app, 
 
 ## Future
 
-Next step in this project is to create an Admin dashboard and improve user dashboard, including: 
-- possibility to add delivery address,
+Incoming improvements and updates: 
+- admin dashboard to manage products and orders,
+- possibility to add delivery address on user dashboard,
 - show delivery address on checkout view
 
