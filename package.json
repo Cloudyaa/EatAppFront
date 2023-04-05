@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "vite --port 3000",
-    "build": "tsc && vite build",
+    "build": "set VITE_API_URL=/api&& tsc && vite build",
     "test": "jest src"
   },
   "eslintConfig": {
