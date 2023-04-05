@@ -42,4 +42,5 @@ Incoming improvements and updates:
 - admin dashboard to manage products and orders,
 - possibility to add delivery address on user dashboard,
 - show delivery address on checkout view
+- single product page with product's nutrition info
 
