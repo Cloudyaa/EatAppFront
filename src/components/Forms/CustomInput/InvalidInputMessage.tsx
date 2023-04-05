@@ -1,19 +1,18 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import { useColor } from 'hooks';
+import { Box, Typography, useTheme } from '@mui/material';
 
 interface Props {
   children: React.ReactNode;
 }
 
 export const InvalidInputMessage = ({ children }: Props) => {
-  const { dangerColor } = useColor();
+  const theme = useTheme();
   return (
     <Box
       sx={{
         mt: 0.5,
         boxSizing: 'border-box',
-        borderLeft: `5px solid ${dangerColor}`,
+        borderLeft: `5px solid ${theme.palette.error.main}`,
       }}
     >
       <Typography
@@ -22,7 +21,7 @@ export const InvalidInputMessage = ({ children }: Props) => {
           alignSelf: 'start',
           fontSize: '60%',
           marginInline: 1,
-          fontFamily: 'var(--main-text-font)',
+          textAlign: 'left',
         }}
       >
         {children}

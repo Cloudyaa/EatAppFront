@@ -22,4 +22,20 @@ export const LogoStyled = styled.div`
     text-align: center;
     width: fit-content;
   }
+
+  @media (max-width: 800px) {
+    font-size: ${({ size }: LogoStyledProps) =>
+      size === 'small' ? '2rem' : size === 'medium' ? '3rem' : size === 'large' ? '8.2vw' : '2rem'};
+  }
+
+  @media (max-width: 420px) {
+    font-size: ${({ size }: LogoStyledProps) =>
+      size === 'small'
+        ? '2rem'
+        : size === 'medium'
+        ? '2.4rem'
+        : size === 'large'
+        ? '8.2vw'
+        : '2rem'};
+  }
 `;

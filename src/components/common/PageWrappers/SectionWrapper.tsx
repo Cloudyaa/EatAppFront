@@ -7,11 +7,12 @@ interface Props {
   classes?: string;
   id?: SectionId;
   children: React.ReactNode;
+  fullWidth?: boolean;
 }
 
-export const SectionWrapper = ({ classes, id, children }: Props) => (
+export const SectionWrapper = ({ classes, id, children, fullWidth }: Props) => (
   <section id={id} className={classes}>
     <SpaceFix />
-    <ContainerStyled>{children}</ContainerStyled>
+    <ContainerStyled fullWidth={fullWidth}>{children}</ContainerStyled>
   </section>
 );

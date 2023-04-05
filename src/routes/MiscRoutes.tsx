@@ -1,18 +1,23 @@
 import React from 'react';
-import { HomeView, NotFoundView } from '../views';
+import { HomeView, CreditsView, ErrorView } from 'views';
 import { getRoutes } from './getRoutes';
 
 export const MiscRoutes = () => {
   const routes = [
     {
-      path: '',
+      path: '/',
       element: <HomeView />,
     },
     {
-      path: '*',
-      element: <NotFoundView />,
+      path: '/credits',
+      element: <CreditsView />,
+    },
+
+    {
+      path: '/*',
+      element: <ErrorView errorMessage="Page that you requested was not found" status={404} />,
     },
   ];
 
-  return getRoutes('/', routes);
+  return getRoutes('', routes);
 };

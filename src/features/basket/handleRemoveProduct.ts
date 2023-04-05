@@ -15,7 +15,7 @@ export const handleRemoveProduct = (
 
     // Update total
     state.totalQty -= qtyToRemove;
-    state.totalPrice -= productPrice * qtyToRemove;
+    state.totalValue -= productPrice * qtyToRemove;
 
     if (qtyToRemove >= productQty) {
       // Remove product from basket

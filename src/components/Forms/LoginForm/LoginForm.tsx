@@ -58,7 +58,7 @@ export const LoginForm = () => {
   if (apiResponse && apiResponse.status === 200 && apiResponse.token) {
     // if user
     if (apiResponse.role === 'user') {
-      navigate(`/user/dashboard/${apiResponse.userId}`);
+      navigate(`/user/${apiResponse.userId}/dashboard`);
     }
     // if admin
     if (apiResponse.role === 'admin') {
@@ -78,21 +78,13 @@ export const LoginForm = () => {
         onSubmit={async (values: AccountLoginDto) => await loginUser(values)}
         validationSchema={LoginSchema}
       >
-        {(formik) => (
+        {() => (
           <Form>
             {/* Email */}
             <CustomTextInput name="email" label="Email *" />
 
             {/* Password */}
-            <CustomPasswordInput
-              sx={{
-                borderColor: 'var(--color-primary)',
-                color: 'var(--color-primary)',
-                borderWidth: '2px !important',
-              }}
-              name="password"
-              label="Password *"
-            />
+            <CustomPasswordInput name="password" label="Password *" />
 
             <ButtonFull>Submit</ButtonFull>
 

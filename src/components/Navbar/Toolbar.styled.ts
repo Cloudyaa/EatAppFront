@@ -3,7 +3,7 @@ import { Toolbar } from '@mui/material';
 import { styled } from '@mui/system';
 
 export const ToolbarStyled = styled(Toolbar)`
-  display: grid !important;
+  display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr 4.1rem 1fr;
   background: ${colors.light.main} !important;
@@ -12,5 +12,6 @@ export const ToolbarStyled = styled(Toolbar)`
   @media (max-width: 800px) {
     display: flex;
     justify-content: space-between;
+    margin-inline: 0;
   }
 `;

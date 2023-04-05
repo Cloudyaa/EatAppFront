@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
 
-export const ContainerStyled = styled.div`
-  --container-width: min(100% - 3rem, 80rem);
-  --container-height: auto;
+interface ContainerStyledProps {
+  fullWidth?: boolean;
+}
 
-  width: var(--container-width);
+export const ContainerStyled = styled.div`
+
+  width: ${({ fullWidth }: ContainerStyledProps) =>
+    fullWidth !== undefined ? '100dvw' : 'min(100% - 3rem, 80rem)'};
+  height: auto;
   min-height: 100%;
   max-height: fit-content;
   margin-inline: auto;

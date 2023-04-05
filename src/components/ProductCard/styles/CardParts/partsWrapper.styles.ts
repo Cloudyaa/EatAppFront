@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { colors } from 'styles';
 
 export const imageWrapperStyles = () => css`
   grid-area: img;
@@ -19,7 +20,7 @@ export const nameWrapperStyles = (size?: 'small' | 'medium' | 'large') => css`
 `;
 
 export const priceWrapperStyles = (size?: 'small' | 'medium' | 'large') => css`
-  color: var(--color-muted);
+  color: ${colors.dark.light};
   grid-area: price;
   align-self: end;
   justify-self: start;

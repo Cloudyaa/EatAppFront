@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ProductCard } from 'components';
 import { apiUrl } from 'config';
-import { useSkeletons } from 'hooks';
+import { useProductSkeletons } from 'hooks';
 import { AppDispatch, RootState } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from 'features/product';
@@ -15,7 +15,7 @@ export const BestsellersProductsContainer = () => {
 
   const getProductQty = useSelector(selectProductQty);
 
-  const { skeletons } = useSkeletons('md', 3);
+  const { skeletons } = useProductSkeletons('md', 3);
 
   useEffect(() => {
     dispatch(fetchProducts(`${apiUrl}/products/bestsellers`));

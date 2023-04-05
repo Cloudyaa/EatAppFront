@@ -1,4 +1,5 @@
 export * from './useViewport';
 export * from './useButton';
-export * from './useColor';
-export * from './useSkeletons';
+export * from './useDiscount';
+export * from './useProductSkeletons';
+export * from './useRedirectToHome';

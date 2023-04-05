@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Formik } from 'formik';
-import { Box } from '@mui/material';
 import { SignupSchema } from 'utils';
 import { apiUrl } from 'config';
 import {
@@ -8,7 +7,6 @@ import {
   FormWrapper,
   ErrorMessage,
   ButtonFull,
-  SpaceFix,
   CustomPasswordInput,
   CustomTextInput,
 } from 'components';
@@ -20,12 +18,6 @@ export const SignupForm = () => {
   const [errorResponse, setErrorResponse] = useState<ErrorResponse | null>(null);
 
   const navigate = useNavigate();
-
-  const handleFormReset = () => {
-    setTimeout(() => {
-      //  resStatus !== 400 && formik.resetForm();
-    }, 1000);
-  };
 
   const saveUser = async (values: AccountSignupDto) => {
     try {
@@ -72,12 +64,11 @@ export const SignupForm = () => {
           }}
           validationSchema={SignupSchema}
           onSubmit={async (values: AccountSignupDto) => {
-            // alert(JSON.stringify(values, null, 2));
             await saveUser(values);
           }}
         >
-          {(formik) => (
-            <Form className="d-flex flex-column justify-content-center align-items-center">
+          {() => (
+            <Form>
               {/* Email */}
               <CustomTextInput name="email" label="Email *" />
 
@@ -87,24 +78,11 @@ export const SignupForm = () => {
               {/* Confirm password */}
               <CustomPasswordInput name="confirmPassword" label="Confirm password *" />
 
-              <ButtonFull onClick={handleFormReset}>Submit</ButtonFull>
-
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.9rem',
-                  mt: 1,
-                }}
-              >
-                <FormRedirect to="login"></FormRedirect>
-              </Box>
+              <ButtonFull>Submit</ButtonFull>
+              <FormRedirect to="login"></FormRedirect>
             </Form>
           )}
         </Formik>
-        <SpaceFix />
       </FormWrapper>
     </>
   );

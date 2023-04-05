@@ -14,7 +14,7 @@ const CustomButton = styled(ButtonUnstyled)`
   padding: 12px 24px;
   font-size: 1.3rem;
   font-family: "arboria", sans-serif;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 2rem;
   transition: all 200ms ease-out;
   cursor: pointer;

@@ -7,5 +7,4 @@ export const typography: TypographyOptions = {
     fontWeight: 600,
     lineHeight: 1.2,
   },
-  // //
 };
