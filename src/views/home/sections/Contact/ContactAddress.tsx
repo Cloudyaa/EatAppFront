@@ -3,14 +3,14 @@ import { FlexEvenlyWrapper } from 'components';
 import { Box, Typography } from '@mui/material';
 
 export const ContactAddress = () => (
-  <FlexEvenlyWrapper>
+  <FlexEvenlyWrapper addSx={{ alignItems: 'center' }}>
     <Box sx={{ textAlign: 'left' }}>
-      <Typography>81 Wern Ddu Lane</Typography>
+      <Typography>81 Wern Ddu Lane&nbsp;</Typography>
       <Typography>Ludborough</Typography>
       <Typography>DN36 7UT</Typography>
       <Typography>United Kingdom</Typography>
     </Box>
-    <Box sx={{ textAlign: 'right', paddingLeft: 10}}>
+    <Box sx={{ textAlign: 'right' }}>
       <Typography>contact@eat.com</Typography>
       <Typography>077 3483 7229</Typography>
     </Box>
