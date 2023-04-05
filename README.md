@@ -15,7 +15,7 @@ Eat is a web app for groceries delivery.
 
 This is Front-End repository of this app. If you would like see Back-end, click [here](https://github.com/Cloudyaa/EatAppBack).
 
-Live version deployed on Netlify available [here](https://eatapp.netlify.app/).
+Live version available [here](https://www.eat.cloudyaa.networkmanager.pl/).
 
 ## Try this app
 
