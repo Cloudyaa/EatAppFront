@@ -10,10 +10,9 @@ export const ContactAddress = () => (
       <Typography>DN36 7UT</Typography>
       <Typography>United Kingdom</Typography>
     </Box>
-    <Box sx={{ textAlign: 'right' }}>
+    <Box sx={{ textAlign: 'right', paddingLeft: 10}}>
       <Typography>contact@eat.com</Typography>
       <Typography>077 3483 7229</Typography>
     </Box>
   </FlexEvenlyWrapper>
 );
-
