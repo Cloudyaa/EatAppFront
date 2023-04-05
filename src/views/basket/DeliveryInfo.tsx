@@ -18,6 +18,7 @@ export const DeliveryInfo = () => {
             fontSize: '1.1rem',
             color: colors.primary.light,
             marginBottom: 2,
+            textAlign: 'center',
           }}
         >
           Spend&nbsp;
