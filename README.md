@@ -43,4 +43,5 @@ Incoming improvements and updates:
 - possibility to add delivery address on user dashboard,
 - show delivery address on checkout view
 - single product page with product's nutrition info
+- sending message through contact form (now it doesn't send it anywhere')
 
