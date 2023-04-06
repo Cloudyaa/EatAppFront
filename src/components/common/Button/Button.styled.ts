@@ -43,27 +43,4 @@ export const ButtonStyled = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  //&-light {
-  //  --btn-background: var(--color-secondary);
-  //}
-  //
-  //&-dark {
-  //  --btn-background: var(--color-primary);
-  //}
-  //
-  //&-big {
-  //  --btn-font-size: 1.2rem;
-  //  --btn-padding: 14px 30px;
-  //}
-  //
-  //&-xl {
-  //  --btn-font-size: 1.6rem;
-  //  --btn-padding: 14px 30px;
-  //}
-  //
-  //&-small {
-  //  --btn-font-size: 1rem;
-  //  --btn-padding: 8px 20px;
-  //}
 `;
