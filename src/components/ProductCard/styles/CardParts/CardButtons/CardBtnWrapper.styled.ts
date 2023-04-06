@@ -3,6 +3,7 @@ export interface ButtonGroupProps {
   hasChangeQty?: boolean;
   hasAdd?: boolean;
   size?: 'small' | 'medium' | 'large';
+  disabled?: boolean;
 }
 
 export const CardBtnWrapperStyled = styled.div<ButtonGroupProps>`
