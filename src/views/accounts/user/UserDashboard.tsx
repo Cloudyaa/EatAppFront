@@ -45,14 +45,14 @@ export const UserDashboard = () => {
 
   return (
     <>
-      {user === null ? (
+      {!user && !error ? (
         <Loader />
-      ) : !user ? (
+      ) : !user && error ? (
         <ErrorView errorMessage={error.message} status={error.status} />
       ) : (
         <SectionWrapper classes="user__dashboard">
           <>
-            <SectionHeader>Hello {user.email.split('@')[0]}</SectionHeader>
+            <SectionHeader>Hello {user?.email.split('@')[0]}</SectionHeader>
             <SubPageWrapper>
               <h3>Your orders</h3>
               <UsersOrderTable />
