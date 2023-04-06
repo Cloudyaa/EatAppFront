@@ -19,7 +19,7 @@ export const LoginForm = () => {
   const [errorResponse, setErrorResponse] = useState<ErrorResponse | null>(null);
 
   // eslint-disable-next-line
-  const [cookies, setCookie, removeCookie] = useCookies(['token', 'userId']);
+  const [, setCookie, ] = useCookies(['token', 'userId', 'role']);
 
   const navigate = useNavigate();
 
@@ -45,6 +45,7 @@ export const LoginForm = () => {
 
         setCookie('token', data.token, { ...cookieOptions });
         setCookie('userId', data.userId, { ...cookieOptions });
+        setCookie('role', data.role, { ...cookieOptions });
       } else {
         const data: ErrorResponse = await res.json();
         setErrorResponse(data);
@@ -62,7 +63,7 @@ export const LoginForm = () => {
     }
     // if admin
     if (apiResponse.role === 'admin') {
-      navigate(`/admin/${apiResponse.userId}`);
+      navigate(`/admin/${apiResponse.userId}/dashboard`);
     }
   }
 

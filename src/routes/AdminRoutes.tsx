@@ -5,7 +5,7 @@ import { AdminDashboard } from 'views';
 export const AdminRoutes = () => {
   const routes = [
     {
-      path: '/:admin_id',
+      path: '/:admin_id/dashboard',
       element: <AdminDashboard />,
     },
   ];
