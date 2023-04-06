@@ -12,21 +12,9 @@ import {
   BasketRouter,
 } from './routes';
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { GlobalStyles, typography } from 'styles';
+import { ThemeProvider } from '@mui/material/styles';
+import { GlobalStyles, theme } from 'styles';
 import { Global } from '@emotion/react';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#32515b',
-    },
-    secondary: {
-      main: '#ffa101',
-    },
-  },
-  typography,
-});
 
 export const App = () => {
   const [search, setSearch] = useState('');
