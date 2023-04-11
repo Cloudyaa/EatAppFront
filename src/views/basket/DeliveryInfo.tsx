@@ -12,22 +12,26 @@ export const DeliveryInfo = () => {
 
   return (
     <>
-      {toSpend > 0 && (
-        <Typography
-          sx={{
-            fontSize: '1.1rem',
-            color: colors.primary.light,
-            marginBottom: 2,
-            textAlign: 'center',
-          }}
-        >
-          Spend&nbsp;
-          <FatFontStyled as="span" color="light">
-            {pricier.format(toSpend)}
-          </FatFontStyled>
-          &nbsp;more to get free delivery!
-        </Typography>
-      )}
+      <Typography
+        sx={{
+          fontSize: '1.1rem',
+          color: colors.primary.light,
+          marginBottom: 2,
+          textAlign: 'center',
+        }}
+      >
+        {toSpend > 0 ? (
+          <>
+            Spend&nbsp;
+            <FatFontStyled as="span" color="light">
+              {pricier.format(toSpend)}
+            </FatFontStyled>
+            &nbsp;more to get free delivery!
+          </>
+        ) : (
+          <>You are eligible for free delivery!</>
+        )}
+      </Typography>
     </>
   );
 };

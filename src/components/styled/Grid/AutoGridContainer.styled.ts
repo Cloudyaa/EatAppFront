@@ -17,7 +17,7 @@ export const AutoGridContainerStyled = styled.div<AutoGridContainerProps>`
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem 1rem;
   }
-  @media (max-width: 470px) {
+  @media (max-width: 560px) {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
     gap: 3rem 0;
