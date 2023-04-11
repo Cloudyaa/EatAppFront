@@ -21,9 +21,12 @@ export const CardBtnWrapperStyled = styled.div<ButtonGroupProps>`
     font-size: ${({ size }: ButtonGroupProps) => (size === 'small' ? '1rem' : 'inherit')};
   }
 
-  @media (min-width: 800px) {
-    ${({ hasChangeQty }: ButtonGroupProps) =>
-      hasChangeQty && 'justify-content : space-between ; gap :0 ;'}
-    ${({ hasAdd }: ButtonGroupProps) => hasAdd && 'justify-content : end ;'}
+  @media (max-width: 860px) {
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 600px) {
+    position: ${({ size }: ButtonGroupProps) => size === 'small' && 'absolute'};
+    left: ${({ size }: ButtonGroupProps) => size === 'small' && '-13dvw'};
   }
 `;
