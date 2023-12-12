@@ -3,7 +3,7 @@ import { CardPartWrapperStyled } from './styles';
 
 interface Props {
   children: React.ReactNode;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xl';
 }
 
 export const ProductName = ({ children, size }: Props) => (

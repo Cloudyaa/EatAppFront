@@ -7,7 +7,7 @@ interface Props {
   add: () => void;
   remove: () => void;
   qty: number;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xl';
 }
 
 export const ChangeQtyBtns = ({ add, remove, qty, size }: Props) => {

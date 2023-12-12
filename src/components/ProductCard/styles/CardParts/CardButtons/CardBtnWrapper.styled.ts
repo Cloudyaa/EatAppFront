@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 export interface ButtonGroupProps {
   hasChangeQty?: boolean;
   hasAdd?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xl';
   disabled?: boolean;
 }
 
@@ -18,7 +18,8 @@ export const CardBtnWrapperStyled = styled.div<ButtonGroupProps>`
   max-width: 100%;
 
   & > * {
-    font-size: ${({ size }: ButtonGroupProps) => (size === 'small' ? '1rem' : 'inherit')};
+    font-size: ${({ size }: ButtonGroupProps) =>
+      size === 'small' ? '1rem' : size === 'xl' ? '1.5rem' : 'inherit'};
   }
 
   @media (max-width: 860px) {
