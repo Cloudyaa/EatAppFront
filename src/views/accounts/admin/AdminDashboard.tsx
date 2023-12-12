@@ -21,7 +21,7 @@ export const AdminDashboard = () => {
 
   useEffect(() => {
     (async () => {
-      const userRes = await fetch(`${apiUrl}/admin/${admin_id}/dashboard`, {
+      const res = await fetch(`${apiUrl}/admin/${admin_id}/dashboard`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -29,11 +29,11 @@ export const AdminDashboard = () => {
         },
       });
 
-      if (userRes.ok) {
-        const data: AdminEntityResponse = await userRes.json();
+      if (res.ok) {
+        const data: AdminEntityResponse = await res.json();
         setAdmin(data);
       } else {
-        const data: ErrorResponse = await userRes.json();
+        const data: ErrorResponse = await res.json();
         if ('message' in data) {
           setError({
             message: data.message,
@@ -53,7 +53,7 @@ export const AdminDashboard = () => {
       ) : !admin && error ? (
         <ErrorView errorMessage={error.message} status={error.status} />
       ) : (
-        <SectionWrapper classes="user__dashboard">
+        <SectionWrapper classes="admin__dashboard">
           <SectionHeader>Admin dashboard</SectionHeader>
           <SubPageWrapper>
             <Typography>
