@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface ProductImageStyledProps {
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xl';
 }
 
 export const ProductImageStyled = styled.img<ProductImageStyledProps>`
@@ -10,13 +10,7 @@ export const ProductImageStyled = styled.img<ProductImageStyledProps>`
   object-fit: cover;
 
   max-height: ${({ size }: ProductImageStyledProps) =>
-    size === 'small'
-      ? '140px'
-      : size === 'medium'
-      ? '280px'
-      : size === 'large'
-      ? '420px'
-      : 'unset'};
+    size === 'small' ? '140px' : size === 'medium' ? '280px' : size === 'xl' ? '420px' : 'unset'};
 
   min-height: ${({ size }: ProductImageStyledProps) => (size === 'small' ? '100%' : 'unset')};
 `;

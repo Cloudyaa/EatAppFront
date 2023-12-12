@@ -3,7 +3,7 @@ import { CardPartWrapperStyled, ProductImageStyled } from './styles';
 
 interface Props {
   productName: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xl';
 }
 
 export const ProductImage = ({ productName, size }: Props) => {

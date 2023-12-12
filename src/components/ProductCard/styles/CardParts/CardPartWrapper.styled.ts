@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
-import { imageWrapperStyles, nameWrapperStyles, priceWrapperStyles } from './partsWrapper.styles';
+import {
+  descriptionWrapperStyles,
+  imageWrapperStyles,
+  nameWrapperStyles,
+  priceWrapperStyles,
+} from './partsWrapper.styles';
 
 type ProductCardProps = {
-  gridArea: 'img' | 'name' | 'price';
-  size?: 'small' | 'medium' | 'large';
+  gridArea: 'img' | 'name' | 'price' | 'desc';
+  size?: 'small' | 'medium' | 'large' | 'xl';
 };
 
 export const CardPartWrapperStyled = styled.div<ProductCardProps>`
@@ -14,5 +19,7 @@ export const CardPartWrapperStyled = styled.div<ProductCardProps>`
       ? nameWrapperStyles(size)
       : gridArea === 'price'
       ? priceWrapperStyles(size)
+      : gridArea === 'desc'
+      ? descriptionWrapperStyles()
       : null}
 `;

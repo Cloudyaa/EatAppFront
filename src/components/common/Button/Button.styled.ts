@@ -3,7 +3,7 @@ import { CSSProperties } from '@mui/material/styles/createMixins';
 import { colors } from 'styles';
 
 type StyledButtonProps = {
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xl';
   color?: 'light' | 'dark';
   sx?: CSSProperties;
 };
@@ -14,17 +14,16 @@ export const ButtonStyled = styled.button`
   --btn-background: ${({ color }: StyledButtonProps) =>
     color === 'dark' ? colors.primary.main : colors.secondary.main};
   --btn-font-size: ${({ size }: StyledButtonProps) =>
-    size === 'small' ? '1rem' : size === 'large' ? 'max(1.6rem, 2cqi)' : 'max(1.3rem, 2cqi);'};
+    size === 'small' ? '1rem' : size === 'xl' ? 'max(1.6rem, 2cqi)' : 'max(1.3rem, 2cqi);'};
   --btn-border: none;
   --btn-radius: 10px;
   --btn-padding: ${({ size }: StyledButtonProps) =>
-    size === 'small' ? '4px 10px' : size === 'large' ? '14px 30px' : '8px 20px'};
+    size === 'small' ? '4px 10px' : size === 'xl' ? '14px 30px' : '8px 20px'};
 
   @media (max-width: 768px) {
     --btn-font-size: ${({ size }: StyledButtonProps) =>
-      size === 'small' ? '0.8rem' : size === 'large' ? 'max(1.3rem, 2cqi)' : 'max(1rem, 2cqi);'};
-    --btn-padding: ${({ size }: StyledButtonProps) =>
-      size === 'large' ? '10px 20px' : '6px 12px'};
+      size === 'small' ? '0.8rem' : size === 'xl' ? 'max(1.3rem, 2cqi)' : 'max(1rem, 2cqi);'};
+    --btn-padding: ${({ size }: StyledButtonProps) => (size === 'xl' ? '10px 20px' : '6px 12px')};
   }
 
   color: var(--btn-font-color);

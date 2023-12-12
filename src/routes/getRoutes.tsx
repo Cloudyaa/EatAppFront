@@ -9,6 +9,7 @@ interface RouteEntity {
 export enum ROUTES {
   DASHBOARD = '/dashboard',
   ADMIN = '/admin',
+  PRODUCTS = '/products',
 }
 
 export const getRoutes = (routeBase: string, routes: RouteEntity[]) =>
