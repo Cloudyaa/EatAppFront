@@ -8,15 +8,15 @@ import { customInputStyles } from './CustomInput.styles';
 const CustomField = styled(TextField)(customInputStyles);
 
 // eslint-disable-next-line
-export const CustomTextInput = ({ label, children, ...props }: any) => {
+export const CustomNumberInput = ({ label, children, ...props }: any) => {
   const [field, meta] = useField(props);
 
   return (
-    <FormControl fullWidth sx={{ marginBlock: 2 }}>
+    <FormControl sx={{ marginBlock: 2 }}>
       <CustomField
         id={props.id}
         label={label}
-        type="text"
+        type="number"
         color="secondary"
         variant="outlined"
         {...field}

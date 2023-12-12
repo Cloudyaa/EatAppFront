@@ -26,7 +26,7 @@ export const NavActions = ({ handleShow }: Props) => {
   const navActions = [
     {
       name: <p>My account</p>,
-      to: cookies.token ? `user/${cookies.userId}/dashboard` : '/account/login',
+      to: cookies.token ? `${cookies.role}/${cookies.userId}/dashboard` : '/account/login',
       icon: <PersonOutlineOutlined />,
     },
 

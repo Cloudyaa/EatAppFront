@@ -1,14 +1,28 @@
 import React from 'react';
-import { getRoutes } from './getRoutes';
-import { AdminDashboard } from 'views';
+import { getRoutes, ROUTES } from './getRoutes';
+import { AdminDashboard, ManageProductsView, NewProductForm } from 'views';
+
+export enum ADMIN_ROUTES {
+  MANAGE_PRODUCTS = '/manage/products',
+  NEW_PRODUCT = '/new',
+  UPLOAD_IMAGE = '/upload',
+}
 
 export const AdminRoutes = () => {
   const routes = [
     {
-      path: '/:admin_id',
+      path: ROUTES.DASHBOARD,
       element: <AdminDashboard />,
+    },
+    {
+      path: ADMIN_ROUTES.MANAGE_PRODUCTS,
+      element: <ManageProductsView />,
+    },
+    {
+      path: `${ADMIN_ROUTES.MANAGE_PRODUCTS}${ADMIN_ROUTES.NEW_PRODUCT}`,
+      element: <NewProductForm />,
     },
   ];
 
-  return getRoutes('/admin', routes);
+  return getRoutes(`${ROUTES.ADMIN}/:admin_id`, routes);
 };

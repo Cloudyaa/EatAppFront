@@ -5,3 +5,4 @@ export * from './SpaceFix';
 export * from './TimerHomeRedirect';
 export * from './Link';
 export * from './Skeletons';
+export * from './Loader';

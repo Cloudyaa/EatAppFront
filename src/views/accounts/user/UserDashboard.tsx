@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { SafeUserEntity, ErrorResponse } from 'types';
 import { apiUrl } from 'config';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import { Box } from '@mui/material';
-import { ButtonFull, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
+import { Loader, LogOutBtn, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 import { UsersOrderTable } from './UserOrdersTable';
 import { ErrorView } from '../../error';
 
@@ -16,9 +15,8 @@ export const UserDashboard = () => {
   });
 
   const { user_id } = useParams();
-  const navigate = useNavigate();
 
-  const [cookies, , removeCookie] = useCookies();
+  const [cookies] = useCookies(['token']);
 
   useEffect(() => {
     (async () => {
@@ -45,25 +43,20 @@ export const UserDashboard = () => {
     })();
   }, []);
 
-  const handleLogout = () => {
-    removeCookie('token', { path: '/' });
-    navigate('/');
-  };
-
   return (
     <>
-      {!user ? (
+      {!user && !error ? (
+        <Loader />
+      ) : !user && error ? (
         <ErrorView errorMessage={error.message} status={error.status} />
       ) : (
         <SectionWrapper classes="user__dashboard">
           <>
-            <SectionHeader>Hello {user.email.split('@')[0]}</SectionHeader>
+            <SectionHeader>Hello {user?.email.split('@')[0]}</SectionHeader>
             <SubPageWrapper>
               <h3>Your orders</h3>
               <UsersOrderTable />
-              <Box sx={{ maxWidth: '40ch' }}>
-                <ButtonFull onClick={handleLogout}>Log out</ButtonFull>
-              </Box>
+              <LogOutBtn />
             </SubPageWrapper>
           </>
         </SectionWrapper>

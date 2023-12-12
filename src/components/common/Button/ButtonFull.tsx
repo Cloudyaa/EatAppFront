@@ -6,6 +6,7 @@ import { colors } from 'styles';
 interface Props {
   children: React.ReactNode;
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
 const CustomButton = styled(ButtonUnstyled)`
@@ -43,9 +44,9 @@ const CustomButton = styled(ButtonUnstyled)`
 }
 `;
 
-export const ButtonFull = ({ children, onClick }: Props) => {
+export const ButtonFull = ({ children, onClick, type = 'submit' }: Props) => {
   return (
-    <CustomButton type="submit" className="btn" onClick={onClick}>
+    <CustomButton type={type} className="btn" onClick={onClick}>
       {children}
     </CustomButton>
   );
