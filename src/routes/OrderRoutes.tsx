@@ -1,7 +1,6 @@
 import React from 'react';
 import { BasketRedirectView, OrderRedirectView, OrderSuccessView } from 'views';
 import { getRoutes } from './getRoutes';
-import { OrderPaymentView } from '../views/order/checkout/OrderPaymentView';
 
 export const BasketRouter = () => {
   const routes = [
@@ -15,10 +14,10 @@ export const BasketRouter = () => {
       element: <OrderRedirectView />,
     },
 
-    {
-      path: '/order/payment',
-      element: <OrderPaymentView />,
-    },
+    // {
+    //   path: '/order/payment/:order_id/:order_number',
+    //   element: <OrderPaymentView />,
+    // },
 
     {
       path: '/order/success/:order_number',

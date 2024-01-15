@@ -1,54 +1,28 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom';
-import { RootState, useAppDispatch } from 'store';
-import { clearBasket } from 'features/basket';
+import { useParams } from 'react-router-dom';
 import { apiUrl } from 'config';
-import { useDiscount } from 'hooks';
-import { OrderDTO, OrderedProductEntity, SuccessOrderResponse } from 'types';
 import { ButtonStyled, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 
 export const OrderPaymentView = () => {
-  const basket = useSelector((state: RootState) => state.basket);
-  const { totalAtCheckout } = useDiscount();
-
+  const { order_id } = useParams();
   const [cookies] = useCookies();
 
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  const handlePayment = async (event: any) => {
+    event.preventDefault();
 
-  const orderedProducts: OrderedProductEntity[] = basket.products.map((product) => {
-    return {
-      productId: product.productId,
-      name: product.name,
-      price: product.price,
-      orderedQty: product.qtyInBasket,
-    };
-  });
-
-  const userOrder: OrderDTO = {
-    products: orderedProducts,
-    totalQty: basket.totalQty,
-    totalValue: Number(totalAtCheckout.toFixed(2)),
-    userId: cookies.userId,
-  };
-
-  const handleCheckout = async () => {
     try {
-      const res = await fetch(`${apiUrl}/user/${cookies.userId}/order/new`, {
-        method: 'POST',
+      const res = await fetch(`${apiUrl}/user/${cookies.userId}/order/payment/${order_id}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${cookies.token}`,
         },
-        body: JSON.stringify(userOrder),
       });
 
       if (res.ok) {
-        const data: SuccessOrderResponse = await res.json();
-        dispatch(clearBasket());
-        navigate(`/basket/order/success/${data.orderNumber}`);
+        const data: PaymentResponse = await res.json();
+
+        console.log(data);
       }
     } catch (e) {
       console.error(e);
@@ -59,7 +33,7 @@ export const OrderPaymentView = () => {
     <SectionWrapper classes="order__checkout">
       <SectionHeader>Payment</SectionHeader>
       <SubPageWrapper>
-        <ButtonStyled onClick={handleCheckout}>Finish order</ButtonStyled>
+        <ButtonStyled onClick={handlePayment}>Pay for order</ButtonStyled>
       </SubPageWrapper>
     </SectionWrapper>
   );
