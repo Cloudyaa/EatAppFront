@@ -5,9 +5,19 @@ import { RootState } from 'store';
 import { apiUrl } from 'config';
 import { useDiscount } from 'hooks';
 import { OrderDTO, OrderedProductEntity, StripeSessionResponse, SuccessOrderResponse } from 'types';
-import { ButtonStyled, FlexLink, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
+import {
+  ButtonStyled,
+  FlexEvenlyWrapper,
+  FlexLink,
+  SectionHeader,
+  SectionWrapper,
+  SubPageWrapper,
+} from 'components';
 import { CheckoutTable } from './CheckoutTable';
 import { loadStripe } from '@stripe/stripe-js';
+import { useNavigate } from 'react-router-dom';
+import { FaCcMastercard, FaCcVisa, FaPaypal } from 'react-icons/fa6';
+import { Divider } from '@mui/material';
 
 const STRIPE_SECRET = import.meta.env.VITE_STRIPE_SECRET;
 const stripePromise = loadStripe(STRIPE_SECRET);
@@ -15,7 +25,6 @@ const stripePromise = loadStripe(STRIPE_SECRET);
 export const OrderCheckoutView = () => {
   const basket = useSelector((state: RootState) => state.basket);
   const { totalAtCheckout } = useDiscount();
-
   const [cookies] = useCookies();
 
   const [orderId, setOrderId] = useState<string | null>(null);
@@ -91,7 +100,40 @@ export const OrderCheckoutView = () => {
       <SubPageWrapper>
         <h3>Your order summary</h3>
         <CheckoutTable />
-        <ButtonStyled onClick={handleCheckout}>Checkout</ButtonStyled>
+        <ButtonStyled onClick={() => null}>
+          <FlexEvenlyWrapper
+            addSx={{
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <FaPaypal />
+            <span>Pay with PayPal</span>
+          </FlexEvenlyWrapper>
+        </ButtonStyled>
+
+        <Divider>OR</Divider>
+
+        <ButtonStyled onClick={handleCheckout}>
+          <FlexEvenlyWrapper
+            addSx={{
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <FaCcMastercard />
+            <FaCcVisa />
+            <img
+              src={
+                'https://www.przelewy24.pl/themes/przelewy24/assets/img/base/przelewy24_logo_2022.svg'
+              }
+              width={40}
+              alt={'przelewy24'}
+              loading="lazy"
+            />
+            <img src={'/blik_icon.svg'} width={40} alt={'przelewy24'} loading="lazy" />
+          </FlexEvenlyWrapper>
+        </ButtonStyled>
         <FlexLink to={'/basket'} text={'Something wrong?'}>
           Back to basket
         </FlexLink>

@@ -14,11 +14,6 @@ export const BasketRouter = () => {
       element: <OrderRedirectView />,
     },
 
-    // {
-    //   path: '/order/payment/:order_id/:order_number',
-    //   element: <OrderPaymentView />,
-    // },
-
     {
       path: '/order/success/:order_number',
       element: <OrderSuccessView />,
