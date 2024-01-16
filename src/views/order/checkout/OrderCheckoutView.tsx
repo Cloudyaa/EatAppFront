@@ -1,23 +1,24 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom';
-import { RootState, useAppDispatch } from 'store';
-import { clearBasket } from 'features/basket';
-import { apiUrl } from 'config';
+import { RootState } from 'store';
 import { useDiscount } from 'hooks';
-import { OrderDTO, OrderedProductEntity, SuccessOrderResponse } from 'types';
-import { ButtonStyled, FlexLink, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
+import { OrderDTO, OrderedProductEntity } from 'types';
+import { FlexLink, SectionHeader, SectionWrapper, SubPageWrapper } from 'components';
 import { CheckoutTable } from './CheckoutTable';
+import { Divider } from '@mui/material';
+
+import { PayPal } from './PayPal';
+import { Stripe } from './Stripe';
+
+export interface PaymentProps {
+  userOrder: OrderDTO;
+}
 
 export const OrderCheckoutView = () => {
   const basket = useSelector((state: RootState) => state.basket);
   const { totalAtCheckout } = useDiscount();
-
   const [cookies] = useCookies();
-
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const orderedProducts: OrderedProductEntity[] = basket.products.map((product) => {
     return {
@@ -35,35 +36,15 @@ export const OrderCheckoutView = () => {
     userId: cookies.userId,
   };
 
-  const handleCheckout = async () => {
-    try {
-      const res = await fetch(`${apiUrl}/user/${cookies.userId}/order/new`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${cookies.token}`,
-        },
-        body: JSON.stringify(userOrder),
-      });
-
-      if (res.ok) {
-        const data: SuccessOrderResponse = await res.json();
-        dispatch(clearBasket());
-        navigate(`/basket/order/success/${data.orderNumber}`);
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   return (
     <SectionWrapper classes="order__checkout">
       <SectionHeader>Checkout</SectionHeader>
       <SubPageWrapper>
         <h3>Your order summary</h3>
         <CheckoutTable />
-        <ButtonStyled onClick={handleCheckout}>Checkout</ButtonStyled>
-
+        <PayPal userOrder={userOrder} />
+        <Divider>OR</Divider>
+        <Stripe userOrder={userOrder} />
         <FlexLink to={'/basket'} text={'Something wrong?'}>
           Back to basket
         </FlexLink>

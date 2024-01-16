@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowseProductsBtn,
   SectionHeader,
@@ -9,9 +9,16 @@ import {
 import { Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { makeOrderNumber } from 'utils';
+import { useAppDispatch } from 'store';
+import { clearBasket } from 'features/basket';
 
 export const OrderSuccessView = () => {
   const { order_number } = useParams();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(clearBasket());
+  }, []);
 
   return (
     <SectionWrapper>
